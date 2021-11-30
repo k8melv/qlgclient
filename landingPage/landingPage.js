@@ -20,7 +20,7 @@
 //   }
 // }
 const GetCustomers = async (email) => {
-    const customerURL = `https://localhost:5001/api/customer/${email}`;
+    const customerURL = `https://qlgapi.herokuapp.com/`;
     const response = await fetch(customerURL);
     const data = await response.json();
     console.log(data);
@@ -29,7 +29,7 @@ const GetCustomers = async (email) => {
 }
 
 function handleOnLoad(email){
-    const postURL = `https://localhost:5001/api/customer/${email}`;
+    const postURL = `https://qlgapi.herokuapp.com/`;
     fetch(postURL).then(function(response){
         return response.json();
     }).then(function(json){
