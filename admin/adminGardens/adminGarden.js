@@ -1,5 +1,4 @@
 const obj = JSON.parse(sessionStorage.getItem('user'));
-console.log(obj);
 
 function handleHello(){
     var helloHtml = document.getElementById('hello');
@@ -30,7 +29,6 @@ function displayModal(data){
 function loadGardens(){
   const gardensURL = "https://qlgapi.herokuapp.com/api/garden";
   fetch(gardensURL).then(function(response){
-      console.log(response);
       return response.json();
   }).then(function(json){
     var html = `<div class='gardens'>`

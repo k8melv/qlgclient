@@ -125,6 +125,5 @@ function sendSuggestion(){
         else{
             alert("Something went wrong. Please try again.")
         }
-        console.log(response);
     })
 }
