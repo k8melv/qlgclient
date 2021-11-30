@@ -180,15 +180,11 @@ function deleteSubmission(id){
             "Content-Type": 'application/json'
         }
     })
-    .then((response)=>{
-        console.log(response);
-    })
     suggestionModal();
 }
 
 function confirmDelete(id){
     let isExecuted = confirm("Are you sure to delete this suggestion?");
-    console.log(isExecuted); // OK = true, Cancel = false
     if (isExecuted == true) {
         alert("This submission has been deleted");
         deleteSubmission(id);
