@@ -1,15 +1,15 @@
 /* 321 Project Code Begins Here */
 body {
     background-color: #2A3033;
-    background-image: url("./assets/Grass-Texture.jpg");
+    /* background-image: url("./assets/BigAlHoldingPlant.png"); */
   }
   #navBarLogo {
     width: 80px;
     height: 80px;
-    margin-left: 8%;
+    margin-left: 10%;
   }
   #headerTitle {
-    padding-left: 18%;
+    padding-left: 19%;
   }
   .dropdown {
     font-size: 20px;
@@ -99,7 +99,7 @@ body {
       background-image: url("./assets/Tim.png");
      transform: rotateY(240deg) translateZ(430px); }
     .carousel__face:nth-child(8) {
-      background-image: url("./assets/bds.png");
+      background-image: url("./assets/BigAlHoldingPlant.png");
       transform: rotateY(280deg) translateZ(430px); }
     .carousel__face:nth-child(9) {
       background-image: url("./assets/quad_copy.png");
