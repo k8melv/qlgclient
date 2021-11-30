@@ -183,6 +183,7 @@ function deleteSubmission(id){
     .then((response)=>{
         console.log(response);
     })
+    suggestionModal();
 }
 
 function confirmDelete(id){
