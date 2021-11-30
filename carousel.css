@@ -76,39 +76,39 @@ span {
 }
 
 .carousel__face:nth-child(1) {
-  background-image: url("./assets/Logo_Background.png");
+  background-image: url("../../assets/Logo_Background.png");
   transform: rotateY(0deg) translateZ(430px);
 }
 .carousel__face:nth-child(2) {
-  background-image: url("./assets/quad_copy.png");
+  background-image: url("../../assets/quad_copy.png");
   transform: rotateY(40deg) translateZ(430px);
 }
 .carousel__face:nth-child(3) {
-  background-image: url("./assets/Jimmy.png");
+  background-image: url("../../assets/Jimmy.png");
   transform: rotateY(80deg) translateZ(430px);
 }
 .carousel__face:nth-child(4) {
-  background-image: url("./assets/bds.png");
+  background-image: url("../../assets/bds.png");
   transform: rotateY(120deg) translateZ(430px);
 }
 .carousel__face:nth-child(5) {
-  background-image: url("./assets/Kate.png");
+  background-image: url("../../assets/Kate.png");
   transform: rotateY(160deg) translateZ(430px);
 }
 .carousel__face:nth-child(6) {
-  background-image: url("./assets/logo.png");
+  background-image: url("../../assets/logo.png");
   transform: rotateY(200deg) translateZ(430px);
 }
 .carousel__face:nth-child(7) {
-  background-image: url("./assets/Tim.png");
+  background-image: url("../../assets/Tim.png");
   transform: rotateY(240deg) translateZ(430px);
 }
 .carousel__face:nth-child(8) {
-  background-image: url("./assets/BigAlHoldingPlant.png");
+  background-image: url("../../assets/BigAlHoldingPlant.png");
   transform: rotateY(280deg) translateZ(430px);
 }
 .carousel__face:nth-child(9) {
-  background-image: url("./assets/quad_copy.png");
+  background-image: url("../../assets/quad_copy.png");
   transform: rotateY(320deg) translateZ(430px);
 }
 
