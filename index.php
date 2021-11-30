@@ -1,1 +1,1 @@
-<?php include_once("/landingCarousel/carousel.html"); ?>
+<?php include_once("./landingCarousel/carousel.html"); ?>
