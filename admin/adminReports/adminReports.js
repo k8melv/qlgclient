@@ -1,5 +1,4 @@
 const obj = JSON.parse(sessionStorage.getItem('user'));
-console.log(obj);
 
 function handleHello(){
     var helloHtml = document.getElementById('hello');
