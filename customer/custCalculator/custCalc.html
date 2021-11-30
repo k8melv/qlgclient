@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Quad Landscaping & Garden</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="../../assets/ElephantLogo_Transparent.png" />
+        <!-- Bootstrap icons-->
+        <link href='https://fonts.googleapis.com/css?family=Dekko' rel='stylesheet'>
+        <link href="../../root.css" rel="stylesheet" />
+        <link rel="stylesheet" href="./custCalc.css">
+    </head>
+    <body onload="handleHello()">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container px-4 px-lg-5">
+              <a class="navbar-brand" href="../../landingPage/landingPage.html"><img src="../../assets/ElephantLogo_Transparent.png" alt="navBarLogo" id="navBarLogo"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                      <li class="nav-item"><a class="nav-link active" aria-current="page" href="../custPlants/custPlants.html">Plants</a></li>
+                      <li class="nav-item"><a class="nav-link active" aria-current="page" href="../custGardens/custGardens.html">Gardens</a></li>
+                      <li class="nav-item"><a class="nav-link active" aria-current="page" href="../custCalculator/custCalcLanding.html">Calculator</a></li>
+                  </ul>
+                  <form class="d-flex">
+                      <button class="btn btn-outline-dark cartBtn" type="submit">
+                          <i class="bi-cart-fill me-1"></i>
+                          Cart
+                          <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                      </button>
+                      <li id="hello" class="nav-item accountPageButton"><a class="nav-link active" aria-current="page" href="../custProfile/custProfile.html">Hello {#NAME}</a></li>
+                  </form>
+              </div>
+          </div>
+      </nav>
+        <!-- Header-->
+        <header class="bg-dark py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder">Quad Landscaping & Garden</h1>
+                    
+
+                    <!-- Buzzfeed Quiz Begins Here -->
+                    <div class="quiz">
+                        <div class="question" id="question1" class="quizRow">
+                          <p class="quiz-question">What kind of plant do you have?</p>
+                          <br>
+
+                          <div style="text-align:center">
+                            <div class="answer-choice">
+                                <a href="#question2">  <button class="q1a2" id="q1c1" onclick="question1(this.id)">Sweet Shrub</button></a>
+                            </div>
+                          </div>
+                    
+                          <div class="quizRow">
+                            <div class="answer-choice">
+                                <a href="#question2"> <button class="q1a3" id="q1c2" onclick="question1(this.id)">Bee Balm</button></a>
+                            </div>
+
+                            <div class="answer-choice">
+                                <a href="#question2"> <button class="q1a4" id="q1c3" onclick="question1(this.id)">Crimsoneyed Rosemallow</button></a>
+                            </div>
+                          </div>
+
+                          <div class="quizRow">
+                            <div class="answer-choice">
+                                <a href="#question2"> <button class="q1a3" id="q1c4" onclick="question1(this.id)">Swamp Azalea</button></a>
+                            </div>
+
+                            <div class="answer-choice">
+                                <a href="#question2"> <button class="q1a4" id="q1c5" onclick="question1(this.id)">Rose</button></a>
+                            </div>
+                          </div>
+
+                        </div> 
+                    </div>
+                    
+                     <div class="quiz">
+                        <div class="question" id="question2" class="quizRow">
+                          <p class="quiz-question">Where does your plant get sun from?</p>
+                          <br>
+                          <div class="quizRow">
+                          <div class="answer-choice">
+                            <a href="#question3"><button class="q2a1" id="q2c1" onclick="question2(this.id)">A nearby window</button></a>
+                          </div>
+                          <div class="answer-choice">
+                            <a href="#question3"><button class="q2a2" id="q2c2" onclick="question2(this.id)">Direct exposure outside</button></a>
+                          </div>
+                          </div>
+                    
+                          <div class="quizRow">
+                          <div class="answer-choice">
+                            <a href="#question3"><button class="q2a3" id="q2c3" onclick="question2(this.id)">A heat lamp</button></a>
+                          </div>
+                          <div class="answer-choice">
+                           <a href="#question3"> <button class="q2a4" id="q2c4" onclick="question2(this.id)">It doesn't....</button></a>
+                          </div>
+                          </div>
+                        </div> 
+                    </div>
+                    
+                     <div class="quiz">
+                        <div class="question" id="question3" class="quizRow">
+                          <p class="quiz-question">How often do you wanter your plant?</p>
+                          <br>
+                        <div class="quizRow">
+                          <div class="answer-choice">
+                            <a href="#question4"><button class="q3a1" id="q3c1" onclick="question3(this.id)">Once a day</button></a>
+                          </div>
+                          <div class="answer-choice">
+                            <a href="#question4"><button class="q3a2" id="q3c2" onclick="question3(this.id)">Once a week</button></a>
+                          </div>
+                          </div>
+                    
+                          <div class="quizRow">
+                          <div class="answer-choice">
+                            <a href="#question4"><button class="q3a3" id="q3c3" onclick="question3(this.id)">Whenever it rains</button></a>
+                          </div>
+                          <div class="answer-choice">
+                            <a href="#question4"><button class="q3a4" id="q3c4" onclick="question3(this.id)">Never</button></a>
+                          </div>
+                          </div>
+                        </div> 
+                        </div>
+
+                        <div class="quiz">
+                        <div class="question" id="question4" class="quizRow">
+                          <p class="quiz-question">How often does your plant experience any <br> physical impact that could injure it?</p>
+                          <p>(Heavy winds, tornados, etc.)</p>
+                          <br>
+                          <div class="quizRow">
+                          <div class="answer-choice">
+                            <a href="#results"><button class="q4a1" id="q4c1" onclick="question4(this.id)">Very often</button></a>
+                          </div>
+                          <div class="answer-choice">
+                            <a href="#results"><button class="q4a2" id="q4c2" onclick="question4(this.id)">Often</button></a>
+                          </div>
+                          </div>
+                    
+                          <div class="quizRow">
+                          <div class="answer-choice">
+                            <a href="#results"><button class="q4a3" id="q4c3" onclick="question4(this.id)">Rarely</button></a>
+                          </div>
+                          <div class="answer-choice">
+                            <a href="#results"><button class="q4a4" id="q4c4" onclick="question4(this.id)">Never</button></a>
+                          </div>
+                          </div>
+                        </div> 
+                        </div>
+
+
+                        <br>
+                        <div class="quiz quizResults">
+                        <div class="garden" id="results">
+
+                            <h2 id="myImg resultsButton">View Results</h2>
+                            <img id="myImg" src="Client/assets/Logo_Background.png" alt="Calculator Results" style="width:200px; height:200px;">
+                                
+                            </div>
+
+                        <!-- The Modal -->
+                            <div id="myModal" class="modal">
+                                <span class="close">&times;</span>
+                                <label id=phealth>Your Plant is: </label>
+                                <img class="modal-content" id="img01">
+                                <div id=pname>Plant name: </div>
+                                <div id="sunscore">Sun Score:</div>
+                                <div id="waterscore">Water Score:</div>
+                                <div id="advice">Advice:</div>
+
+                                <div id="caption"></div>
+                            </div>
+                        </div>
+                        </div>
+                          
+
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Quad Landscaping & Garden 2021</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="custCalc.js"></script>
+    </body>
+</html>

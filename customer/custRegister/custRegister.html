@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Quad Landscaping & Garden</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="../../assets/ElephantLogo_Transparent.png" />
+        <!-- Bootstrap icons-->
+        <link href='https://fonts.googleapis.com/css?family=Dekko' rel='stylesheet'>
+        <link href="../../root.css" rel="stylesheet" />
+        <link rel="stylesheet" href="./custRegister.css">
+    </head>
+    <body style="background-color: #2A3033;">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="../custCarousel/carousel.html"><img src="../../assets/ElephantLogo_Transparent.png" alt="navBarLogo" id="navBarLogo"></a>
+                <!-- <h1 class="display-4 fw-bolder">Quad Landscaping & Garden</h1> -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                
+                <!-- log in nav button -->
+                <li class="nav-item dropdown" style="list-style-type: none;">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">Get Started</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="../../landingPage/landingPage.html">Returning Customer</a></li>
+                        <li><a class="dropdown-item" href="../custRegister/custRegister.html">New Customer</a></li>
+                        <li><a class="dropdown-item" href="../../admin/adminLogIn/index.html">Returning Admin</a></li>
+                        <li><a class="dropdown-item" href="../../admin/adminRegister/index.html">New Admin</a></li>
+                    </ul>
+                </li>
+                
+            </div>
+        </nav>
+        <!-- Header-->
+        <header>
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <!-- <h1 class="display-4 fw-bolder">Quad Landscaping & Garden</h1> -->
+                    
+                    <!-- customer registration -->
+                    <h1 class="reg">Register</h1>
+
+                    <form action="">
+                        <input type="text" id="fname" name="fname" placeholder="First Name">
+                        <input type="text" id="lname" name="lname" placeholder="Last Name"><br><br>
+                        <input type="text" id="birthdate" name="birthdate" placeholder="Birthdate">
+                        <input type="text" id="email" name="email" placeholder="Email"><br><br>
+                        <input type="text" id="password" name="password" placeholder="Password"><br><br>
+                        
+                        <!-- subscribe button -->
+                        <input type="radio" checked="checked" name="subscribeToEmails" value="subscribeToEmails" id="subscribeToEmails">
+                        <label for="subscribeToEmails">Subscribe To Emails</label>
+                        <br>
+                        <!-- terms and conditions -->
+                        <input type="radio" name="termsAndCond" value="termsAndCond" id="termsAndCond">
+                        <a href="./assets/QL&G Terms & Conditions.pdf" target="_blank" download>
+                            <label>Terms and Conditions</label>
+                        </a>
+                        <label id="errorMsg">
+
+                        </label>
+                        <!-- recaptcha -->
+                        <form action="?" method="POST">
+                            <div class="g-recaptcha" data-sitekey="your_site_key"></div>
+                            <br/>
+                            <input type="submit" value="Submit" onclick="registerAccount()">
+                        </form> 
+                    </form>
+
+                </div>
+            </div>
+        </header>
+
+        <!-- Footer-->
+        <footer class="footer">
+            <div><p class="text-center text-white">Copyright &copy; Quad Landscaping & Garden 2021</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="custRegister.js"></script>
+        <!-- Recaptcha -->
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    </body>
+</html>

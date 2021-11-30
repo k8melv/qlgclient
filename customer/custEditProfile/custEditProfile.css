@@ -1,0 +1,170 @@
+/* 321 Project Code Begins Here */
+
+h1 {
+    padding-top: 70px;
+    font-size: 30px;
+    font-family: Verdana, Tahoma, sans-serif;    
+    text-shadow: 2px 2px black;
+  }
+  h2 >* {
+    color: white;
+    font-size: 20px;
+    font-family: Verdana, Tahoma, sans-serif;
+    text-shadow: 2px 2px black;
+  }
+  /* .px-4 > * {
+    margin-top: -30px;
+  } */
+  
+  input {
+    border: 2px solid #990000;
+    border-radius: 10px;
+    background-color: #2A3033;
+    color: white;
+    text-align: center;
+  }
+  /* placeholder {
+    color: white;
+  } */
+  #navBarLogo {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .dropdown {
+    font-size: 20px;
+    list-style-type: none;
+  }
+  
+  #navbarDropdown {
+    list-style-type: none;
+  }
+  
+  /* sticky nav bar */
+  nav > * {
+    background-color: #2A3033;
+    position: fixed;
+    padding-top: 80px;
+  }
+  
+  
+  .sticky {
+    background-color: #990000;
+  }
+  
+  footer > *{
+    padding: 100px 0 100px 50px;
+  }
+  
+  /* 321 Project Code Begins Here */
+  #navBarLogo {
+    width: 70px;
+    height: 70px;
+  }
+  .accountPageButton {
+    list-style-type: none;
+  }
+  
+  /* .container {
+    position: relative;
+    width: 50%;
+  } */
+  .image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+  .middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  /* .container:hover .image {
+    opacity: 0.3;
+  }
+  
+  .container:hover .middle {
+    opacity: 1;
+  } */
+  .text {
+    background-color: #990000;
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+  }
+  
+  .gardens {
+    display: flex;
+    justify-content: center;
+  }
+  .garden {
+    padding: 5%;
+  }
+  nav > * {
+    padding-top: 40px;
+    background-color: #2A3033;
+    position: fixed;
+  }
+  .fw-bolder {
+    font-size: 38px;
+  }
+  
+  
+  body {
+    background: white;
+    padding-top: 15px;
+  }
+  
+  .form-control:focus {
+    box-shadow: none;
+    border-color: #990000;
+  }
+  
+  .profile-button {
+    background: #990000;
+    box-shadow: none;
+    border: none
+  }
+  
+  .profile-button:hover {
+    background: #990000;
+  }
+  
+  .profile-button:focus {
+    background: #990000;
+    box-shadow: none
+  }
+  
+  .profile-button:active {
+    background: #990000;
+    box-shadow: none
+  }
+  
+  .back:hover {
+    color: #990000;
+    cursor: pointer
+  }
+  
+  .labels {
+    font-size: 18px;
+    color: #990000;
+    font-style: italic;
+  }
+  
+  .add-experience:hover {
+    background: #990000;
+    color: #2A3033;
+    cursor: pointer;
+    border: solid 1px #990000;
+  }
+  span {
+    font-size: 20px;
+  }

@@ -1,0 +1,4 @@
+customerid,firstname,lastname,birthdate,email,password,creditcard,shippingaddress,billingaddress,pastPurchases,status
+1,Jeff,Lucas,1980-09-23,jslucas@customer.com,#Pass123,2342323443244323,"13904 Summerlook Lane","13904 Summerlook Lane"," ",yes
+2,Jamie,Hillman,1995-05-12,jmhillman@customer.com,#Pass123," "," "," "," ",no
+3,Blake,Minichan,2000-09-28,bminichan@customer.com,#Pass123,1234431254322134,"700 15th St Tuscaloosa, AL 35401","700 15th St Tuscaloosa, AL 35401"," ",yes

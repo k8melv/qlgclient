@@ -1,0 +1,54 @@
+/* 321 Project Code Begins Here */
+body {
+    background-color: #2a3033;
+  }
+  #navBarLogo {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .dropdown {
+    font-size: 20px;
+    list-style-type: none;
+  }
+  
+  #navbarDropdown {
+    list-style-type: none;
+  }
+  
+  /* sticky nav bar */
+  nav > * {
+    padding-top: 50px;
+  }
+  
+  #navbarDropdown {
+    color: white;
+    opacity: 1;
+  }
+  .dropdown-menu {
+    color: white;
+    background-color: white;
+    opacity: 1;
+  }
+  .dropdown-menu:hover {
+    color: white;
+    background-color: white;
+    opacity: 1;
+  }
+  .dropdown-item:hover {
+    background-color: #990000;
+    width: 80%;
+    opacity: 1;
+  }
+
+  #myCarousel {
+      display: flex;
+      justify-content: center;
+      height: 600px;
+      width: 900px;
+      margin-left: 20%;
+  }
+  footer > * {
+    padding: 200px 0 150px 50px;
+  }
+  

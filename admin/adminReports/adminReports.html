@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Quad Landscaping & Garden</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="../../assets/ElephantLogo_Transparent.png" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="adminReports.css" rel="stylesheet" />
+        
+    </head>
+    <body onload="handleHello()">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="../../landingCarousel/carousel.html"><img src="../../assets/ElephantLogo_Transparent.png" alt="navBarLogo" id="navBarLogo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="../adminPlants/adminPlants.html">Plants</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="../adminGardens/adminGarden.html">Gardens</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="../adminReports/adminReports.html">Reports</a></li>
+                    </ul>
+                    
+                    </ul>
+                    <form class="d-flex">
+                        <li id="hello" class="nav-item accountPageButton"><a class="nav-link active" aria-current="page" href="../adminProfile/adminProfile.html">Hello {#NAME}</a></li>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="bg-dark py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder"
+                    style="font-size: 55px; letter-spacing: 1px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;"
+                    >Starting and Maintaining a Garden</h1>
+                </div>
+            </div>
+        </header>
+
+        <!-- <section class="adminEditingBtns">
+            <button class="btn btn-outline-dark" type="submit">Add</button>
+            <button class="btn btn-outline-dark" type="submit">Edit</button>
+            <button class="btn btn-outline-dark" type="submit">Delete</button>
+        </section> -->
+
+        <main>
+            <section class="reports">
+            <!-- <div class="report">
+                <h2 style="text-align: center; padding: 10px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;"
+                id="myImg" >View Subscribers</h2>
+            <div class="report">
+                <button style="text-align: center; padding: 10px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;"
+                id="myImg" >View Subscribers</button>
+            </div>
+            <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="img01">
+                <div id="caption"></div>
+            </div> -->
+
+
+            <!-- <div class="report">
+                <h2 style="text-align: center; padding: 10px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;"
+                id="myImg" >View Popular Plants</h2>
+            <div class="report">
+                <button style="text-align: center; padding: 10px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;"
+                id="myImg" >View Popular Plants</button>
+            </div>
+
+            <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="img01">
+                <div id="caption"></div>
+            </div>
+            </section>
+
+            <section class="reports">
+            <div class="report">
+                <button 
+                style="text-align: center; padding: 10px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;"
+                id="myImg" >View Plant Suggestions</button>
+            </div>
+
+            <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="img01">
+                <div id="caption"></div>
+            </div> -->
+            <a class="btn btn-outline-dark" style="display: inline-block;margin: 25px;" href="./assets/Subscribers.csv" target="_blank" download>
+                <h2>View Subscribers</h2>
+            </a>
+
+            <a class="btn btn-outline-dark" style="display: inline-block;margin: 25px;" href="./assets/PopularPlants.csv" target="_blank" download>
+                <h2>View Popular Plants</h2>
+            </a>
+
+            <a class="btn btn-outline-dark" style="display: inline-block;margin: 25px;" href="./assets/PlantSuggestions.csv" target="_blank" download>
+                <h2>View Plant Suggestions</h2>
+            </a>
+
+            <a class="btn btn-outline-dark" style="display: inline-block;margin: 25px;" href="./assets/HealthCalculatorResults.csv" target="_blank" download>
+                <h2>View Calculator Results</h2>
+            </a>
+            <!-- <div class="report">
+                <h2 
+            <div class="report">
+                <button 
+                style="text-align: center; padding: 10px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;"
+                id="myImg" >View Calculator Results</button>
+            </div>
+            The Modal -->
+            <!-- <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="img01">
+                <div id="caption"></div>
+            </div> -->
+            
+            </section>
+        </main>
+
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Quad Landscaping & Garden 2021</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="adminReports.js"></script>
+    </body>
+</html>
