@@ -39,7 +39,7 @@ img.onclick = function(){
 }
 
 function calculator2Database(){//STILL NEEDS TO BE WORKED ON
-  const plantApiUrl = "https://localhost:5001/api/plantinformation";
+  const plantApiUrl = "https://qlgapi.herokuapp.com/api/plantinformation";
   const namePlant = document.getElementById(`pname`).value;
   const plantLocation = document.getElementById(`plocation`).value;
     const waterNeeds = document.getElementById(`pwater`).value;

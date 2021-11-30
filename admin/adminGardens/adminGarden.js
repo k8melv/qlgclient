@@ -9,7 +9,7 @@ function handleHello(){
 }
 
 const GetGarden = async (id) => {
-  const gardenURL = `https://localhost:5001/api/garden/${id}`;
+  const gardenURL = `https://qlgapi.herokuapp.com/api/garden/${id}`;
   const response = await fetch(gardenURL);
   const data = await response.json();
   displayModal(data);
@@ -28,7 +28,7 @@ function displayModal(data){
 }
 
 function loadGardens(){
-  const gardensURL = "https://localhost:5001/api/garden";
+  const gardensURL = "https://qlgapi.herokuapp.com/api/garden";
   fetch(gardensURL).then(function(response){
       console.log(response);
       return response.json();

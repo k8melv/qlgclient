@@ -8,7 +8,7 @@ function handleHello(){
 }
 
 const GetPlant = async (id) => {
-    const plantURL = `https://localhost:5001/api/plantinformation/${id}`;
+    const plantURL = `https://qlgapi.herokuapp.com/api/plantinformation/${id}`;
     const response = await fetch(plantURL);
     const data = await response.json();
     displayModal(data);
@@ -26,7 +26,7 @@ function displayModal(data){
 }
 
 const GetPlantCart = async (id) => {
-    const plantURL = `https://localhost:5001/api/plantinformation/${id}`;
+    const plantURL = `https://qlgapi.herokuapp.com/api/plantinformation/${id}`;
     const response = await fetch(plantURL);
     const data = await response.json();
     addToCart(data);
@@ -86,7 +86,7 @@ function cartModal(){
 }
 
 function loadPlants(){
-    const allPlantsApiUrl = "https://localhost:5001/api/plantinformation";
+    const allPlantsApiUrl = "https://qlgapi.herokuapp.com/api/plantinformation";
     fetch(allPlantsApiUrl).then(function(response){
         return response.json();
     }).then(function(json){
@@ -105,7 +105,7 @@ function loadPlants(){
 }
 
 function sendSuggestion(){
-    const suggestionURL = 'https://localhost:5001/api/submissions';
+    const suggestionURL = 'https://qlgapi.herokuapp.com/api/submissions';
     const plant = document.getElementById(`plantSubmission`).value;
 
     fetch(suggestionURL, {

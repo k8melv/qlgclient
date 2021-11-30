@@ -8,7 +8,7 @@ function handleHello(){
 }
 
 const GetPlant = async (id) => {
-    const plantURL = `https://localhost:5001/api/plantinformation/${id}`;
+    const plantURL = `https://qlgapi.herokuapp.com/api/plantinformation/${id}`;
     const response = await fetch(plantURL);
     const data = await response.json();
     displayModal(data);
@@ -26,7 +26,7 @@ function displayModal(data){
 }
 
 function addPlant(){
-    const plantApiUrl = "https://localhost:5001/api/plantinformation";
+    const plantApiUrl = "https://qlgapi.herokuapp.com/api/plantinformation";
     const namePlant = document.getElementById(`pname`).value;
     const plantLocation = document.getElementById(`plocation`).value;
     const waterNeeds = document.getElementById(`pwater`).value;
@@ -72,7 +72,7 @@ function displayAddMenu(){
 }
 
 function putPlant(id){
-    const plantApiUrl = `https://localhost:5001/api/plantinformation/${id}`;
+    const plantApiUrl = `https://qlgapi.herokuapp.com/api/plantinformation/${id}`;
     const namePlant = document.getElementById(`plantName`).innerHTML;
     const plantLocation = document.getElementById(`editLocation`).value;
     const waterNeeds = document.getElementById(`editWater`).value;
@@ -117,7 +117,7 @@ function confirmation(id){
 }  
 
 function removeElement(id){
-    const plantUrl = `https://localhost:5001/api/plantinformation/${id}`;
+    const plantUrl = `https://qlgapi.herokuapp.com/api/plantinformation/${id}`;
     fetch(plantUrl, {
         method: "DELETE",
         headers: {
@@ -132,7 +132,7 @@ function removeElement(id){
 }
 
 function loadPlants(){
-    const allPlantsApiUrl = "https://localhost:5001/api/plantinformation";
+    const allPlantsApiUrl = "https://qlgapi.herokuapp.com/api/plantinformation";
     fetch(allPlantsApiUrl).then(function(response){
         return response.json();
     }).then(function(json){
@@ -151,7 +151,7 @@ function loadPlants(){
 }
 
 const getSuggestions = async () => {
-    const suggestionURL = 'https://localhost:5001/api/submissions';
+    const suggestionURL = 'https://qlgapi.herokuapp.com/api/submissions';
     const response = await fetch(suggestionURL);
     const data = await response.json();
     suggestionModal(data);
@@ -172,7 +172,7 @@ function suggestionModal(data){
 }
 
 function deleteSubmission(id){
-    const suggestionURL = `https://localhost:5001/api/submissions/${id}`;
+    const suggestionURL = `https://qlgapi.herokuapp.com/api/submissions/${id}`;
     fetch(suggestionURL, {
         method: "DELETE",
         headers: {
