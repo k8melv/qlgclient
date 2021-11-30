@@ -21,36 +21,57 @@
 
         <link rel="stylesheet" href="carousel.css">
     </head>
-    <body>
+    <body onload="handleHello()">
         <!-- Navigation-->
-        <nav id="stickyNav" class="navbar">
-            <div class="container  px-lg-5">
-                <a href="./landingPage.html"><img src="../assets/ElephantLogo_Transparent.png" alt="navBarLogo" id="navBarLogo"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-
-                <!-- log in nav button -->
-                <li class="dropdown">
-                    <p class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" >Get Started</p>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="./landingPage.html">Returning Customer</a></li>
-                        <li><a class="dropdown-item" href="../customer/custRegister/custRegister.html">New Customer</a></li>
-                        <li><a class="dropdown-item" href="../admin/adminLogIn/index.html">Returning Admin</a></li>
-                        <li><a class="dropdown-item" href="../admin/adminRegister/index.html">New Admin</a></li>
-                    </ul>
-                </li>
-                
+        <nav class="navbar">
+          <div>
+              <a href="./carousel.html"><img src="./assets/ElephantLogo_Transparent.png" alt="navBarLogo" id="navBarLogo"></a>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href='../custPlants/custPlants.html'>Plants</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="../custGardens/custGardens.html">Gardens</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="../custCalculator/custCalcLanding.html">Calculator</a></li>
+                </ul>
+                <form class="d-flex">
+                    <button class="btn btn-outline-dark" type="submit">
+                        <i class="bi-cart-fill me-1"></i>
+                        Cart
+                        <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                    </button>
+                    <li id="hello" class="nav-item accountPageButton"><a class="nav-link active" aria-current="page" href="../custProfile/custProfile.html">Hello {#NAME}</a></li>
+                </form>
             </div>
-        </nav>
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+              <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button> -->
+              <img id="headerTitle" src="./assets/title.png" alt="title" style="height: 40%; width: 45%;">
+              <!-- <span id="title">Quad Landscaping & Garden</span> -->
+              <!-- log in nav button -->
+              <a id="logIn" href="../landingPage/landingPage.html">Log In</a>
+          </div>
+      </nav>
+
+        <div class="container">
+          <div class="carousel">
+            <div class="carousel__face"></div>
+            <div class="carousel__face"></div>
+            <div class="carousel__face"></div>
+            <div class="carousel__face"></div>
+            <div class="carousel__face"></div>
+            <div class="carousel__face"></div>
+            <div class="carousel__face"></div>
+            <div class="carousel__face"></div>
+            <div class="carousel__face"></div>
+          </div>
+        </div>
+        <!-- <div id="myCarousel" class="carousel slide" data-ride="carousel"> -->
             <!-- Indicators -->
-            <ol class="carousel-indicators">
+            <!-- <ol class="carousel-indicators">
               <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
               <li data-target="#myCarousel" data-slide-to="1"></li>
               <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
+            </ol> -->
           
             <!-- Wrapper for slides -->
-            <div class="carousel-inner">
+            <!-- <div class="carousel-inner">
               <div class="item active">
                 <img src="./assets/BDS.png" alt="Los Angeles">
               </div>
@@ -74,10 +95,10 @@
               <div class="item">
                 <img src="./assets/Quad.png" alt="New York">
               </div>
-            </div>
+            </div> -->
           
             <!-- Left and right controls -->
-            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <!-- <a class="left carousel-control" href="#myCarousel" data-slide="prev">
               <span class="glyphicon glyphicon-chevron-left"></span>
               <span class="sr-only">Previous</span>
             </a>
@@ -85,7 +106,7 @@
               <span class="glyphicon glyphicon-chevron-right"></span>
               <span class="sr-only">Next</span>
             </a>
-          </div>
+          </div> -->
 
         <!-- Footer-->
         <footer>

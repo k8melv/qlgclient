@@ -41,7 +41,6 @@ function displayGarden(value){
 function loadGardens(){
   const gardensURL = "https://qlgapi.herokuapp.com/api/garden";
   fetch(gardensURL).then(function(response){
-      console.log(response);
       return response.json();
   }).then(function(json){
     var html = `<div class='gardens'>`
