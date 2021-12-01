@@ -32,7 +32,7 @@ img.onclick = function(){
     sunScore.innerHTML = `Sun Score: ${ans2Emoji}`;
     waterScore.innerHTML = `Water Score: ${ans3Emoji}`;
     advice.innerHTML = `Advice: ${adviceLabel}`;
-    //calculator2Database();
+    calculator2Database();
   }
   
 
@@ -138,11 +138,11 @@ function question2(id){
   answer2=document.getElementById(id).innerHTML;
   if(answer2=="A nearby window"){
     ans2Emoji="🌞🌞🌞";
-    answer2="3"
+    answer2="3";
   }
   if(answer2=="Direct exposure outside"){
-    ans2Emoji="🌞🌞🌞🌞🌞";
-    answer2="5";
+      ans2Emoji="🌞🌞🌞🌞🌞";
+      answer2="5";
   }
   if(answer2=="A heat lamp"){
     ans2Emoji="🌞🌞🌞🌞";
@@ -161,12 +161,12 @@ function question3(id){
     answer3="5";
   }
   if(answer3=="Once a week"){
-    ans3Emoji="💧💧";
+    ans3Emoji="💧💧"
     answer3="2";
   }
   if(answer3=="Whenever it rains"){
     ans3Emoji="💧💧💧";
-    answer3="3"
+    answer3="3";
   }
   if(answer3=="Never"){
     ans3Emoji="💧";
