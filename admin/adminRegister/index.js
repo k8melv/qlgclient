@@ -5,7 +5,7 @@ function registerAccount(){
     const lastname = document.getElementById(`lname`).value;
     console.log(lastname);
     const email2 = document.getElementById(`email`).value;
-    const password2 = document.getElementById(`password`).value;
+    const password2 = document.getElementById(`pass`).value;
     const date = document.getElementById(`date`).value;
     const position = document.getElementById(`position`).value;
     console.log(date);
