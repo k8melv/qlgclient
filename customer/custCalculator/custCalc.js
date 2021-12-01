@@ -32,24 +32,18 @@ img.onclick = function(){
     sunScore.innerHTML = `Sun Score: ${ans2Emoji}`;
     waterScore.innerHTML = `Water Score: ${ans3Emoji}`;
     advice.innerHTML = `Advice: ${adviceLabel}`;
-    //calculator2Database();
+    calculator2Database();
   }
   
 
 }
 
 function calculator2Database(){//STILL NEEDS TO BE WORKED ON
-  const plantApiUrl = "https://qlgapi.herokuapp.com/api/plantinformation";
-  const namePlant = document.getElementById(`pname`).value;
-  const plantLocation = document.getElementById(`plocation`).value;
-    const waterNeeds = document.getElementById(`pwater`).value;
-    const sunNeed = document.getElementById(`psun`).value;
-    const plantInfo = document.getElementById(`pinfo`).value;
-    const plantFact = document.getElementById(`pfact`).value;
-    const plantPrice = document.getElementById(`pprice`).value;
-    
-
-    fetch(plantApiUrl, {
+  const calculatorApiUrl = "https://qlgapi.herokuapp.com/api/plantinformation";
+  const namePlant = answer1;
+  const sunScore = answer2;
+  const waterScore = answer3;
+    fetch(calculatorApiUrl, {
         method: "POST",
         headers: {
             "Accept": 'application/json',
@@ -57,22 +51,15 @@ function calculator2Database(){//STILL NEEDS TO BE WORKED ON
 
         },
         body: JSON.stringify({
-            plantName: namePlant,
-            location: plantLocation,
-            numTimesWater: waterNeeds,
-            sunNeeds: sunNeed,
-            information: plantInfo,
-            funFact: plantFact,
-            price: plantPrice
+            PlantType: namePlant,
+            WaterScore: waterScore,
+            SunScore: sunScore,
         })
     })
     .then((response)=>{
         console.log(response);
-        loadPlants();
     })
-    var addMenu = document.getElementById("addButton");
-    var html = `<button id = "adminAdd" class="btn btn-outline-dark" type="submit" onclick="displayAddMenu()">Add</button>`;
-    addMenu.innerHTML = html;
+
 
 }
 
