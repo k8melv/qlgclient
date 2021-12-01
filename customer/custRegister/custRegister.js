@@ -8,16 +8,22 @@
 
 function registerAccount(){
     const customerApiUrl = "https://localhost:5001/api/customer";
-    const firstname = document.getElementById(`fname`);
-    const lastname = document.getElementById(`lname`);
-    const birthdate = document.getElementById(`birthdate`);
-    const email2 = document.getElementById(`email`);
-    const password2 = document.getElementById(`password`);
+    const firstname = document.getElementById(`fname`).value;
+    console.log(firstname);
+    const lastname = document.getElementById(`lname`).value;
+    console.log(lastname);
+    const birthdate = document.getElementById(`birthdate`).value;
+    console.log(birthdate);
+    const email2 = document.getElementById(`email`).value;
+    console.log(email2);
+    const password2 = document.getElementById(`password`).value;
+    console.log(password2);
+    console.log(document.getElementById("subscribeToEmails").checked)
     if(document.getElementById("subscribeToEmails").checked==true){
-        const status="yes";
+        var status="yes";
     }
     else{
-        const status="no";
+        var status="no";
     }
     if(document.getElementById("termsAndCond").checked==true){
         fetch(customerApiUrl, {
@@ -25,7 +31,6 @@ function registerAccount(){
             headers: {
                 "Accept": 'application/json',
                 "Content-Type": 'application/json'
-    
             },
             body: JSON.stringify({
                 firstName: firstname,
@@ -33,6 +38,7 @@ function registerAccount(){
                 birthdate: birthdate,
                 email: email2,
                 password: password2,
+                status: status
             })
         })
         .then((response)=>{
