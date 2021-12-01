@@ -148,32 +148,32 @@ function question2(id){
   counter++;
   answer2=document.getElementById(id).innerHTML;
   if(answer2=="A nearby window"){
-    answer2="3"
+    answer2="🌞🌞🌞"
   }
   if(answer2=="Direct exposure outside"){
-      answer2="5"
+      answer2="🌞🌞🌞🌞🌞"
   }
   if(answer2=="A heat lamp"){
-    answer2="4"
+    answer2="🌞🌞🌞🌞"
   }
   if(answer2=="It doesn't...."){
-    answer2="1";
+    answer2="🌞";
   }
 }
 function question3(id){
   counter++;
   answer3=document.getElementById(id).innerHTML;
   if(answer3=="Once a day"){
-    answer3="5"
+    answer3="💧💧💧💧💧"
   }
   if(answer3=="Once a week"){
-    answer3="2"
+    answer3="💧💧"
   }
   if(answer3=="Whenever it rains"){
-    answer3="3";
+    answer3="💧💧💧";
   }
   if(answer3=="Never"){
-    answer3="1"
+    answer3="💧"
   }
 }
 function question4(id){
