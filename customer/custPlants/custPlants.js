@@ -33,56 +33,88 @@ const GetPlantCart = async (id) => {
     return data;
 }
 
-var cart = [];
-async function addToCart(data){
-    var cartHtml = document.getElementById("cartNum");
-	var productName = data[0].plantName;
+if (sessionStorage.getItem("myCart")){
+    var cart = JSON.parse(sessionStorage.getItem("myCart"));
+} 
+else{
+    var cart = [];
+} 
 
-    cart.push(JSON.stringify(data[0]));
-	alert(productName + " has successfully been added to your cart");
+async function addToCart(data){
+    var test = JSON.parse(sessionStorage.getItem("myCart"));
+    if (test === null || test === "null"){
+        cart = [];
+        var cartHtml = document.getElementById("cartNum");
+        var productName = data[0].plantName;
     
+        cart.push(JSON.stringify(data[0]));
+        alert(productName + " has successfully been added to your cart");
+        
+        sessionStorage.setItem("myCart", JSON.stringify(cart));
+        let length = Object.keys(cart).length;
+        cartHtml.innerHTML = length;
+        console.log(length + " addToCart method")
+        console.log(JSON.parse(sessionStorage.getItem('myCart')))
+    }
+    else{
+        console.log('else')
+        var cartHtml = document.getElementById("cartNum");
+        var productName = data[0].plantName;
     
-    console.log(cart);
-    cart.push(JSON.parse(sessionStorage.getItem('myCart'))); //not working
-	sessionStorage.setItem("myCart", JSON.stringify(cart));
-    let length = Object.keys(cart).length;
-    cartHtml.innerHTML = length;
-    console.log(length + " addToCart method")
-    console.log(JSON.parse(sessionStorage.getItem('myCart')))
+        cart.push(JSON.stringify(data[0]));
+        alert(productName + " has successfully been added to your cart");
+        
+        sessionStorage.setItem("myCart", JSON.stringify(cart));
+        let length = Object.keys(cart).length;
+        cartHtml.innerHTML = length;
+        console.log(length + " addToCart method")
+        console.log(JSON.parse(sessionStorage.getItem('myCart')))
+    }
 }
 
 function getCart(){
     var cartHtml = document.getElementById("cartNum");
     var test = JSON.parse(sessionStorage.getItem("myCart"));
-    let length = Object.keys(test).length;
-    console.log(test);
-    if (test !== 'null'){
-        console.log(length + " getCart method");
-        cartHtml.innerHTML = length;
-    } 
-    else {
+    try{
+        if (test !== 'null'){
+            let length = Object.keys(test).length;
+            console.log(length + " getCart method");
+            cartHtml.innerHTML = length;
+        } 
+    }   
+    catch{
         cartHtml.innerHTML = '0';
     }
 }
 
-function clearCart(){
-	sessionStorage.removeItem("myCart");
-}
-
-function removeProduct(productId){
-    let storageProducts = JSON.parse(sessionStorage.getItem('products'));
-    let products = storageProducts.filter(product => product.productId !== productId );
-    sessionStorage.setItem('products', JSON.stringify(products));
+function removeProduct(id){
+    let storageProducts = JSON.parse(sessionStorage.getItem('myCart'));
+    let products = storageProducts.filter(product => product.id == id);
+    sessionStorage.removeItem('myCart', JSON.stringify(products));
+    console.log(JSON.parse(sessionStorage.getItem('myCart')));
+    getCart();
+    cartModal();
 }
 
 function cartModal(){
 	var cart = JSON.parse(sessionStorage.getItem("myCart"));
-    console.log(cart + " cartModal method");
-    html = `<div class="modal-dialog"><div class="modal-content">`
-    html += `<div class="modal-header"><h5 class="modal-title">Cart</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`
-    html += `</div><div class="modal-body"><p>${cart.toString()}</p><button id='removeButton' type="button" class="btn btn-danger">Remove</button></div><div class="modal-footer">`
-    html += `<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-primary">Checkout</button></div></div></div>`
-	document.getElementById("cartModal").innerHTML = html;
+    if (cart === null){
+        var html = `<div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Cart</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`
+        html += `</div><div class="modal-body"><p>Your cart is empty</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-primary">Checkout</button>`
+        html += `</div></div></div>`
+        document.getElementById("cartModal").innerHTML = html;
+    }
+    else{
+        var html = `<div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Cart</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`
+        html += `</div><div class="modal-body">`
+        cart.forEach((data) => {
+            var parsedData = JSON.parse(data);
+            html += `<p>${parsedData["plantName"]}: ${parsedData["price"]}<button id='removeButton' type="button" class="btn btn-danger" onclick='removeProduct(${parsedData["plantID"]})'>Remove</button></p>`
+        });
+        html += `</div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-primary">Checkout</button></div></div>`
+        html += `</div>`
+        document.getElementById("cartModal").innerHTML = html;
+    }
 }
 
 function loadPlants(){
@@ -125,5 +157,6 @@ function sendSuggestion(){
         else{
             alert("Something went wrong. Please try again.")
         }
+        console.log(response);
     })
 }
