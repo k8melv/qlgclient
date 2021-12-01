@@ -26,10 +26,12 @@ function registerAccount(){
                 position: position,
                 startdate: date,
             })
+        }).then((response)=>{
+            console.log(response);
+            var user = [firstname, lastname, email2, password2, position, date];
+            sessionStorage.setItem('user', user)
+            window.location.replace("../adminProfile/adminProfile.html");
         })
-        var user = [firstname, lastname, email2, password2, position, date];
-        sessionStorage.setItem('user', user)
-        window.location.replace("../adminProfile/adminProfile.html");
     }
     else{
         var errorMessage = document.getElementById("errorMsg");
