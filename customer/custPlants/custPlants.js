@@ -91,6 +91,7 @@ function removeProduct(id){
     let storageProducts = JSON.parse(sessionStorage.getItem('myCart'));
     let products = storageProducts.filter(product => product.id == id);
     sessionStorage.removeItem('myCart', JSON.stringify(products));
+    console.log(JSON.parse(sessionStorage.getItem('myCart')));
     getCart();
     cartModal();
 }
