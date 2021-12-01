@@ -88,6 +88,7 @@ function getCart(){
 }
 
 function removeProduct(id){
+    console.log(id);
     let storageProducts = JSON.parse(sessionStorage.getItem('myCart'));
     let products = storageProducts.filter(product => product.id == id);
     sessionStorage.removeItem('myCart', JSON.stringify(products));
@@ -107,11 +108,9 @@ function cartModal(){
     else{
         var html = `<div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Cart</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`
         html += `</div><div class="modal-body">`
-        cart.forEach((data, i) => {
-            id = i;
-            console.log(id)
+        cart.forEach((data) => {
             var parsedData = JSON.parse(data);
-            html += `<p>${parsedData["plantName"]}: ${parsedData["price"]}<button id='removeButton' type="button" class="btn btn-danger" onclick='removeProduct(${id})'>Remove</button></p>`
+            html += `<p>${parsedData["plantName"]}: ${parsedData["price"]}<button id='removeButton' type="button" class="btn btn-danger" onclick='removeProduct(${parsedData["plantID"]})'>Remove</button></p>`
         });
         html += `</div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-primary">Checkout</button></div></div>`
         html += `</div>`
