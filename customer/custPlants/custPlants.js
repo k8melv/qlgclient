@@ -107,8 +107,8 @@ function cartModal(){
     else{
         var html = `<div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Cart</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`
         html += `</div><div class="modal-body">`
-        cart.forEach((data) => {
-            id = index +1;
+        cart.forEach((data, i) => {
+            id = i;
             console.log(id)
             var parsedData = JSON.parse(data);
             html += `<p>${parsedData["plantName"]}: ${parsedData["price"]}<button id='removeButton' type="button" class="btn btn-danger" onclick='removeProduct(${id})'>Remove</button></p>`
