@@ -26,9 +26,11 @@ function registerAccount(){
                 position: position,
                 startdate: date,
             })
-        })
-        .then((response)=>{
+        }).then((response)=>{
             console.log(response);
+            var user = [firstname, lastname, email2, password2, position, date];
+            sessionStorage.setItem('user', user)
+            window.location.replace("../adminProfile/adminProfile.html");
         })
     }
     else{
