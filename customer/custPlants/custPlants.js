@@ -57,7 +57,6 @@ async function addToCart(data){
         console.log(JSON.parse(sessionStorage.getItem('myCart')))
     }
     else{
-        //cart.push(test); // NO
         console.log('else')
         var cartHtml = document.getElementById("cartNum");
         var productName = data[0].plantName;
@@ -109,7 +108,7 @@ function cartModal(){
         html += `</div><div class="modal-body">`
         cart.forEach((data) => {
             var parsedData = JSON.parse(data);
-            html += `<p>${parsedData["plantName"]}: ${parsedData["price"]}<button id='removeButton' type="button" class="btn btn-danger" onclick='removeProduct(${1})'>Remove</button></p>`
+            html += `<p>${parsedData["plantName"]}: ${parsedData["price"]}<button id='removeButton' type="button" class="btn btn-danger" onclick='removeProduct(${parsedData["plantID"]})'>Remove</button></p>`
         });
         html += `</div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-primary">Checkout</button></div></div>`
         html += `</div>`
