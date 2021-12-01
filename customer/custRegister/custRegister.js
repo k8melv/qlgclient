@@ -7,7 +7,7 @@
 // Use this file to add JavaScript to your project
 
 function registerAccount(){
-    const customerApiUrl = "https://localhost:5001/api/customer";
+    const customerApiUrl = "https://qlgapi.herokuapp.com/api/customer";
     const firstname = document.getElementById(`fname`).value;
     console.log(firstname);
     const lastname = document.getElementById(`lname`).value;
