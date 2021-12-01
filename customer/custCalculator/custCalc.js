@@ -29,8 +29,8 @@ img.onclick = function(){
     modalImg.src = imageID;
     captionText.innerHTML = this.alt;
     plantName.innerHTML = `Plant Name: ${answer1}`;
-    sunScore.innerHTML = `Sun Score: ${answer2}`;
-    waterScore.innerHTML = `Water Score: ${answer3}`;
+    sunScore.innerHTML = `Sun Score: ${ans2Emoji}`;
+    waterScore.innerHTML = `Water Score: ${ans3Emoji}`;
     advice.innerHTML = `Advice: ${adviceLabel}`;
     //calculator2Database();
   }
@@ -39,17 +39,11 @@ img.onclick = function(){
 }
 
 function calculator2Database(){//STILL NEEDS TO BE WORKED ON
-  const plantApiUrl = "https://qlgapi.herokuapp.com/api/plantinformation";
-  const namePlant = document.getElementById(`pname`).value;
-  const plantLocation = document.getElementById(`plocation`).value;
-    const waterNeeds = document.getElementById(`pwater`).value;
-    const sunNeed = document.getElementById(`psun`).value;
-    const plantInfo = document.getElementById(`pinfo`).value;
-    const plantFact = document.getElementById(`pfact`).value;
-    const plantPrice = document.getElementById(`pprice`).value;
-    
-
-    fetch(plantApiUrl, {
+  const calculatorApiUrl = "https://qlgapi.herokuapp.com/api/plantinformation";
+  const namePlant = answer1;
+  const sunScore = answer2;
+  const waterScore = answer3;
+    fetch(calculatorApiUrl, {
         method: "POST",
         headers: {
             "Accept": 'application/json',
@@ -57,22 +51,15 @@ function calculator2Database(){//STILL NEEDS TO BE WORKED ON
 
         },
         body: JSON.stringify({
-            plantName: namePlant,
-            location: plantLocation,
-            numTimesWater: waterNeeds,
-            sunNeeds: sunNeed,
-            information: plantInfo,
-            funFact: plantFact,
-            price: plantPrice
+            PlantType: namePlant,
+            WaterScore: waterScore,
+            SunScore: sunScore,
         })
     })
     .then((response)=>{
         console.log(response);
-        loadPlants();
     })
-    var addMenu = document.getElementById("addButton");
-    var html = `<button id = "adminAdd" class="btn btn-outline-dark" type="submit" onclick="displayAddMenu()">Add</button>`;
-    addMenu.innerHTML = html;
+
 
 }
 
@@ -100,6 +87,8 @@ var answer1;
 var answer2;
 var answer3;
 var answer4;
+var ans2Emoji;
+var ans3Emoji;
 var imageID;
 
 function calculateScore(score){
@@ -148,32 +137,40 @@ function question2(id){
   counter++;
   answer2=document.getElementById(id).innerHTML;
   if(answer2=="A nearby window"){
-    answer2="🌞🌞🌞"
+    ans2Emoji="🌞🌞🌞";
+    answer2="3"
   }
   if(answer2=="Direct exposure outside"){
-      answer2="🌞🌞🌞🌞🌞"
+    ans2Emoji="🌞🌞🌞🌞🌞";
+    answer2="5";
   }
   if(answer2=="A heat lamp"){
-    answer2="🌞🌞🌞🌞"
+    ans2Emoji="🌞🌞🌞🌞";
+    answer2="4";
   }
   if(answer2=="It doesn't...."){
-    answer2="🌞";
+    ans2Emoji="🌞";
+    answer2="1";
   }
 }
 function question3(id){
   counter++;
   answer3=document.getElementById(id).innerHTML;
   if(answer3=="Once a day"){
-    answer3="💧💧💧💧💧"
+    ans3Emoji="💧💧💧💧💧";
+    answer3="5";
   }
   if(answer3=="Once a week"){
-    answer3="💧💧"
+    ans3Emoji="💧💧";
+    answer3="2";
   }
   if(answer3=="Whenever it rains"){
-    answer3="💧💧💧";
+    ans3Emoji="💧💧💧";
+    answer3="3"
   }
   if(answer3=="Never"){
-    answer3="💧"
+    ans3Emoji="💧";
+    answer3="1";
   }
 }
 function question4(id){
