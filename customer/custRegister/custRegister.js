@@ -33,9 +33,9 @@ function registerAccount(){
                 status: status
             })
         })
-        .then((response)=>{
-            console.log(response);
-        })
+        var user = [firstname, lastname, birthdate, email2, password2];
+        sessionStorage.setItem('user', user)
+        window.location.replace("../custProfile/custProfile.html");
     }
     else{
         var errorMessage = document.getElementById("errorMsg");
