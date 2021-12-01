@@ -29,8 +29,8 @@ img.onclick = function(){
     modalImg.src = imageID;
     captionText.innerHTML = this.alt;
     plantName.innerHTML = `Plant Name: ${answer1}`;
-    sunScore.innerHTML = `Sun Score: ${answer2}`;
-    waterScore.innerHTML = `Water Score: ${answer3}`;
+    sunScore.innerHTML = `Sun Score: ${ans2Emoji}`;
+    waterScore.innerHTML = `Water Score: ${ans3Emoji}`;
     advice.innerHTML = `Advice: ${adviceLabel}`;
     //calculator2Database();
   }
@@ -100,6 +100,8 @@ var answer1;
 var answer2;
 var answer3;
 var answer4;
+var ans2Emoji;
+var ans3Emoji;
 var imageID;
 
 function calculateScore(score){
@@ -148,32 +150,40 @@ function question2(id){
   counter++;
   answer2=document.getElementById(id).innerHTML;
   if(answer2=="A nearby window"){
-    answer2="🌞🌞🌞"
+    ans2Emoji="🌞🌞🌞";
+    answer2="3";
   }
   if(answer2=="Direct exposure outside"){
-      answer2="🌞🌞🌞🌞🌞"
+      ans2Emoji="🌞🌞🌞🌞🌞";
+      answer2="5";
   }
   if(answer2=="A heat lamp"){
-    answer2="🌞🌞🌞🌞"
+    ans2Emoji="🌞🌞🌞🌞";
+    answer2="4";
   }
   if(answer2=="It doesn't...."){
-    answer2="🌞";
+    ans2Emoji="🌞";
+    answer2="1";
   }
 }
 function question3(id){
   counter++;
   answer3=document.getElementById(id).innerHTML;
   if(answer3=="Once a day"){
-    answer3="💧💧💧💧💧"
+    ans3Emoji="💧💧💧💧💧";
+    answer3="5";
   }
   if(answer3=="Once a week"){
-    answer3="💧💧"
+    ans3Emoji="💧💧"
+    answer3="2";
   }
   if(answer3=="Whenever it rains"){
-    answer3="💧💧💧";
+    ans3Emoji="💧💧💧";
+    answer3="3";
   }
   if(answer3=="Never"){
-    answer3="💧"
+    ans3Emoji="💧";
+    answer3="1";
   }
 }
 function question4(id){
