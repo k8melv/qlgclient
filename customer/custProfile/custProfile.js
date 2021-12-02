@@ -2,7 +2,7 @@ const obj = JSON.parse(sessionStorage.getItem('user'));
 console.log(obj);
 
 const getCustomer = async () => {
-    if (Array.isArray(obj)){
+    if (Array.isArray(obj) == true){
         var id = obj[3];
     }
     else{
