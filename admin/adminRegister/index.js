@@ -28,8 +28,8 @@ function registerAccount(){
             })
         }).then((response)=>{
             console.log(response);
-            var user = {firstname, lastname, email2, password2, position, date};
-            sessionStorage.setItem('user', user)
+            var user = [firstname, lastname, email2, password2, position, date];
+            sessionStorage.setItem('user', JSON.stringify(user));
             window.location.replace("../adminProfile/adminProfile.html");
         })
     }
