@@ -6,10 +6,10 @@ function registerAccount(){
     console.log(lastname);
     const birthdate = document.getElementById(`birthdate`).value;
     console.log(birthdate);
-    const email2 = document.getElementById(`email`).value;
-    console.log(email2);
-    const password2 = document.getElementById(`password`).value;
-    console.log(password2);
+    const email = document.getElementById(`email`).value;
+    console.log(email);
+    const password = document.getElementById(`password`).value;
+    console.log(password);
     console.log(document.getElementById("subscribeToEmails").checked)
     if(document.getElementById("subscribeToEmails").checked==true){
         var status="yes";
@@ -28,14 +28,14 @@ function registerAccount(){
                 firstName: firstname,
                 lastName: lastname,
                 birthdate: birthdate,
-                email: email2,
-                password: password2,
+                email: email,
+                password: password,
                 status: status
             })
         })
         .then((response)=>{
             console.log(response);
-            var user = {firstname, lastname, birthdate, email2, password2};
+            var user = {firstname, lastname, birthdate, email, password};
             sessionStorage.setItem('user', JSON.stringify(user));
             window.location.replace("../custProfile/custProfile.html");
         })
