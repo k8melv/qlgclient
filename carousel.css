@@ -88,7 +88,7 @@ span {
   transform: rotateY(80deg) translateZ(430px);
 }
 .carousel__face:nth-child(4) {
-  background-image: url("./assets/BDS.png");
+  background-image: url("./assets/ogBDS.png");
   transform: rotateY(120deg) translateZ(430px);
 }
 .carousel__face:nth-child(5) {
@@ -108,7 +108,7 @@ span {
   transform: rotateY(280deg) translateZ(430px);
 }
 .carousel__face:nth-child(9) {
-  background-image: url("./assets/quad_copy.png");
+  background-image: url("./assets/Quad.png");
   transform: rotateY(320deg) translateZ(430px);
 }
 
