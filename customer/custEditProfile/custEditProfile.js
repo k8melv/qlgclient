@@ -23,15 +23,55 @@ function populateFields(){
     main.innerHTML = html;
 
     var fname = document.getElementById("fname");
-    var html = `<div class='col-md-6'><label class='labels'>First Name</label><input type='text' class='form-control' placeholder='First Name' value='${obj.firstName}'></div>`;
+    var html = `<div class='col-md-6'><label class='labels'>First Name</label><input type='text' id="editFname" class='form-control' placeholder='First Name' value='${obj.firstName}'></div>`;
     fname.innerHTML = html;
     var lname = document.getElementById("lname");
-    var html = `<div class='col-md-6'><label class='labels'>Last Name</label><input type='text' class='form-control' placeholder='Last Name' value='${obj.lastName}'></div>`;
+    var html = `<div class='col-md-6'><label class='labels'>Last Name</label><input type='text' id="editLname" class='form-control' placeholder='Last Name' value='${obj.lastName}'></div>`;
     lname.innerHTML = html;
     
     var email = document.getElementById("email");
-    var html = `<div class='col-md-6'><label class='labels'>Email Address</label><input type='text' class='form-control' placeholder='Email Address' value='${obj.email}'></div>`;
+    var html = `<div class='col-md-6'><label class='labels'>Email Address</label><input type='text' id="editEmail" class='form-control' placeholder='Email Address' value='${obj.email}'></div>`;
     email.innerHTML = html;
+
+    var address = document.getElementById("aline1");
+    var html = `<div class='col-md-6'><label class='labels'>Address Line</label><input type='text' id="editAddress"class='form-control' placeholder='Address Line' value='${obj.billingAddress}'></div>`;
+    address.innerHTML = html;
     
 
+}
+
+function saveProfile(){
+    const profileApiUrl = `https://qlgapi.herokuapp.com/api/customer/${obj.customerid}`;
+    const firstName = document.getElementById("editFname");
+    const lastName = document.getElementById("editLname");
+    const email = document.getElementById("editEmail");
+    const address = document.getElementById("editAddress");
+    fetch(profileApiUrl,{
+        method: "PUT",
+        headers: {
+            "Accept": 'application/json',
+            "Content-Type": 'application/json',
+        },
+        body: JSON.stringify({
+            CustomerID: obj.customerid,
+            FirstName: firstName,
+            LastName: lastName,
+            Birthdate: obj.Birthdate,
+            Email: email,
+            Password: obj.Password,
+            CreditCard: obj.CreditCard,
+            ShippingAddress: address,
+            BillingAddress: address,
+            PastPurchases: obj.PastPurchases,
+            Status: obj.Status
+        })
+    }).then((response)=>{
+        if (response.status == 200){
+            alert("Profile has been successfully saved!");
+            populateFields();
+        }
+        else{
+            alert("Something went wrong. Please try again");
+        }
+    })   
 }
