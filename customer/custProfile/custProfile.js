@@ -3,12 +3,12 @@ console.log(obj);
 
 const getCustomer = async () => {
     if (Array.isArray(obj) == true){
-        var id = obj[3];
+        var email = obj[3];
     }
     else{
-        var id = obj.customerid;
+        var email = obj.email;
     }
-    const plantURL = `https://qlgapi.herokuapp.com/api/customer/${id}`;
+    const plantURL = `https://qlgapi.herokuapp.com/api/customer/${email}`;
     const response = await fetch(plantURL);
     const data = await response.json();
     populateFields(data);
