@@ -1,16 +1,10 @@
 function registerAccount(){
     const customerApiUrl = "https://qlgapi.herokuapp.com/api/customer";
-    const firstname = document.getElementById(`fname`).value;
-    console.log(firstname);
-    const lastname = document.getElementById(`lname`).value;
-    console.log(lastname);
+    const firstName = document.getElementById(`fname`).value;
+    const lastName = document.getElementById(`lname`).value;
     const birthdate = document.getElementById(`birthdate`).value;
-    console.log(birthdate);
     const email = document.getElementById(`email`).value;
-    console.log(email);
     const password = document.getElementById(`password`).value;
-    console.log(password);
-    console.log(document.getElementById("subscribeToEmails").checked)
     if(document.getElementById("subscribeToEmails").checked==true){
         var status="yes";
     }
@@ -25,8 +19,8 @@ function registerAccount(){
                 "Content-Type": 'application/json'
             },
             body: JSON.stringify({
-                firstName: firstname,
-                lastName: lastname,
+                firstName: firstName,
+                lastName: lastName,
                 birthdate: birthdate,
                 email: email,
                 password: password,
@@ -35,7 +29,7 @@ function registerAccount(){
         })
         .then((response)=>{
             console.log(response);
-            var user = {firstname, lastname, birthdate, email, password};
+            var user = {firstName, lastName, birthdate, email, password};
             sessionStorage.setItem('user', JSON.stringify(user));
             window.location.replace("../custProfile/custProfile.html");
         })
