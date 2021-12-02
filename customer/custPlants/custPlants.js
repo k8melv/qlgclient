@@ -118,6 +118,27 @@ function cartModal(){
     }
 }
 
+function checkoutModal(){
+    var cart = JSON.parse(sessionStorage.getItem("myCart"));
+    if (cart === null || cart === "null"){
+        alert("Your cart is empty! Add plants before checking out");
+    }
+    else{
+        var html = `<div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Checkout</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`
+        html += `</div><div class="modal-body">`
+        cart.forEach((data) => {
+            var parsedData = JSON.parse(data);
+            total += parsedData["price"];
+            html += `<p>${parsedData["plantName"]}: ${parsedData["price"]}<button id='removeButton' type="button" class="btn btn-danger" onclick='removeProduct(${parsedData["plantID"]})'>Remove</button></p>`
+        });
+        html += `<div id="fname" class="col-md-6"><label class="labels">First Name</label><input type="text" class="form-control" placeholder="${obj.lastName}" value=""></div>`
+        html += `<div id="lname" class="col-md-6"><label class="labels">Last Name</label><input type="text" class="form-control" value="" placeholder="${obj.lastName}"></div>`
+        html += `</div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-primary">Submit</button></div></div>`
+        html += `</div>`
+        document.getElementById("checkoutModal").innerHTML = html;
+    }
+}
+
 function loadPlants(){
     const allPlantsApiUrl = "https://qlgapi.herokuapp.com/api/plantinformation";
     fetch(allPlantsApiUrl).then(function(response){
