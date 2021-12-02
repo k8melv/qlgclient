@@ -23,6 +23,9 @@ function populateFields(){
     var email = document.getElementById("email");
     var html = `<div class='col-md-6'><label class='labels'>Email Address</label><input type='text' class='form-control' placeholder='Email Address' value='${obj.email}'></div>`;
     email.innerHTML = html;
-    
+
+    var address = document.getElementById("aline1");
+    var html = `<div class='col-md-6'><label class='labels'>Address Line</label><input type='text' class='form-control' placeholder='Address Line' value='${obj.shippingaddress}'></div>`;
+    address.innerHTML = html;
 
 }
