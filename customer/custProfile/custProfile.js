@@ -6,8 +6,9 @@ const getCustomer = async () => {
         var email = obj[3];
     }
     else{
-        var email = obj.email;
+        email = obj.email;
     }
+    console.log(email);
     const plantURL = `https://qlgapi.herokuapp.com/api/customer/${email}`;
     const response = await fetch(plantURL);
     const data = await response.json();
