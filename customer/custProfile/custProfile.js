@@ -32,7 +32,7 @@ function populateFields(data){
     var html = `<div class='col-md-6'><label class='labels'>Email Address</label><input type='text' class='form-control' placeholder='Email Address' value='${data[0].email}'></div>`;
     email.innerHTML = html;
 
-    if(data[0].shippingaddress == undefined){
+    if(data[0].shippingaddress === 'undefined'){
         var address = document.getElementById("aline1");
         var html = `<div class='col-md-6'><label class='labels'>Address Line</label><input type='text' class='form-control' placeholder='Address Line' value='No current address on file'></div>`;
         address.innerHTML = html;
@@ -42,5 +42,4 @@ function populateFields(data){
         var html = `<div class='col-md-6'><label class='labels'>Address Line</label><input type='text' class='form-control' placeholder='Address Line' value='${data[0].shippingaddress}'></div>`;
         address.innerHTML = html;
     }
-
 }
