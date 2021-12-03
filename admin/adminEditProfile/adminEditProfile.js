@@ -30,7 +30,7 @@ function populateFields(){
     lname.innerHTML = html;
     
     var email = document.getElementById("email");
-    var html = `<div class='col-md-6'><label class='labels'>Email Address</label><input type='text' id="editEmail" class='form-control' placeholder='Email Address' value='${obj.email}'></div>`;
+    var html = `<div class='col-md-6'><label class='labels'>Position</label><input type='text' id="editEmail" class='form-control' placeholder='Email Address' value='${obj.email}'></div>`;
     email.innerHTML = html;
 
     var position = document.getElementById("adminPos");
@@ -38,7 +38,7 @@ function populateFields(){
     position.innerHTML = html;
 
     var date = document.getElementById("startDate");
-    var html = `<div class='col-md-6'><label class='labels'>Email Address</label><input type='text' id="editDate" class='form-control' placeholder='Email Address' value='${obj.startDate}'></div>`;
+    var html = `<div class='col-md-6'><label class='labels'>Start Date</label><input type='text' id="editDate" class='form-control' placeholder='Email Address' value='${obj.startDate}'></div>`;
     date.innerHTML = html;
     
 

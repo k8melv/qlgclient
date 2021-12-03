@@ -23,7 +23,7 @@ function populateFields(){
     position.innerHTML = html;
 
     var date = document.getElementById("startDate");
-    var html = `<div class='col-md-6'><label class='labels'>Address Line 1</label><input type='text' id="editDate" class='form-control' placeholder='Email Address' value='${obj.startdate}'></div>`;
+    var html = `<div class='col-md-6'><label class='labels'>Start Date</label><input type='text' id="editDate" class='form-control' placeholder='Email Address' value='${obj.startDate}'></div>`;
     date.innerHTML = html;
     
 
