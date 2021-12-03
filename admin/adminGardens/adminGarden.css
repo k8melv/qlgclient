@@ -24,6 +24,10 @@ body.modal {
   overflow-y: auto;
 }
 
+.form-control {
+  max-height: 45vh;
+}
+
 .modal-lg {
   display: block;
   width: 500px;
