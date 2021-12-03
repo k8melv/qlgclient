@@ -109,7 +109,6 @@ function putPlant(id){
 
 function confirmation(id){
     let isExecuted = confirm("Are you sure to delete this plant?");
-    console.log(isExecuted); // OK = true, Cancel = false
     if (isExecuted == true) {
         alert("This plant has been deleted");
         removeElement(id);

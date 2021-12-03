@@ -20,14 +20,13 @@ function displayModal(data){
   var html = `<div class="modal-dialog"><div class="modal-content">`;
   html += `<div class="modal-header"><h5 class="modal-title" id="exampleModalLabel">${data[0].gardenType}</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`;
   html += `</div><div class="modal-body"><img class="modalImg" src="./assets/garden-${data[0].gardenID}.jpg" alt="House Plants" width="300" height="200"/><div style='display: flex;'><input type='text' id="gardenInfoForm" class='form-control' placeholder='Garden Information' value='${data[0].information}'></div></div>`;
-  html += `<div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-danger" onclick="confirmation(${data[0].gardenID})">Delete</button><button type="button" class="btn btn-primary">Save changes</button>`;
+  html += `<div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-danger" onclick="confirmation(${data[0].gardenID})">Delete</button><button type="button" class="btn btn-primary" onclick="putGarden(${data[0].gardenID})" method="PUT">Save changes</button>`;
   html += `</div></div></div></div>`;
   garden.innerHTML = html;
 }
 
 function confirmation(id){
   let isExecuted = confirm("Are you sure to delete this plant?");
-  console.log(isExecuted); // OK = true, Cancel = false
   if (isExecuted == true) {
       alert("This garden has been deleted");
       removeElement(id);
@@ -47,6 +46,32 @@ function removeElement(id){
       console.log(response);
       loadGardens();
   })
+}
+
+function putGarden(id){
+  const gardenURL = `https://qlgapi.herokuapp.com/api/garden/${id}`;
+  const gardenInfo = document.getElementById(`gardenInfoForm`).value;
+  const gardenType = document.getElementById('exampleModalLabel').innerHTML;
+  fetch(gardenURL,{
+      method: "PUT",
+      headers: {
+          "Accept": 'application/json',
+          "Content-Type": 'application/json',
+      },
+      body: JSON.stringify({
+        gardenID: id,
+        gardenType: gardenType,
+        gardenInfo: gardenInfo  
+      })
+  }).then((response)=>{
+      if (response.status == 200){
+          alert("Garden has been successfully updated!");
+          loadGardens();
+      }
+      else{
+          alert("Something went wrong. Please try again");
+      }
+  })    
 }
 
 function loadGardens(){
