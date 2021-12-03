@@ -20,9 +20,33 @@ function displayModal(data){
   var html = `<div class="modal-dialog"><div class="modal-content">`;
   html += `<div class="modal-header"><h5 class="modal-title" id="exampleModalLabel">${data[0].gardenType}</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`;
   html += `</div><div class="modal-body"><img class="modalImg" src="./assets/garden-${data[0].gardenID}.jpg" alt="House Plants" width="300" height="200"/><input type='text' id="gardenInfoForm" class='form-control' placeholder='Garden Information' value='${data[0].information}'></div>`;
-  html += `</div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-primary">Save changes</button>`;
+  html += `</div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-danger" onclick="confirmation(${data[0].gardenID})">Delete</button><button type="button" class="btn btn-primary">Save changes</button>`;
   html += `</div></div></div>`;
   garden.innerHTML = html;
+}
+
+function confirmation(id){
+  let isExecuted = confirm("Are you sure to delete this plant?");
+  console.log(isExecuted); // OK = true, Cancel = false
+  if (isExecuted == true) {
+      alert("This garden has been deleted");
+      removeElement(id);
+  }
+}  
+
+function removeElement(id){
+  const gardenURL = `https://qlgapi.herokuapp.com/api/garden/${id}`;
+  fetch(gardenURL, {
+      method: "DELETE",
+      headers: {
+        "Accept": 'application/json',
+        "Content-Type": 'application/json'
+      }
+  })
+  .then((response)=>{
+      console.log(response);
+      loadGardens();
+  })
 }
 
 function loadGardens(){
