@@ -282,7 +282,7 @@ body.modal {
 }
 
 .modal-body {
-  max-height: calc(100vh - 210px);
+  max-height: 80vh;
   overflow-y: auto;
 }
 
