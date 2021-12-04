@@ -14,7 +14,7 @@ function registerAccount(){
         var html = "You are not an admin. Please register through the customer registration";
         errorMessage.innerHTML=html;
     }
-    if (firstName == null || firstName == "" || lastName == null || lastName == "" || email == null || email == "" || password == null || password == "" || date == null || date == "" || position == null || position == ""){
+    else if (firstName == null || firstName == "" || lastName == null || lastName == "" || email == null || email == "" || password == null || password == "" || date == null || date == "" || position == null || position == ""){
         var errorMessage = document.getElementById("errorMsg");
         var html = "You must fill out all information";
         errorMessage.innerHTML=html;
