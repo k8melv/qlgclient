@@ -166,3 +166,7 @@ body {
 span {
   font-size: 20px;
 }
+
+.container {
+  max-width: inherit;
+}
