@@ -101,7 +101,7 @@ function displayAddMenu(){
   var html = `<div class="modal-dialog"><div class="modal-content">`;
   html += `<div class="modal-header"><h5 class="modal-title" id="exampleModalLabel">Add Garden</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`;
   html += `</div><div class="modal-body"><div>Garden Picture: <input class='input' type="file" value="Choose File" id="gpic" accept='image/jpeg'></div><div>Garden Type: <input class='input' type="edit" value="Enter Type" id="gtype"></div><div>Garden Information: <input class='input' type="edit" value="Enter Information" id="ginfo"></div>`;
-  html += ` </div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-secondary" onclick="addGarden()">Add Garden</button>`;
+  html += ` </div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-primary" onclick="addGarden()">Add Garden</button>`;
   html += `</div></div></div>`;
   addMenu.innerHTML = html;
 }
