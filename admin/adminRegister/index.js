@@ -11,6 +11,14 @@ function registerAccount(){
         var errorMessage = document.getElementById("errorMsg");
         var html = "You must fill out all information";
         errorMessage.innerHTML=html;
+
+        var emailCheck = email.split('@');
+        console.log(emailCheck[1]);
+        if (emailCheck[1] !== 'qlg.com'){
+            var errorMessage = document.getElementById("errorMsg");
+            var html = "You are not an admin. Please register through the customer registration";
+            errorMessage.innerHTML=html;
+        }
     }
     else{
         if(document.getElementById("termsAndCond").checked==true){
