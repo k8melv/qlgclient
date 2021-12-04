@@ -11691,8 +11691,11 @@ h2 > * {
 } */
 
 input {
-  background-color: white;
-  color: black;
+  border: 2px solid #990000;
+  border-radius: 10px;
+  background-color: #2a3033;
+  color: white;
+  text-align: center;
 }
 /* placeholder {
   color: white;
@@ -11775,4 +11778,9 @@ footer > * {
 
 .fw-bolder {
   font-size: 32px;
+}
+
+.input {
+  background-color: white;
+  color: black;
 }
