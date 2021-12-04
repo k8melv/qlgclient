@@ -664,7 +664,7 @@ progress {
   margin-top: -50px;
 }
 
-@media (min-width: 576px) {
+/* @media (min-width: 576px) {
   .container-sm,
   .container {
     max-width: 540px;
@@ -703,7 +703,7 @@ progress {
   .container {
     max-width: 1500px;
   }
-}
+} */
 .row {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
