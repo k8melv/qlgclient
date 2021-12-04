@@ -51,7 +51,9 @@ function removeElement(id){
 function putGarden(id){
   const gardenURL = `https://qlgapi.herokuapp.com/api/garden/${id}`;
   const gardenInfo = document.getElementById(`gardenInfoForm`).value;
+  console.log(gardenInfo)
   const gardenType = document.getElementById('exampleModalLabel').innerHTML;
+  console.log(gardenType)
   fetch(gardenURL,{
       method: "PUT",
       headers: {
