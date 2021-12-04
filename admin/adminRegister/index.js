@@ -11,7 +11,7 @@ function registerAccount(){
     console.log(emailCheck[1]);
     if (emailCheck[1] !== 'qlg.com'){
         var errorMessage = document.getElementById("errorMsg");
-        var html = `You are not an admin. Please register through the <a href="../../customer/custRegister/custRegister.html" target="_blank" download><label>customer registration</label></a>`;
+        var html = `You are not an admin. Please register through the <a href="../../customer/custRegister/custRegister.html">customer registration</a>`;
         errorMessage.innerHTML=html;
     }
     else if (firstName == null || firstName == "" || lastName == null || lastName == "" || email == null || email == "" || password == null || password == "" || date == null || date == "" || position == null || position == ""){
