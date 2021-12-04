@@ -95,3 +95,38 @@ function loadGardens(){
       console.log(error);
   })
 }
+
+function displayAddMenu(){
+  var addMenu = document.getElementById("addModal");
+  var html = `<div class="modal-dialog"><div class="modal-content">`;
+  html += `<div class="modal-header"><h5 class="modal-title" id="exampleModalLabel">Add Garden</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`;
+  html += `</div><div class="modal-body"><div>Garden Picture: <input class='input' type="file" value="Choose File" id="gpic" accept='image/jpeg'></div><div>Garden Type: <input class='input' type="edit" value="Enter Type" id="gtype"></div><div>Garden Information: <input class='input' type="edit" value="Enter Information" id="ginfo"></div>`;
+  html += ` <div>Price: <input class='input' type="edit" value="Enter Price" id="pprice"></div></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-secondary" onclick="addGarden()">Add Garden</button>`;
+  html += `</div></div></div>`;
+  addMenu.innerHTML = html;
+}
+
+function addGarden(){
+  const plantApiUrl = "https://qlgapi.herokuapp.com/api/garden";
+  const gardenType = document.getElementById(`gtype`).value;
+  const gardenInfo = document.getElementById(`ginfo`).value;
+  
+  fetch(plantApiUrl, {
+      method: "POST",
+      headers: {
+        "Accept": 'application/json',
+        "Content-Type": 'application/json'
+      },
+      body: JSON.stringify({
+        gardenType: gardenType,
+        information: gardenInfo
+      })
+  })
+  .then((response)=>{
+      console.log(response);
+      loadGardens();
+  })
+  var addMenu = document.getElementById("addButton");
+  var html = `<button id = "adminAdd" class="btn btn-outline-dark" type="submit" onclick="displayAddMenu()">Add</button>`;
+  addMenu.innerHTML = html;
+}

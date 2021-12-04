@@ -71,6 +71,27 @@
             </div>
             </div>
         </div>
+
+        <!-- Add Modal -->
+        <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Garden</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+            <div class="modal-body">
+                <div>Garden Picture: <input type="file" value="Choose File" id="gpic"></div>
+                <div>Garden Type: <input type="edit" value="Enter Name" id="gtype"></div>
+                <div>Garden Information: <input type="edit" value="Enter Location" id="ginfo"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" onclick="addGarden()">Add Garden</button>
+            </div>
+            </div>
+            </div>
+        </div>
         </main>
 
         <!-- Footer-->
