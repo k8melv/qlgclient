@@ -3,7 +3,7 @@
 h1 {
   padding-top: 70px;
   font-size: 30px;
-  font-family: Verdana, Tahoma, sans-serif;    
+  font-family: Verdana, Tahoma, sans-serif;
   text-shadow: 2px 2px black;
 }
 h2 > * {
@@ -19,7 +19,7 @@ h2 > * {
 input {
   border: 2px solid #990000;
   border-radius: 10px;
-  background-color: #2A3033;
+  background-color: #2a3033;
   color: white;
   text-align: center;
 }
@@ -42,7 +42,7 @@ input {
 
 /* sticky nav bar */
 nav > * {
-  background-color: #2A3033;
+  background-color: white;
   position: fixed;
   padding-top: 80px;
 }
@@ -51,7 +51,7 @@ nav > * {
   background-color: #990000;
 }
 
-footer > *{
+footer > * {
   padding: 100px 0 100px 50px;
 }
 
@@ -73,11 +73,11 @@ footer > *{
   display: block;
   width: 100%;
   height: auto;
-  transition: .5s ease;
+  transition: 0.5s ease;
   backface-visibility: hidden;
 }
 .middle {
-  transition: .5s ease;
+  transition: 0.5s ease;
   opacity: 0;
   position: absolute;
   top: 50%;
@@ -109,13 +109,12 @@ footer > *{
 }
 nav > * {
   padding-top: 40px;
-  background-color: #2A3033;
+  background-color: #2a3033;
   position: fixed;
 }
 .fw-bolder {
   font-size: 38px;
 }
-
 
 body {
   background: white;
@@ -130,7 +129,7 @@ body {
 .profile-button {
   background: #990000;
   box-shadow: none;
-  border: none
+  border: none;
 }
 
 .profile-button:hover {
@@ -139,17 +138,17 @@ body {
 
 .profile-button:focus {
   background: #990000;
-  box-shadow: none
+  box-shadow: none;
 }
 
 .profile-button:active {
   background: #990000;
-  box-shadow: none
+  box-shadow: none;
 }
 
 .back:hover {
   color: #990000;
-  cursor: pointer
+  cursor: pointer;
 }
 
 .labels {
@@ -160,7 +159,7 @@ body {
 
 .add-experience:hover {
   background: #990000;
-  color: #2A3033;
+  color: #2a3033;
   cursor: pointer;
   border: solid 1px #990000;
 }
