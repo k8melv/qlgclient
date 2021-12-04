@@ -67,3 +67,7 @@ body.modal {
   margin-right: auto;
   width: 50%;
 }
+
+.input {
+  background-color: white;
+}
