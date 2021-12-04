@@ -64,7 +64,7 @@ function putGarden(id){
       body: JSON.stringify({
         gardenID: id,
         gardenType: gardenType,
-        gardenInformation: gardenInfo  
+        information: gardenInfo  
       })
   }).then((response)=>{
       if (response.status == 200){
