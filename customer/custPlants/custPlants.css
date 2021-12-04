@@ -11691,11 +11691,8 @@ h2 > * {
 } */
 
 input {
-  border: 2px solid #990000;
-  border-radius: 10px;
-  background-color: #2a3033;
-  color: white;
-  text-align: center;
+  background-color: white;
+  color: black;
 }
 /* placeholder {
   color: white;
