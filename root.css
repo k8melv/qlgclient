@@ -656,6 +656,7 @@ progress {
 .container-lg,
 .container-md,
 .container-sm {
+  width: 100%;
   /* padding-right: var(--bs-gutter-x, 0.75rem);
   padding-left: var(--bs-gutter-x, 0.75rem); */
   /* margin-right: auto;
@@ -690,7 +691,7 @@ progress {
   .container-md,
   .container-sm,
   .container {
-    max-width: 1200px;
+    max-width: 1140px;
   }
 }
 @media (min-width: 1400px) {
@@ -700,7 +701,7 @@ progress {
   .container-md,
   .container-sm,
   .container {
-    max-width: 1500px;
+    max-width: 1320px;
   }
 }
 .row {
