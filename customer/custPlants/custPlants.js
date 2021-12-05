@@ -55,7 +55,6 @@ async function addToCart(data){
         cartHtml.innerHTML = length;
     }
     else{
-        console.log('else')
         var cartHtml = document.getElementById("cartNum");
         var productName = data[0].plantName;
     
@@ -74,7 +73,6 @@ function getCart(){
     try{
         if (test !== 'null'){
             let length = Object.keys(test).length;
-            console.log(length + " getCart method");
             cartHtml.innerHTML = length;
         } 
     }   
@@ -84,9 +82,7 @@ function getCart(){
 }
 
 function removeProduct(id){
-    console.log(id + " made it to remove")
     var items = JSON.parse(sessionStorage.getItem('myCart'));
-    console.log(items);
     for (var i =0; i< items.length; i++) {
         var items = JSON.parse(items[i]);
         if (items.plantID == id) {
@@ -95,7 +91,6 @@ function removeProduct(id){
         }
     }
     items = JSON.stringify(items);
-    console.log(items);
     sessionStorage.setItem('myCart', items);
 
     // console.log(id);
@@ -169,7 +164,27 @@ function checkoutSubmit(){
     }
     else{
         alert("Your order has been submitted!");
+        sendOrderDatabase();
     }
+}
+
+function sendOrderDatabase(){
+    var cart = JSON.parse(sessionStorage.getItem("myCart"));
+    const customerApiUrl = `https://qlgapi.herokuapp.com/api/customer/${obj.email}`;
+    fetch(customerApiUrl, {
+        method: "PUT",
+        headers: {
+            "Accept": 'application/json',
+            "Content-Type": 'application/json'
+        },
+        body: JSON.stringify({
+            pastPurchases: cart
+        })
+    })
+    .then((response)=>{
+        console.log(response); 
+        
+    })
 }
 
 function loadPlants(){
