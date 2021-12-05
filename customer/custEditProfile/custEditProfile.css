@@ -158,7 +158,7 @@ body {
 
 .add-experience:hover {
   background: #990000;
-  color: #990000;
+  color: #2a3033;
   cursor: pointer;
   border: solid 1px #990000;
 }
@@ -168,4 +168,8 @@ span {
 
 .btn-outline-dark {
   background-color: white;
+}
+.btn-outline-dark:hover {
+  background-color: #990000;
+  color: black;
 }
