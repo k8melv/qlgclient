@@ -35,7 +35,7 @@ const slider = async (value) => {
 
 function getSlider(data, value){
   console.log(data.length);
-  for (var i=1;i<data.length;i++){
+  for (var i=1;i<=data.length;i++){
     if (value !== i){
       var garden = document.getElementById(`modalButton-${i}`);
       garden.classList.remove('selected');
