@@ -157,7 +157,19 @@ function checkoutModal(){
 }
 
 function checkoutSubmit(){
-    alert("Your order has been submitted!");
+    var fname = document.getElementById('fname').value;
+    var lname = document.getElementById('lname').value;
+    var shipping = document.getElementById('sadd').value;
+    var billing = document.getElementById('badd').value;
+    var cc = document.getElementById('cc').value;
+    var exp = document.getElementById('expDate').value;
+    var cvv = document.getElementById('cvv').value;
+    if (fname == null || fname == "" || lname == null || lname == "" || shipping == null || shipping == "" || billing == null || billing == "" || cc == null || cc == "" || exp == null || exp == "" || cvv == null || cvv == ""){
+        alert("You must fill out all fields before checking out.");
+    }
+    else{
+        alert("Your order has been submitted!");
+    }
 }
 
 function loadPlants(){
