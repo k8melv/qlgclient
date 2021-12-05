@@ -34,7 +34,7 @@ function saveProfile(){
             "Content-Type": 'application/json',
         },
         body: JSON.stringify({
-            customerid: obj.customerid,
+            customerid: obj.customerID,
             firstname: firstName,
             lastname: lastName,
             email: email,
