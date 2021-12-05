@@ -24,9 +24,13 @@ function populateFields(){
 function saveProfile(){
     const profileApiUrl = `https://qlgapi.herokuapp.com/api/customer`;
     const firstName = document.getElementById("editFname").value;
+    console.log(firstName);
     const lastName = document.getElementById("editLname").value;
+    console.log(lastName);
     const email = document.getElementById("editEmail").value;
+    console.log(email);
     const address = document.getElementById("editAddress").value;
+    console.log(address);
     fetch(profileApiUrl,{
         method: "PUT",
         headers: {
@@ -35,7 +39,7 @@ function saveProfile(){
         },
         body: JSON.stringify({
             customerid: obj.customerID,
-            firstNme: firstName,
+            firstName: firstName,
             lastName: lastName,
             birthdate: obj.birthdate,
             email: email,
