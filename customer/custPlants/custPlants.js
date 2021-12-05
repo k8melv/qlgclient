@@ -94,6 +94,7 @@ function removeProduct(id){
         var items = JSON.parse(items[i]);
         if (items.plantID == id) {
             items.splice(i, 1);
+            break;
         }
     }
     items = JSON.stringify(items);
