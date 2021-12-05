@@ -35,13 +35,14 @@ const slider = async (value) => {
 
 function getSlider(data, value){
   for (var i=1;i<=data.length;i++){
-    if (value !== i){
-      console.log("if")
+    if (value === i){
       var garden = document.getElementById(`modalButton-${i}`);
-      garden.classList.remove('selected');
+      garden.classList.add('selected');
     }
     else{
-      displayGarden(i);
+      var garden = document.getElementById(`modalButton-${i}`);
+      garden.classList.remove('selected');
+      //displayGarden(i);
     }
   }
 }
