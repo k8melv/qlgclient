@@ -21,7 +21,7 @@
 
         <link rel="stylesheet" href="./carousel.css">
     </head>
-    <body onload="handleHello()">
+    <body onload="handleHello(), getCart()">
         <!-- Navigation-->
         <!-- <nav class="navbar">
           <div>
@@ -127,6 +127,43 @@
               <span class="sr-only">Next</span>
             </a>
           </div> -->
+          <!--CART MODAL-->
+        <div class="modal" tabindex="-1" id="cartModal" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Cart</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p>Your cart is empty</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Checkout</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!--CHECKOUT MODAL-->
+        <div class="modal" tabindex="-1" id="checkoutModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Checkout</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>Your cart is empty</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Checkout</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
         <!-- Footer-->
         <footer>

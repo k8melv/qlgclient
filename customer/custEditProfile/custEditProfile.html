@@ -13,7 +13,7 @@
         <link href="../../root.css" rel="stylesheet" />
         <link rel="stylesheet" href="./custEditProfile.css">
     </head>
-    <body onload="populateFields()">
+    <body onload="populateFields(), getCart()">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
@@ -26,7 +26,7 @@
                         <li class="nav-item"><a style="color: white;" class="nav-link active" aria-current="page" href="../custCalculator/custCalcLanding.html">Calculator</a></li>
                     </ul>
                     <form class="d-flex">
-                        <button style="background-color: white;" class="btn btn-outline-dark" type="submit">
+                        <button style="background-color: white;" class="btn btn-outline-dark" type="button" data-bs-toggle="modal" data-bs-target="#cartModal" onclick="cartModal()">
                             <i style="color: black;" class="bi-cart-fill me-1"></i>
                             Cart
                             <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
@@ -60,6 +60,44 @@
         </div>
         </div>
         </div>
+
+        <!--CART MODAL-->
+        <div class="modal" tabindex="-1" id="cartModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Cart</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>Your cart is empty</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Checkout</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!--CHECKOUT MODAL-->
+          <div class="modal" tabindex="-1" id="checkoutModal" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Checkout</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Your cart is empty</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Checkout</button>
+                  </div>
+                </div>
+              </div>
+            </div>
 
         <!-- Footer-->
         <footer class="py-5 bg-dark">
