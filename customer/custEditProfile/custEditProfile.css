@@ -158,10 +158,14 @@ body {
 
 .add-experience:hover {
   background: #990000;
-  color: #2a3033;
+  color: #990000;
   cursor: pointer;
   border: solid 1px #990000;
 }
 span {
   font-size: 20px;
+}
+
+.btn-outline-dark {
+  background-color: white;
 }
