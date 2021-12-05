@@ -140,9 +140,9 @@ function checkoutModal(){
         cart.forEach((data) => {
             var parsedData = JSON.parse(data);
             total = parsedData["price"];
-            console.log(total);
             html += `<p>${parsedData["plantName"]}: ${parsedData["price"]}<button id='removeButton' type="button" class="btn btn-danger" onclick='removeProduct(${parsedData["plantID"]})'>Remove</button></p>`
         });
+        html += `<p>Total: $${total}</p>`
         html += `<div id="fname" class="col-md-6"><label class="labels">First Name:</label><input type="text" class="form-control" placeholder="${obj.firstName}" value=""></div>`
         html += `<div id="lname" class="col-md-6"><label class="labels">Last Name:</label><input type="text" class="form-control" value="" placeholder="${obj.lastName}"></div>`
         html += `<div id="sadd" class="col-md-6"><label class="labels">Shipping Address:</label><input type="text" class="form-control" value="" placeholder="Shipping Address"></div>`
