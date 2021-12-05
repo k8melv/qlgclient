@@ -169,6 +169,7 @@ span {
 .btn-outline-dark {
   background-color: white;
 }
+
 .btn-outline-dark:hover {
   color: black;
   background-color: #990000;

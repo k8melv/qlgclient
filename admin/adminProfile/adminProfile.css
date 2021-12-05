@@ -165,3 +165,12 @@ body {
 span {
   font-size: 20px;
 }
+
+.btn-outline-dark {
+  background-color: white;
+}
+.btn-outline-dark:hover {
+  color: black;
+  background-color: #990000;
+  border-color: #990000;
+}
