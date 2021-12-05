@@ -37,14 +37,9 @@ function saveProfile(){
             customerid: obj.customerid,
             firstname: firstName,
             lastname: lastName,
-            birthdate: obj.birthdate,
             email: email,
-            password: '',
-            creditcard: '',
             shippingaddress: address,
-            billingaddress: address,
-            pastPurchases: obj.pastPurchases,
-            status: obj.status
+            billingaddress: address
         })
     }).then((response)=>{
         if (response.status == 200){
