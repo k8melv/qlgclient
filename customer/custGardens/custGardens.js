@@ -42,15 +42,8 @@ function getSlider(data, value){
     else{
       var garden = document.getElementById(`modalButton-${i}`);
       garden.classList.remove('selected');
-      //displayGarden(i);
     }
   }
-}
-
-function displayGarden(i){
-  console.log(i)
-  var garden = document.getElementById(`modalButton-${i}`);
-  garden.classList.add('selected');
 }
 
 function loadGardens(){
