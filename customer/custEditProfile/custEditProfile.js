@@ -35,14 +35,14 @@ function saveProfile(){
         },
         body: JSON.stringify({
             customerid: obj.customerID,
-            firstname: firstName,
-            lastname: lastName,
+            firstNme: firstName,
+            lastName: lastName,
             birthdate: obj.birthdate,
             email: email,
             password: obj.password,
             creditcard: '',
-            shippingaddress: address,
-            billingaddress: address,
+            shippingAddress: address,
+            billingAddress: address,
             pastPurchases: obj.pastPurchases,
             status: obj.status
         })
