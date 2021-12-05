@@ -25,15 +25,29 @@ function displayModal(data){
   garden.innerHTML = html;
 }
 
-function getSlider(value, oldValue){
-  console.log(oldValue);
-  var garden = document.getElementById(`modalButton-${oldValue}`);
-  garden.classList.remove('selected');
-  displayGarden(value);
+const slider = async (value) => {
+  const gardenURL = `https://qlgapi.herokuapp.com/api/garden`;
+  const response = await fetch(gardenURL);
+  const data = await response.json();
+  getSlider(data, value);
+  return data;
 }
 
-function displayGarden(value){
-  var garden = document.getElementById(`modalButton-${value}`);
+function getSlider(data, value){
+  console.log(data.length);
+  for (var i=1;i<data.length;i++){
+    if (value !== i){
+      var garden = document.getElementById(`modalButton-${i}`);
+      garden.classList.remove('selected');
+    }
+    else{
+      displayGarden(i);
+    }
+  }
+}
+
+function displayGarden(i){
+  var garden = document.getElementById(`modalButton-${i}`);
   garden.classList.add('selected');
 }
 
