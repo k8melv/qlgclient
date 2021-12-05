@@ -84,10 +84,9 @@ footer > * {
   list-style-type: none;
 }
 
-/* .container {
-  position: relative;
-  width: 50%;
-} */
+.container {
+  min-width: -webkit-fill-available;
+}
 .image {
   opacity: 1;
   display: block;

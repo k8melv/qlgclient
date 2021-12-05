@@ -45,6 +45,7 @@ footer > * {
 
 /* begin slideshow */
 .container {
+  min-width: -webkit-fill-available;
   position: relative;
   width: 320px;
   margin: 100px auto 0 auto;
