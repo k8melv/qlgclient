@@ -89,6 +89,7 @@ function getCart(){
 
 function removeProduct(id){
     var items = JSON.parse(sessionStorage.getItem('myCart'));
+    console.log(items);
     for (var i =0; i< items.length; i++) {
         var items = JSON.parse(items[i]);
         if (items.plantID == id) {
@@ -96,6 +97,7 @@ function removeProduct(id){
         }
     }
     items = JSON.stringify(items);
+    console.log(items);
     sessionStorage.setItem('myCart', items);
 
     // console.log(id);
