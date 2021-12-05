@@ -53,8 +53,6 @@ async function addToCart(data){
         sessionStorage.setItem("myCart", JSON.stringify(cart));
         let length = Object.keys(cart).length;
         cartHtml.innerHTML = length;
-        console.log(length + " addToCart method")
-        console.log(JSON.parse(sessionStorage.getItem('myCart')))
     }
     else{
         console.log('else')
@@ -67,8 +65,6 @@ async function addToCart(data){
         sessionStorage.setItem("myCart", JSON.stringify(cart));
         let length = Object.keys(cart).length;
         cartHtml.innerHTML = length;
-        console.log(length + " addToCart method")
-        console.log(JSON.parse(sessionStorage.getItem('myCart')))
     }
 }
 
