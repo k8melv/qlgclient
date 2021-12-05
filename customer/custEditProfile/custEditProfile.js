@@ -38,17 +38,17 @@ function saveProfile(){
             "Content-Type": 'application/json',
         },
         body: JSON.stringify({
-            customerid: obj.customerID,
-            firstName: firstName,
-            lastName: lastName,
-            birthdate: obj.birthdate,
-            email: email,
-            password: obj.password,
-            creditcard: '',
-            shippingAddress: address,
-            billingAddress: address,
-            pastPurchases: obj.pastPurchases,
-            status: obj.status
+            CustomerID: obj.customerID,
+            FirstName: firstName,
+            LastName: lastName,
+            Birthdate: obj.birthdate,
+            Email: email,
+            Password: obj.password,
+            CreditCard: '',
+            ShippingAddress: address,
+            BillingAddress: address,
+            PastPurchases: obj.pastPurchases,
+            Status: obj.status
         })
     }).then((response)=>{
         if (response.status == 200){
