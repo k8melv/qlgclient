@@ -95,6 +95,8 @@ function removeProduct(id){
             items.splice(i, 1);
         }
     }
+    items = JSON.stringify(items);
+    sessionStorage.setItem('myCart', items);
 
     // console.log(id);
     // let storageProducts = JSON.parse(sessionStorage.getItem('myCart'));
