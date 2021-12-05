@@ -90,7 +90,7 @@ function removeProduct(id){
     for (var i =0; i< items.length; i++) {
         var items = JSON.parse(items[i]);
         if (items.plantID == id) {
-            items.splice(i, 1);
+            items.splice(i, 8);
             break;
         }
     }
