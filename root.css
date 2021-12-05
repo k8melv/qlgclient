@@ -4315,6 +4315,7 @@ fieldset:disabled .btn {
 .navbar > .container-lg,
 .navbar > .container-xl,
 .navbar > .container-xxl {
+  min-width: -webkit-fill-available;
   display: flex;
   flex-wrap: inherit;
   align-items: center;

@@ -75,7 +75,6 @@ nav > * {
   position: fixed;
 }
 
-
 .sticky {
   background-color: #990000;
 }
@@ -115,4 +114,8 @@ nav > * {
 
 #fields {
   padding: 20%;
+}
+
+.container {
+  min-width: -webkit-fill-available;
 }
