@@ -7,7 +7,6 @@ const getCustomer = async () => {
     else{
         email = obj.email;
     }
-    console.log(email);
     const plantURL = `https://qlgapi.herokuapp.com/api/customer/${email}`;
     const response = await fetch(plantURL);
     const data = await response.json();
@@ -49,7 +48,6 @@ function getCart(){
     try{
         if (test !== 'null'){
             let length = Object.keys(test).length;
-            console.log(length + " getCart method");
             cartHtml.innerHTML = length;
         } 
     }   

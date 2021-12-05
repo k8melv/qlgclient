@@ -49,7 +49,8 @@ function saveProfile(){
     }).then((response)=>{
         if (response.status == 200){
             alert("Profile has been successfully saved!");
-            populateFields();
+            //window.location.replace("../custProfile/custProfile.html");
+            //populateFields();
         }
         else{
             alert("Something went wrong. Please try again");
