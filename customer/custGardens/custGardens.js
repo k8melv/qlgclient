@@ -34,10 +34,9 @@ const slider = async (value) => {
 }
 
 function getSlider(data, value){
-  console.log(value);
   for (var i=1;i<=data.length;i++){
-    console.log(i);
     if (value !== i){
+      console.log("if")
       var garden = document.getElementById(`modalButton-${i}`);
       garden.classList.remove('selected');
     }
@@ -48,6 +47,7 @@ function getSlider(data, value){
 }
 
 function displayGarden(i){
+  console.log(i)
   var garden = document.getElementById(`modalButton-${i}`);
   garden.classList.add('selected');
 }
