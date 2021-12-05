@@ -22,7 +22,7 @@ function populateFields(){
 }
 
 function saveProfile(){
-    const profileApiUrl = `https://qlgapi.herokuapp.com/api/customer/${obj.customerid}`;
+    const profileApiUrl = `https://qlgapi.herokuapp.com/api/customer`;
     const firstName = document.getElementById("editFname");
     const lastName = document.getElementById("editLname");
     const email = document.getElementById("editEmail");
@@ -34,17 +34,17 @@ function saveProfile(){
             "Content-Type": 'application/json',
         },
         body: JSON.stringify({
-            CustomerID: obj.customerid,
-            FirstName: firstName,
-            LastName: lastName,
-            Birthdate: obj.birthdate,
-            Email: email,
-            Password: '',
-            CreditCard: '',
-            ShippingAddress: address,
-            BillingAddress: address,
-            PastPurchases: obj.pastPurchases,
-            Status: obj.status
+            customerid: obj.customerid,
+            firstname: firstName,
+            lastname: lastName,
+            birthdate: obj.birthdate,
+            email: email,
+            password: '',
+            creditcard: '',
+            shippingaddress: address,
+            billingaddress: address,
+            pastPurchases: obj.pastPurchases,
+            status: obj.status
         })
     }).then((response)=>{
         if (response.status == 200){
