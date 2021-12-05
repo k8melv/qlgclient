@@ -150,10 +150,14 @@ function checkoutModal(){
         html += `<div id="cc" class="col-md-6"><label for="ccn" class="labels">Credit Card Number:</label><input id="ccn" type="tel" class="form-control" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx"></div>`
         html += `<div id="expDate" class="col-md-6"><label class="labels">Expiration Date:</label><input type="month" class="form-control" placeholder=""></div>`
         html += `<div id="cvv" class="col-md-6"><label class="labels">CVV:</label><input type="number" inputmode="numeric" class="form-control" max="4" placeholder="----"></div>`
-        html += `</div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-primary">Submit</button></div></div>`
+        html += `</div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-primary" onclick="checkoutSubmit()">Submit</button></div></div>`
         html += `</div>`
         document.getElementById("checkoutModal").innerHTML = html;
     }
+}
+
+function checkoutSubmit(){
+    alert("Your order has been submitted!");
 }
 
 function loadPlants(){
