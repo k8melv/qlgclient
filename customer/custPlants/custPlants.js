@@ -88,11 +88,19 @@ function getCart(){
 }
 
 function removeProduct(id){
-    console.log(id);
-    let storageProducts = JSON.parse(sessionStorage.getItem('myCart'));
-    let products = storageProducts.filter(product => product.id == id);
-    sessionStorage.removeItem('myCart', JSON.stringify(products));
-    console.log(JSON.parse(sessionStorage.getItem('myCart')));
+    var items = JSON.parse(sessionStorage.getItem('myCart'));
+    for (var i =0; i< items.length; i++) {
+        var items = JSON.parse(items[i]);
+        if (items.plantID == id) {
+            items.splice(i, 1);
+        }
+    }
+
+    // console.log(id);
+    // let storageProducts = JSON.parse(sessionStorage.getItem('myCart'));
+    // let products = storageProducts.filter(product => product.id == id);
+    // sessionStorage.splice('myCart', JSON.stringify(products));
+    // console.log(JSON.parse(sessionStorage.getItem('myCart')));
     getCart();
     cartModal();
 }
