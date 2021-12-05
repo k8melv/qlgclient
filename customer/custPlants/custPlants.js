@@ -88,6 +88,7 @@ function getCart(){
 }
 
 function removeProduct(id){
+    console.log(id + " made it to remove")
     var items = JSON.parse(sessionStorage.getItem('myCart'));
     console.log(items);
     for (var i =0; i< items.length; i++) {
