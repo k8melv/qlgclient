@@ -147,7 +147,7 @@ function checkoutModal(){
         html += `<div id="lname" class="col-md-6"><label class="labels">Last Name:</label><input type="text" class="form-control" value="" placeholder="${obj.lastName}"></div>`
         html += `<div id="sadd" class="col-md-6"><label class="labels">Shipping Address:</label><input type="text" class="form-control" value="" placeholder="Shipping Address"></div>`
         html += `<div id="badd" class="col-md-6"><label class="labels">Billing Address:</label><input type="text" class="form-control" value="" placeholder="Billing Address"></div>`
-        html += `<div id="cc" class="col-md-6"><label for="ccn" class="labels">Credit Card Number:</label><input id="ccn" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx"></div>`
+        html += `<div id="cc" class="col-md-6"><label for="ccn" class="labels">Credit Card Number:</label><input id="ccn" type="tel" class="form-control" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx"></div>`
         html += `</div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-primary">Submit</button></div></div>`
         html += `</div>`
         document.getElementById("checkoutModal").innerHTML = html;
