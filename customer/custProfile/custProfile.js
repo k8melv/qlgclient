@@ -20,24 +20,24 @@ function populateFields(data){
     main.innerHTML = html;
 
     var fname = document.getElementById("fname");
-    var html = `<div class='col-md-6'><label class='labels'>First Name</label><input type='text' class='form-control' placeholder='First Name' value='${data[0].firstName}'></div>`;
+    var html = `<div class='col-md-6'><label class='labels'>First Name</label><input type='text' class='form-control' placeholder='First Name' value='${data[0].firstName}' readonly></div>`;
     fname.innerHTML = html;
     var lname = document.getElementById("lname");
-    var html = `<div class='col-md-6'><label class='labels'>Last Name</label><input type='text' class='form-control' placeholder='Last Name' value='${data[0].lastName}'></div>`;
+    var html = `<div class='col-md-6'><label class='labels'>Last Name</label><input type='text' class='form-control' placeholder='Last Name' value='${data[0].lastName}' readonly></div>`;
     lname.innerHTML = html;
     
     var email = document.getElementById("email");
-    var html = `<div class='col-md-6'><label class='labels'>Email Address</label><input type='text' class='form-control' placeholder='Email Address' value='${data[0].email}'></div>`;
+    var html = `<div class='col-md-6'><label class='labels'>Email Address</label><input type='text' class='form-control' placeholder='Email Address' value='${data[0].email}' readonly></div>`;
     email.innerHTML = html;
 
-    if(data[0].shippingaddress === 'undefined'){
+    if(data[0].shippingaddress == 'undefined'){
         var address = document.getElementById("aline1");
-        var html = `<div class='col-md-6'><label class='labels'>Address Line</label><input type='text' class='form-control' placeholder='Address Line' value='No current address on file'></div>`;
+        var html = `<div class='col-md-6'><label class='labels'>Address Line</label><input type='text' class='form-control' placeholder='Address Line' value='No current address on file' readonly></div>`;
         address.innerHTML = html;
     }
     else{
         var address = document.getElementById("aline1");
-        var html = `<div class='col-md-6'><label class='labels'>Address Line</label><input type='text' class='form-control' placeholder='Address Line' value='${data[0].shippingaddress}'></div>`;
+        var html = `<div class='col-md-6'><label class='labels'>Address Line</label><input type='text' class='form-control' placeholder='Address Line' value='${data[0].shippingaddress}' readonly></div>`;
         address.innerHTML = html;
     }
 }
