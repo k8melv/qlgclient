@@ -27,7 +27,7 @@ async function displayModal(data){
     var html = `<div class="modal-dialog"><div class="modal-content">`;
     html += `<div class="modal-header"><h5 class="modal-title" id="plantName">${data[0].plantName}</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`;
     html += `</div><div class="modal-body"><img class="modalImg" src="${photoUrl}" alt="Picture" width="300" height="200"/><div style="font-weight: 650">Location: <p style="font-weight: 400;">${data[0].location}</p></div><div style="font-weight: 650">Water Needs: <p style="font-weight: 400;">${data[0].numTimesWater}</p></div><div style="font-weight: 650">Sun Needs: <p style="font-weight: 400;">${data[0].sunNeeds}</p></div><div id="plantinfo" style="font-weight: 650">Plant Information: <p style="font-weight: 400;">${data[0].information}</p></div><div style="font-weight: 650">Fun Fact: <p style="font-weight: 400;">${data[0].funFact}</p></div>`;
-    html += `<div style="font-weight: 650">Price: <p style="font-weight: 400;">${data[0].price}</p></div></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="addToCart(${data[0]})">Add to Cart</button>`;
+    html += `<div style="font-weight: 650">Price: <p style="font-weight: 400;">${data[0].price}</p></div></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="addToCart(data)">Add to Cart</button>`;
     html += `</div></div></div>`;
     garden.innerHTML = html;
 }
