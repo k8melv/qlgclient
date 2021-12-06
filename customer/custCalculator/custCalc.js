@@ -38,8 +38,8 @@ img.onclick = function(){
 
 }
 
-function calculator2Database(){//STILL NEEDS TO BE WORKED ON
-  const calculatorApiUrl = "https://qlgapi.herokuapp.com/api/plantinformation";
+function calculator2Database(){
+  const calculatorApiUrl = "https://qlgapi.herokuapp.com/api/healthcalculator";
   const namePlant = answer1;
   const sunScore = answer2;
   const waterScore = answer3;
