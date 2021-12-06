@@ -176,6 +176,10 @@ span {
 }
 
 .profilepic {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center;
+
   position: relative;
   width: 125px;
   height: 125px;
