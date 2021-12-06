@@ -49,7 +49,7 @@ function saveProfile(){
     }).then((response)=>{
         if (response.status == 200){
             alert("Profile has been successfully saved!");
-            //window.location.replace("../custProfile/custProfile.html");
+            window.location.replace("../custProfile/custProfile.html");
             //populateFields();
         }
         else{
