@@ -32,6 +32,8 @@ async function displayModal(data){
     garden.innerHTML = html;
 }
 
+window.displayModal = displayModal;
+
 const GetPlantCart = async (id) => {
     const plantURL = `https://qlgapi.herokuapp.com/api/plantinformation/${id}`;
     const response = await fetch(plantURL);
@@ -140,6 +142,8 @@ function cartModal(){
     }
 }
 
+window.cartModal = cartModal;
+
 function checkoutModal(){
     var cart = JSON.parse(sessionStorage.getItem("myCart"));
     if (cart === null || cart === "null"){
@@ -209,6 +213,8 @@ function sendOrderDatabase(){
     })
 }
 
+window.sendOrderDatabase = sendOrderDatabase;
+
 async function loadPlants(){
     const allPlantsApiUrl = "https://qlgapi.herokuapp.com/api/plantinformation";
     var response = await fetch(allPlantsApiUrl);
@@ -229,6 +235,8 @@ async function loadPlants(){
     html += "</div>";
     document.getElementById("plantList").innerHTML = html;
 }
+
+window.loadPlants = loadPlants;
 
 function sendSuggestion(){
     const suggestionURL = 'https://qlgapi.herokuapp.com/api/submissions';
