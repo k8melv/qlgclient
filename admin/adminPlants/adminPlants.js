@@ -158,12 +158,12 @@ const getSuggestions = async () => {
 }
 
 function suggestionModal(data){
-    let html = `<div class="modal-dialog" style="overflow-y: scroll">`;
+    let html = `<div class="modal-dialog">`;
     html += `<div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="submitModalLabel">Customer Submissions:</h5>`;
     html += `<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body">`;
     html += `<div style='font-weight: bold;'>Plant:`
     data.forEach((suggestion) => {
-        html += `<div style='font-weight: 400'>${suggestion.plant}<button style='margin: 5px; justify-content: flex-end;' id="adminAdd" class="btn btn-outline-dark" type="submit" data-bs-toggle="modal" data-bs-target="#addModal" onclick="displayAddMenu()">Add</button><button style='justify-content: flex-end;' type="button" class="btn btn-danger" onclick="confirmDelete(${suggestion.id})">Delete</button></div>`;
+        html += `<div style='font-weight: 400'>${suggestion.plant}<button style='justify-content: flex-end; float: right; margin: 5px' type="button" class="btn btn-danger" onclick="confirmDelete(${suggestion.id})">Delete</button></div><button style='margin: 5px; justify-content: flex-end; float: right;' id="adminAdd" class="btn btn-outline-dark" type="submit" data-bs-toggle="modal" data-bs-target="#addModal" onclick="displayAddMenu()">Add</button>`;
     });
         html += `</div></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button></div></div>`;
     html += "</div>";
