@@ -155,6 +155,7 @@ async function loadPlants(){
             var photoUrl = '../../assets/ElephantLogo_Transparent.png';
             try {
                 photoUrl = await getPhoto(plantinformation.plantID);
+                console.log(photoUrl)
             } catch (error) {
                 console.log(error);
             }
