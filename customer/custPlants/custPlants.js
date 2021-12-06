@@ -101,7 +101,7 @@ function removeProduct(id){
     var items = JSON.parse(sessionStorage.getItem('myCart'));
     for (var i =0; i< items.length; i++) {
         var items = JSON.parse(items[i]);
-        console.log(items);
+        console.log(items.plantID);
         if (items.plantID == id) {
             console.log(items)
             sessionStorage.removeItem('myCart', items);
