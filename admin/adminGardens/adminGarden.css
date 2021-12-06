@@ -72,3 +72,6 @@ body.modal {
   background-color: white;
   color: black;
 }
+#activePage {
+  color: #990000;
+}

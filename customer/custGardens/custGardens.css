@@ -333,3 +333,7 @@ body.modal {
   flex: 0 0 auto;
   width: 25%;
 }
+
+#activePage {
+  color: #990000;
+}
