@@ -27,7 +27,7 @@ function populateFields(){
 
 function updateProfile(){
     const profileApiUrl = `https://qlgapi.herokuapp.com/api/admin/${obj.adminID}`;
-    const firstName = document.getElementById(`editFirst`).innerHTML;
+    const firstName = document.getElementById(`editFirst`).value;
     const lastName = document.getElementById(`editLast`).value;
     const email = document.getElementById(`editEmail`).value;
     const position = document.getElementById(`editPosition`).value;
