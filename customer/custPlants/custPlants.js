@@ -102,8 +102,8 @@ function removeProduct(id){
     items.push(JSON.parse(sessionStorage.getItem('myCart')));
     console.log(items);
     for (var i =0; i< items.length; i++) {
-        var item = JSON.parse(items[i]);
-        console.log(item)
+        var item = items[i];
+        console.log(items[i])
         if (item.plantID == id) {
             console.log(item)
             items.splice(item.plantID, 1);
