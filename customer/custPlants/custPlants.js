@@ -59,7 +59,7 @@ function addToCart(data){
         var cartHtml = document.getElementById("cartNum");
         var productName = data[0].plantName;
     
-        cart.push(JSON.stringify(data[0]));
+        cart.push(data[0]);
         alert(productName + " has successfully been added to your cart");
         
         sessionStorage.setItem("myCart", JSON.stringify(cart));
