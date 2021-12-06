@@ -23,7 +23,7 @@
                   <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                       <li class="nav-item"><a class="nav-link active" aria-current="page" href="../custPlants/custPlants.html">Plants</a></li>
                       <li class="nav-item"><a class="nav-link active" aria-current="page" href="../custGardens/custGardens.html">Gardens</a></li>
-                      <li class="nav-item"><a class="nav-link active" aria-current="page" href="../custCalculator/custCalcLanding.html">Calculator</a></li>
+                      <li class="nav-item"><a id="activePage" class="nav-link active" aria-current="page" href="../custCalculator/custCalcLanding.html">Calculator</a></li>
                   </ul>
                   <form class="d-flex">
                       <button class="btn btn-outline-dark cartBtn" type="button" data-bs-toggle="modal" data-bs-target="#cartModal" onclick="cartModal()">
@@ -40,7 +40,7 @@
         <header class="bg-dark py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
-                    <h1 style="align-items: center;" class="display-4 fw-bolder">Quad Landscaping & Garden</h1>
+                    <h1 style="align-items: center;" class="display-4 fw-bolder" id="questionStart">Quad Landscaping & Garden</h1>
                     
 
                     <!-- Buzzfeed Quiz Begins Here -->
@@ -160,6 +160,7 @@
                             <img id="myImg" src="../../assets/ElephantLogo_Transparent.png" alt="Calculator Results" style="width:200px; height:200px;">
                                 
                             </div>
+                            
 
                         <!-- The Modal -->
                             <div id="myModal" class="modal">
@@ -175,7 +176,9 @@
                             </div>
                         </div>
                         </div>
-                          
+                        <div>
+                          <a id="calcAgain" href="#questionStart"><button>Calculate Again!👆</button></a>
+                        </div>
 
                     </div>
                     </div>
