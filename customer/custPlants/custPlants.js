@@ -143,7 +143,7 @@ function cartModal(){
     }
 }
 
-// window.cartModal = cartModal;
+window.cartModal = cartModal;
 
 function checkoutModal(){
     var cart = JSON.parse(sessionStorage.getItem("myCart"));
