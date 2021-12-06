@@ -101,15 +101,16 @@ function removeProduct(id){
     var items = JSON.parse(sessionStorage.getItem('myCart'));
     for (var i =0; i< items.length; i++) {
         var item = JSON.parse(items[i]);
+        console.log(item)
         if (item.plantID == id) {
             console.log(item)
             sessionStorage.removeItem('myCart', item);
             break;
         }
     }
-    items = JSON.stringify(items);
-    console.log(items);
-    sessionStorage.setItem('myCart', items);
+    //items = JSON.stringify(items);
+    // console.log(items);
+    //sessionStorage.setItem('myCart', items);
 
     getCart();
     cartModal();
