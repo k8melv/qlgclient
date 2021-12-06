@@ -163,7 +163,7 @@ function suggestionModal(data){
     html += `<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body">`;
     html += `<div style='font-weight: bold;'>Plant:`
     data.forEach((suggestion) => {
-        html += `<div style='font-weight: 400'>${suggestion.plant}<button style='justify-content: flex-end; float: right; margin: 5px' type="button" class="btn btn-danger" onclick="confirmDelete(${suggestion.id})">Delete</button></div><button style='margin: 5px; justify-content: flex-end; float: right;' id="adminAdd" class="btn btn-outline-dark" type="submit" data-bs-toggle="modal" data-bs-target="#addModal" onclick="displayAddMenu()">Add</button>`;
+        html += `<div style='font-weight: 400'>${suggestion.plant}<button style='justify-content: flex-end; float: right; margin: 5px' type="button" class="btn btn-danger" onclick="confirmDelete(${suggestion.id})">Delete</button><button style='margin: 5px; justify-content: flex-end; float: right;' id="adminAdd" class="btn btn-outline-dark" type="submit" data-bs-toggle="modal" data-bs-target="#addModal" onclick="displayAddMenu()">Add</button></div>`;
     });
         html += `</div></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button></div></div>`;
     html += "</div>";
