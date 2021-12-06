@@ -107,6 +107,7 @@ function removeProduct(id){
         if (item.plantID == id) {
             console.log(item)
             items.splice(item.plantID, 1);
+            console.log(items);
             break;
         }
     }
