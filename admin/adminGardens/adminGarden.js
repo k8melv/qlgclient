@@ -22,7 +22,7 @@ const GetGarden = async (id) => {
 window.GetGarden = GetGarden;
 
 async function displayModal(data){
-  const photoUrl = await getPhoto(data[0].plantID);
+  const photoUrl = await getPhoto(data[0].gardenID);
   var garden = document.getElementById("exampleModal");
   var html = `<div class="modal-dialog"><div class="modal-content">`;
   html += `<div class="modal-header"><h5 class="modal-title" id="exampleModalLabel">${data[0].gardenType}</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`;
