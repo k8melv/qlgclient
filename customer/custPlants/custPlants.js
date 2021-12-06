@@ -104,7 +104,8 @@ function removeProduct(id){
         console.log(items);
         if (items.plantID == id) {
             console.log(items)
-            items.splice(i, 8);
+            sessionStorage.removeItem('myCart', items);
+            // items.splice(i, 8);
             break;
         }
     }
