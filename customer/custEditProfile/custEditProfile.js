@@ -22,15 +22,11 @@ function populateFields(){
 }
 
 function saveProfile(){
-    const profileApiUrl = `https://qlgapi.herokuapp.com/api/customer`;
+    const profileApiUrl = `https://qlgapi.herokuapp.com/api/customer/${obj.custommerID}`;
     const firstName = document.getElementById("editFname").value;
-    console.log(firstName);
     const lastName = document.getElementById("editLname").value;
-    console.log(lastName);
     const email = document.getElementById("editEmail").value;
-    console.log(email);
     const address = document.getElementById("editAddress").value;
-    console.log(address);
     fetch(profileApiUrl,{
         method: "PUT",
         headers: {
