@@ -9,6 +9,7 @@ const GetAdmin = async () => {
 }
 
 function populateFields(data){
+    console.log(data);
     var main = document.getElementById("mainImage");
     var html = `<div class="d-flex flex-column align-items-center text-center p-3 py-5" id="mainImage"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">${data[0].firstName}</span><span class="text-black-50">${data[0].email}</span><span> </span></div>`
     main.innerHTML = html;
