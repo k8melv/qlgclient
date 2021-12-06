@@ -76,6 +76,15 @@ footer > * {
   transition: 0.5s ease;
   backface-visibility: hidden;
 }
+.btn-outline-dark {
+  background-color: white;
+}
+
+.btn-outline-dark:hover {
+  color: black;
+  background-color: #990000;
+  border-color: #990000;
+}
 .middle {
   transition: 0.5s ease;
   opacity: 0;
