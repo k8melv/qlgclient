@@ -1,3 +1,5 @@
+import { uploadImage, ref, getDownloadURL, storage } from "../../firebase/firebase.js";
+
 const obj = JSON.parse(sessionStorage.getItem('user'));
 
 function handleHello(){
