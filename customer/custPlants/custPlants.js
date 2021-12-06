@@ -96,7 +96,9 @@ function removeProduct(id){
     var items = JSON.parse(sessionStorage.getItem('myCart'));
     for (var i =0; i< items.length; i++) {
         var items = JSON.parse(items[i]);
+        console.log(items);
         if (items.plantID == id) {
+            console.log(items)
             items.splice(i, 8);
             break;
         }
