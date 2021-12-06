@@ -45,7 +45,7 @@ function populateFields(){
 }
 
 function updateProfile(){
-    const profileApiUrl = `https://qlgapi.herokuapp.com/api/admin/${obj.adminid}`;
+    const profileApiUrl = `https://qlgapi.herokuapp.com/api/admin/${obj.adminID}`;
     const firstName = document.getElementById(`editFirst`).innerHTML;
     const lastName = document.getElementById(`editLast`).value;
     const email = document.getElementById(`editEmail`).value;
@@ -58,7 +58,7 @@ function updateProfile(){
             "Content-Type": 'application/json',
         },
         body: JSON.stringify({
-            AdminID: obj.adminid,
+            AdminID: obj.adminID,
             FirstName: firstName,
             LastName: lastName,
             Email: email,
@@ -69,7 +69,7 @@ function updateProfile(){
     }).then((response)=>{
         if (response.status == 200){
             alert("Profile has been successfully updated!");
-            populateFields();
+            window.location.replace("../adminProfile/adminProfile.html");
         }
         else{
             alert("Something went wrong. Please try again");
