@@ -4313,7 +4313,7 @@ fieldset:disabled .btn {
   display: block;
 }
 
-.navbar {
+/* .navbar {
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -4321,7 +4321,7 @@ fieldset:disabled .btn {
   justify-content: space-between;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-}
+} */
 .navbar > .container,
 .navbar > .container-fluid,
 .navbar > .container-sm,
@@ -4333,6 +4333,7 @@ fieldset:disabled .btn {
   flex-wrap: inherit;
   align-items: center;
   justify-content: space-between;
+  z-index: 1;
 }
 .navbar-brand {
   padding-top: 0.3125rem;
