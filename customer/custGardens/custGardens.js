@@ -21,7 +21,7 @@ const GetGarden = async (id) => {
 
 window.GetGarden = GetGarden;
 
-function displayModal(data){
+async function displayModal(data){
   const photoUrl = await getPhoto(data[0].gardenID);
   var garden = document.getElementById("exampleModal");
   var html = `<div class="modal-dialog"><div class="modal-content">`;
