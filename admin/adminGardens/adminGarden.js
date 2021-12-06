@@ -150,7 +150,7 @@ function addGarden(pic){
 window.addGarden = addGarden;
 
 const getHighestId = async () => {
-  const plantURL = `https://qlgapi.herokuapp.com/api/garden/highestid`;
+  const plantURL = `https://qlgapi.herokuapp.com/api/garden/gardenhighestid`;
   const response = await fetch(plantURL);
   const data = await response.json();
   return data;
