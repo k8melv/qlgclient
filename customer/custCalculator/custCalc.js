@@ -20,9 +20,12 @@ var advice = document.getElementById("advice");
 var captionText = document.getElementById("caption");
 img.onclick = function(){
   if(counter>=4){
-    var score = answer2+answer3;
+    console.log(answer3);
+    console.log(answer2);
+    var score = parseInt(answer2)+parseInt(answer3);
     console.log(score);
     var scoreLabel = calculateScore(score);
+    console.log(scoreLabel);
     var adviceLabel = calculateAdvice();
     modal.style.display = "block";
     healthScore.innerHTML=`Your Plant is: ${scoreLabel}`;
