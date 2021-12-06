@@ -1,8 +1,8 @@
 const obj = JSON.parse(sessionStorage.getItem('user'));
 
 const GetAdmin = async () => {
-    const plantURL = `https://qlgapi.herokuapp.com/api/plantinformation/${obj.adminID}`;
-    const response = await fetch(plantURL);
+    const adminURL = `https://qlgapi.herokuapp.com/api/admin/${obj.adminID}`;
+    const response = await fetch(adminURL);
     const data = await response.json();
     populateFields(data);
     return data;
