@@ -139,6 +139,8 @@ var cart = JSON.parse(sessionStorage.getItem("myCart"));
   }
 }
 
+window.cartModal = cartModal;
+
 function checkoutModal(){
   var cart = JSON.parse(sessionStorage.getItem("myCart"));
   if (cart === null || cart === "null"){
