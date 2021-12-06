@@ -1,3 +1,5 @@
+import { ref, getDownloadURL, storage } from "../../firebase/firebase.js";
+
 const obj = JSON.parse(sessionStorage.getItem('user'));
 
 function handleHello(){
@@ -7,6 +9,8 @@ function handleHello(){
     loadPlants();
 }
 
+window.handleHello = handleHello;
+
 const GetPlant = async (id) => {
     const plantURL = `https://qlgapi.herokuapp.com/api/plantinformation/${id}`;
     const response = await fetch(plantURL);
@@ -15,12 +19,15 @@ const GetPlant = async (id) => {
     return data;
 }
 
-function displayModal(data){
+window.GetPlant = GetPlant;
+
+async function displayModal(data){
+    const photoUrl = await getPhoto(data[0].plantID);
     var garden = document.getElementById("exampleModal");
     var html = `<div class="modal-dialog"><div class="modal-content">`;
-    html += `<div class="modal-header"><h5 class="modal-title" id="exampleModalLabel">${data[0].plantName}</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`;
-    html += `</div><div class="modal-body"><img class="modalImg" src="./assets/plant-${data[0].plantID}.jpeg" alt="Picture" width="300" height="200"/><div style="font-weight: 650">Location: <p style="font-weight: 400">${data[0].location}</p></div><div style="font-weight: 650">Water Needs: <p style="font-weight: 400">${data[0].numTimesWater}</p></div><div style="font-weight: 650">Sun Needs: <p style="font-weight: 400">${data[0].sunNeeds}</p></div><div id="plantinfo" style="font-weight: 650">Plant Information: <p style="font-weight: 400">${data[0].information}</p></div><div style="font-weight: 650">Fun Fact: <p style="font-weight: 400">${data[0].funFact}</p></div>`;
-    html += `<div style="font-weight: 650">Price: <p style="font-weight: 400">${data[0].price}</p></div></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-primary" onclick="GetPlantCart(${data[0].plantID})">Add to Cart</button>`;
+    html += `<div class="modal-header"><h5 class="modal-title" id="plantName">${data[0].plantName}</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`;
+    html += `</div><div class="modal-body"><img class="modalImg" src="${photoUrl}" alt="Picture" width="300" height="200"/><div style="font-weight: 650">Location: <p style="font-weight: 400;">${data[0].location}</p></div><div style="font-weight: 650">Water Needs: <p style="font-weight: 400;">${data[0].numTimesWater}</p></div><div style="font-weight: 650">Sun Needs: <p style="font-weight: 400;">${data[0].sunNeeds}</p></div><div id="plantinfo" style="font-weight: 650">Plant Information: <p style="font-weight: 400;">${data[0].information}</p></div><div style="font-weight: 650">Fun Fact: <p style="font-weight: 400;">${data[0].funFact}</p></div>`;
+    html += `<div style="font-weight: 650">Price: <p style="font-weight: 400;">${data[0].price}</p></div></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>`;
     html += `</div></div></div>`;
     garden.innerHTML = html;
 }
@@ -32,6 +39,8 @@ const GetPlantCart = async (id) => {
     addToCart(data);
     return data;
 }
+
+window.GetPlantCart = GetPlantCart;
 
 if (sessionStorage.getItem("myCart")){
     var cart = JSON.parse(sessionStorage.getItem("myCart"));
@@ -81,6 +90,8 @@ function getCart(){
     }
 }
 
+window.getCart = getCart;
+
 function removeProduct(id){
     var items = JSON.parse(sessionStorage.getItem('myCart'));
     for (var i =0; i< items.length; i++) {
@@ -101,6 +112,8 @@ function removeProduct(id){
     getCart();
     cartModal();
 }
+
+window.removeProduct = removeProduct;
 
 function cartModal(){
 	var cart = JSON.parse(sessionStorage.getItem("myCart"));
@@ -151,6 +164,8 @@ function checkoutModal(){
     }
 }
 
+window.checkoutModal = checkoutModal;
+
 function checkoutSubmit(){
     var fname = document.getElementById('fname').value;
     var lname = document.getElementById('lname').value;
@@ -167,6 +182,8 @@ function checkoutSubmit(){
         sendOrderDatabase();
     }
 }
+
+window.checkoutSubmit = checkoutSubmit;
 
 function sendOrderDatabase(){
     var cart = JSON.parse(sessionStorage.getItem("myCart"));
@@ -188,23 +205,25 @@ function sendOrderDatabase(){
     })
 }
 
-function loadPlants(){
+async function loadPlants(){
     const allPlantsApiUrl = "https://qlgapi.herokuapp.com/api/plantinformation";
-    fetch(allPlantsApiUrl).then(function(response){
-        return response.json();
-    }).then(function(json){
+    var response = await fetch(allPlantsApiUrl);
+    const json = await response.json();
         let html = `<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">`;
-        json.forEach((plantinformation) => {
+        for (const plantinformation of json){
+            var photoUrl = '../../assets/ElephantLogo_Transparent.png';
+            try {
+                photoUrl = await getPhoto(plantinformation.plantID);
+            } catch (error) {
+                console.log(error);
+            }
             html += `<button type="button" class="modalButton" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="GetPlant(${plantinformation.plantID})">`;
-            html += `<div class="col mb-5"> <div class="card h-100">  <img class="card-img-top" src="./assets/plant-${plantinformation.plantID}.jpeg" alt="${plantinformation.plantName}" height="200px"/>`;
-            html += `<div class="card-body p-4"> <div class="text-center"> <h5 class="fw-bold">${plantinformation.plantName}</h5>${plantinformation.price}</div></div>`;
-            html += `<div class="card-footer p-4 pt-0 border-top-0 bg-transparent"> <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View Plant Info</a></div></div></div></div></button>`;
-        });
-        html += "</div>";
-        document.getElementById("plantList").innerHTML = html;
-    }).catch(function(error){
-        console.log(error);
-    })
+            html += `<div class="col mb-5"><div class="card h-100"><img class="card-img-top" src='${photoUrl}' alt="../../assets/ElephantLogo_Transparent.png" height="200px"/>`;
+            html += `<div class="card-body p-4"> <div class="text-center"> <h5 class="fw-bold">${plantinformation.plantName}</h5>${plantinformation.price}</div></div>`
+            html += `<div class="card-footer p-4 pt-0 border-top-0 bg-transparent"> <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View Plant Info</a></div></div></div></div></button>`
+        }
+    html += "</div>";
+    document.getElementById("plantList").innerHTML = html;
 }
 
 function sendSuggestion(){
@@ -231,3 +250,16 @@ function sendSuggestion(){
         console.log(response);
     })
 }
+
+window.sendSuggestion = sendSuggestion;
+
+async function getPhoto(id){
+    try {
+        const thisUrl =  await getDownloadURL(ref(storage, `images/plant-${id}.jpg`))
+        return thisUrl;
+    } catch (error) {
+        console.log("Could not get photos");
+    }
+}
+
+window.getPhoto = getPhoto;

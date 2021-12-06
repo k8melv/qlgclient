@@ -101,7 +101,7 @@ async function loadGardens(){
       }
       html += `<div class="garden">`;
       html += `<button id="modalButton-${garden.gardenID}" type="button" class="modalButton" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="GetGarden(${garden.gardenID})">`
-      html += `<img id="myImg" src="${photoUrl}" alt="${garden.gardenType}" width="300" height="200"/><h3 class="gardenText">${garden.gardenType}</h3></button>`
+      html += `<img id="myImg" src="${photoUrl}" alt="../../assets/ElephantLogo_Transparent.png" width="300" height="200"/><h3 class="gardenText">${garden.gardenType}</h3></button>`
       html += "</div>";
     }
   html += "</div>";
@@ -142,9 +142,9 @@ function addGarden(pic){
       addPhoto(pic);
       loadGardens();
   })
-  var addMenu = document.getElementById("addButton");
-  var html = `<button id = "adminAdd" class="btn btn-outline-dark" type="submit" onclick="displayAddMenu()">Add</button>`;
-  addMenu.innerHTML = html;
+  // var addMenu = document.getElementById("addButton");
+  // var html = `<button id = "adminAdd" class="btn btn-outline-dark" type="submit" onclick="displayAddMenu()">Add</button>`;
+  // addMenu.innerHTML = html;
 }
 
 window.addGarden = addGarden;
@@ -161,7 +161,7 @@ window.getHighestId = getHighestId;
 async function addPhoto(event){
   var selectedFile = event.target.files[0];
   var data = await getHighestId()
-  uploadGarden(selectedFile, data[0].plantID);
+  uploadGarden(selectedFile, data[0].gardenID);
 }
 
 window.addPhoto = addPhoto;
