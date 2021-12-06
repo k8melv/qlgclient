@@ -32,13 +32,12 @@
         <div class="container rounded bg-white mt-5 mb-5">
             <div class="row">
                 <div class="col-md-3 border-right">
-                    <!-- <div class="d-flex flex-column align-items-center text-center p-3 py-5" id="mainImage"><img class="rounded-circle mt-5" width="300px" src="./assets/ElephantLogo.jpg"></div> -->
                     <div class="container-profilepic card rounded-circle overflow-hidden">
                         <div class="photo-preview card-img w-100 h-100"></div>
                         <div class="middle-profilepic text-center card-img-overlay d-none flex-column justify-content-center">
                             <div class="text-profilepic text-success">
                                 <i class="fas fa-camera"></i>
-                                <div class="text-profilepic">Change it</div>
+                                <div class="text-profilepic" data-toggle="modal" data-target="#uploadModal" onclick="changePhoto()">Change Photo</div>
                             </div>
                         </div>
                     </div>
@@ -61,6 +60,34 @@
                 </div>
             </div>
         </div>
+        </div>
+        </div>
+
+        <!-- <button type="button" class="btn btn-info" data-toggle="modal" data-target="#uploadModal">Upload file</button> -->
+
+        <!-- Modal -->
+        <div id="uploadModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+    
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">File upload form</h4>
+            </div>
+            <div class="modal-body">
+            <!-- Form -->
+            <form method='post' action='' enctype="multipart/form-data">
+                Select file : <input type='file' name='file' id='file' class='form-control' ><br>
+                <input type='button' class='btn btn-info' value='Upload' id='btn_upload'>
+            </form>
+    
+            <!-- Preview-->
+            <div id='preview'></div>
+            </div>
+    
+        </div>
+    
         </div>
         </div>
         <!-- Footer-->

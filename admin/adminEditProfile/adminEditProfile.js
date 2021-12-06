@@ -22,11 +22,11 @@ function populateFields(data){
     lname.innerHTML = html;
     
     var email = document.getElementById("email");
-    var html = `<div class='col-md-6'><label class='labels'>Position</label><input type='text' id="editEmail" class='form-control' placeholder='Email Address' value='${data[0].email}'></div>`;
+    var html = `<div class='col-md-6'><label class='labels'>Email Address</label><input type='text' id="editEmail" class='form-control' placeholder='Email Address' value='${data[0].email}'></div>`;
     email.innerHTML = html;
 
     var position = document.getElementById("adminPos");
-    var html = `<div class='col-md-6'><label class='labels'>Email Address</label><input type='text' id="editPosition" class='form-control' placeholder='Email Address' value='${data[0].position}'></div>`;
+    var html = `<div class='col-md-6'><label class='labels'>Position</label><input type='text' id="editPosition" class='form-control' placeholder='Email Address' value='${data[0].position}'></div>`;
     position.innerHTML = html;
 
     var date = document.getElementById("startDate");
@@ -65,4 +65,8 @@ function updateProfile(){
             alert("Something went wrong. Please try again");
         }
     })    
+}
+
+function changePhoto(){
+    
 }
