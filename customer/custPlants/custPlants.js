@@ -109,8 +109,8 @@ function removeProduct(id){
             break;
         }
     }
-    items = JSON.stringify(items);
-    sessionStorage.setItem('myCart', items);
+    // items = JSON.stringify(items);
+    // sessionStorage.setItem('myCart', items);
 
     // console.log(id);
     // let storageProducts = JSON.parse(sessionStorage.getItem('myCart'));
