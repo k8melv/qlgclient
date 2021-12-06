@@ -1,23 +1,31 @@
 const obj = JSON.parse(sessionStorage.getItem('user'));
 
-function populateFields(){
+const getCustomer = async () => {
+    const customer = `https://qlgapi.herokuapp.com/api/customer/${obj.email}`;
+    const response = await fetch(customer);
+    const data = await response.json();
+    populateFields(data);
+    return data;
+}
+
+function populateFields(data){
     var main = document.getElementById("mainImage");
-    var html = `<div class="d-flex flex-column align-items-center text-center p-3 py-5" id="mainImage"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">${obj.firstName}</span><span class="text-black-50">${obj.email}</span><span> </span></div>`
+    var html = `<div class="d-flex flex-column align-items-center text-center p-3 py-5" id="mainImage"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">${data[0].firstName}</span><span class="text-black-50">${data[0].email}</span><span> </span></div>`
     main.innerHTML = html;
 
     var fname = document.getElementById("fname");
-    var html = `<div class='col-md-6'><label class='labels'>First Name</label><input type='text' id="editFname" class='form-control' placeholder='First Name' value='${obj.firstName}'></div>`;
+    var html = `<div class='col-md-6'><label class='labels'>First Name</label><input type='text' id="editFname" class='form-control' placeholder='First Name' value='${data[0].firstName}'></div>`;
     fname.innerHTML = html;
     var lname = document.getElementById("lname");
-    var html = `<div class='col-md-6'><label class='labels'>Last Name</label><input type='text' id="editLname" class='form-control' placeholder='Last Name' value='${obj.lastName}'></div>`;
+    var html = `<div class='col-md-6'><label class='labels'>Last Name</label><input type='text' id="editLname" class='form-control' placeholder='Last Name' value='${data[0].lastName}'></div>`;
     lname.innerHTML = html;
     
     var email = document.getElementById("email");
-    var html = `<div class='col-md-6'><label class='labels'>Email Address</label><input type='text' id="editEmail" class='form-control' placeholder='Email Address' value='${obj.email}'></div>`;
+    var html = `<div class='col-md-6'><label class='labels'>Email Address</label><input type='text' id="editEmail" class='form-control' placeholder='Email Address' value='${data[0].email}'></div>`;
     email.innerHTML = html;
 
     var address = document.getElementById("aline1");
-    var html = `<div class='col-md-6'><label class='labels'>Address Line</label><input type='text' id="editAddress"class='form-control' placeholder='Address Line' value='${obj.billingAddress}'></div>`;
+    var html = `<div class='col-md-6'><label class='labels'>Address Line</label><input type='text' id="editAddress"class='form-control' placeholder='Address Line' value='${data[0].billingAddress}'></div>`;
     address.innerHTML = html;
 }
 
