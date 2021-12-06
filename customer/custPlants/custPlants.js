@@ -99,7 +99,7 @@ window.getCart = getCart;
 
 function removeProduct(id){
     var items = [];
-    items.push(JSON.parse(sessionStorage.getItem('myCart')));
+    items.push(sessionStorage.getItem('myCart'));
     console.log(items);
     for (var i =0; i< items.length; i++) {
         var item = items[i];
