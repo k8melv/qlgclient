@@ -100,11 +100,11 @@ window.getCart = getCart;
 function removeProduct(id){
     var items = JSON.parse(sessionStorage.getItem('myCart'));
     for (var i =0; i< items.length; i++) {
-        var items = JSON.parse(items[i]);
-        console.log(items.plantID);
-        if (items.plantID == id) {
-            console.log(items)
-            sessionStorage.removeItem('myCart', items);
+        var item = JSON.parse(items[i]);
+        console.log(item.plantID);
+        if (item.plantID == id) {
+            console.log(item)
+            sessionStorage.removeItem('myCart', item);
             // items.splice(i, 8);
             break;
         }
