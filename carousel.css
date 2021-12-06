@@ -13,6 +13,9 @@ body {
 .navbar-brand {
   min-height: auto;
 }
+.nav-link {
+  color: white;
+}
 #headerTitle {
   padding-left: 19%;
 }
