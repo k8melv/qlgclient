@@ -65,8 +65,8 @@ function displayAddMenu(){
     var addMenu = document.getElementById("addModal");
     var html = `<div class="modal-dialog"><div class="modal-content">`;
     html += `<div class="modal-header"><h5 class="modal-title" id="exampleModalLabel">Add Plant</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`;
-    html += `</div><div class="modal-body"><div>Plant Picture: <input class='input' type="file" value="Choose File" id="ppicture" accept='image/jpeg'></div><div>Plant Name: <input class='input' type="edit" placeholder="Enter Name" id="pname"></div><div>Location: <input class='input' type="edit" placeholder="Enter Location" id="plocation"></div><div>Water Needs: <input class='input' type="edit" placeholder="Enter Water Needs" id="pwater"></div><div>Sun Needs: <input class='input' type="edit" placeholder="Enter Sun Needs" id="psun"></div><div id="plantinfo">Plant Information: <input class='input' type="edit" placeholder="Enter Plant Information" id="pinfo"></div><div>Fun Fact: <input class='input' type="edit" placeholder="Enter Fun Fact" id="pfact"></div>`;
-    html += ` <div>Price: <input class='input' type="edit" placeholder="Enter Price" id="pprice"></div></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-primary" onclick="addPlant()">Add Plant</button>`;
+    html += `</div><div class="modal-body"><div style="font-weight: 650;">Plant Picture: <input class='form-control' type="file" value="Choose File" id="ppicture" accept='image/jpeg'></div><div style="font-weight: 650;">Plant Name: <input class='form-control' type="edit" placeholder="Enter Name" id="pname"></div><div style="font-weight: 650;">Location: <input class='form-control' type="edit" placeholder="Enter Location" id="plocation"></div><div style="font-weight: 650;">Water Needs: <input class='form-control' type="edit" placeholder="Enter Water Needs" id="pwater"></div><div style="font-weight: 650;">Sun Needs: <input class='form-control' type="edit" placeholder="Enter Sun Needs" id="psun"></div><div id="plantinfo" style="font-weight: 650;">Plant Information: <input class='form-control' type="edit" placeholder="Enter Plant Information" id="pinfo"></div><div style="font-weight: 650;">Fun Fact: <input class='form-control' type="edit" placeholder="Enter Fun Fact" id="pfact"></div>`;
+    html += ` <div style="font-weight: 650;">Price: <input class='form-control' type="edit" placeholder="Enter Price" id="pprice"></div></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-primary" onclick="addPlant()">Add Plant</button>`;
     html += `</div></div></div>`;
     addMenu.innerHTML = html;
 }
@@ -188,11 +188,4 @@ function confirmDelete(id){
         alert("This submission has been deleted");
         deleteSubmission(id);
     }
-} 
-
-
-    
-            
-        
-    
-
+}
