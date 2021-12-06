@@ -178,6 +178,7 @@ function sendOrderDatabase(){
             "Content-Type": 'application/json'
         },
         body: JSON.stringify({
+            customerID: obj.customerID,
             pastPurchases: cart
         })
     })
