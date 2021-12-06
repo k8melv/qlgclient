@@ -21,60 +21,57 @@
 
         <link rel="stylesheet" href="carousel.css">
     </head>
-    <body>
+    <body onload="handleHello()">
         <!-- Navigation-->
-        <nav id="stickyNav" class="navbar">
-            <div class="container  px-lg-5">
-                <a href="./landingPage.html"><img src="../../assets/ElephantLogo_Transparent.png" alt="navBarLogo" id="navBarLogo"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-
-                <!-- log in nav button -->
-                <li class="dropdown">
-                    <p class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" >Get Started</p>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="./landingPage.html">Returning Customer</a></li>
-                        <li><a class="dropdown-item" href="../../customer/custRegister/custRegister.html">New Customer</a></li>
-                        <li><a class="dropdown-item" href="../../admin/adminLogIn/index.html">Returning Admin</a></li>
-                        <li><a class="dropdown-item" href="../../admin/adminRegister/index.html">New Admin</a></li>
-                    </ul>
-                </li>
-                
-            </div>
-        </nav>
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-              <li data-target="#myCarousel" data-slide-to="1"></li>
-              <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
-          
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner">
-              <div class="item active">
-                <img src="./assets/BigLogo.jpg" alt="Los Angeles">
-              </div>
-          
-              <div class="item">
-                <img src="./assets/BigLogo_Transparent.png" alt="Chicago">
-              </div>
-          
-              <div class="item">
-                <img src="./assets/ElephantLogo.jpg" alt="New York">
-              </div>
-            </div>
-          
-            <!-- Left and right controls -->
-            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-              <span class="glyphicon glyphicon-chevron-left"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#myCarousel" data-slide="next">
-              <span class="glyphicon glyphicon-chevron-right"></span>
-              <span class="sr-only">Next</span>
-            </a>
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="container px-4 px-lg-5">
+              <a class="navbar-brand" href="../custCarousel/carousel.html"><img src="../../assets/ElephantLogo_Transparent.png" alt="navBarLogo" id="navBarLogo"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul style="margin-top: 20px;" class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                      <li class="nav-item"><a style="color: white;" class="nav-link active" aria-current="page" href="../adminPlants/adminPlants.html">Plants</a></li>
+                      <li class="nav-item"><a style="color: white;" class="nav-link active" aria-current="page" href="../adminGardens/adminGarden.html">Gardens</a></li>
+                      <li class="nav-item"><a style="color: white;" class="nav-link active" aria-current="page" href="../adminRegister/index.html">Reports</a></li>
+                  </ul>
+                  <img id="headerTitle" src="../../assets/title.png" alt="title" style="height: 50%; width: 50%;">
+                </div>
+                <form class="d-flex">
+                    <li id="hello" class="nav-item accountPageButton"><a class="nav-link active" aria-current="page" href="../custProfile/custProfile.html">Hello {#NAME}</a></li>
+                </form>
           </div>
+      </nav>
 
+      <div class="carousel_wrapper">
+        <div class="carousel">
+          <div class="slide one">
+            <img src="../../assets/Logo_Background.png" />
+          </div>
+          <div class="slide two">
+            <img src="../../assets/ogQuad.png" />
+          </div>
+          <div class="slide three">
+            <img src="../../assets/Kate.png" />
+          </div>
+          <div class="slide four">
+            <img src="../../assets/ogBDS.png" />
+          </div>
+          <div class="slide five">
+            <img src="../../assets/logo.png" />
+          </div>
+          <div class="slide six">
+            <img src="../../assets/Tim.png" />
+          </div>
+          <div class="slide seven">
+            <img src="../../assets/Quad.png" />
+          </div>
+          <div class="slide eight">
+            <img src="../../assets/" />
+          </div>
+          <div class="slide nine">
+            <img src="https://images.unsplash.com/photo-1446776709462-d6b525c57bd3" />
+          </div>
+        </div>
+      </div>
         <!-- Footer-->
         <footer>
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Quad Landscaping & Garden 2021</p></div>
