@@ -1,21 +1,4 @@
-/*!
-* Start Bootstrap - Shop Homepage v5.0.4 (https://startbootstrap.com/template/shop-homepage)
-* Copyright 2013-2021 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-shop-homepage/blob/master/LICENSE)
-*/
-// This file is intentionally blank
-// Use this file to add JavaScript to your project
 const obj = JSON.parse(sessionStorage.getItem('user'));
-console.log(obj);
-
-// const GetCustomers = async (id) => {
-//     const customerURL = `https://localhost:5001/api/customer/${id}`;
-//     const response = await fetch(customerURL);
-//     const data = await response.json();
-//     console.log(data);
-//     populateFields(data);
-//     return data;
-// }
 
 function populateFields(){
     var main = document.getElementById("mainImage");
@@ -40,8 +23,6 @@ function populateFields(){
     var date = document.getElementById("startDate");
     var html = `<div class='col-md-6'><label class='labels'>Start Date</label><input type='text' id="editDate" class='form-control' placeholder='Email Address' value='${obj.startDate}'></div>`;
     date.innerHTML = html;
-    
-
 }
 
 function updateProfile(){
