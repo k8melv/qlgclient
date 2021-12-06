@@ -76,6 +76,8 @@ async function addToCart(data){
     }
 }
 
+window.addToCart = addToCart;
+
 function getCart(){
     var cartHtml = document.getElementById("cartNum");
     var test = JSON.parse(sessionStorage.getItem("myCart"));
