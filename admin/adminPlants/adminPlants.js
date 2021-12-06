@@ -164,8 +164,8 @@ async function loadPlants(){
             html += `<div class="card-body p-4"> <div class="text-center"> <h5 class="fw-bold">${plantinformation.plantName}</h5>${plantinformation.price}</div></div>`
             html += `<div class="card-footer p-4 pt-0 border-top-0 bg-transparent"> <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View Plant Info</a></div></div></div></div></button>`
         }
-        html += "</div>";
-        document.getElementById("plantList").innerHTML = html;
+    html += "</div>";
+    document.getElementById("plantList").innerHTML = html;
 }
 
 const getSuggestions = async () => {
@@ -239,4 +239,4 @@ async function getPhoto(id){
     }
 }
 
-window.getPhoto = getPhoto
+window.getPhoto = getPhoto;
