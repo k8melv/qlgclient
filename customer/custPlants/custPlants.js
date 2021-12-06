@@ -101,23 +101,16 @@ function removeProduct(id){
     var items = JSON.parse(sessionStorage.getItem('myCart'));
     for (var i =0; i< items.length; i++) {
         var item = JSON.parse(items[i]);
-        console.log(item.plantID);
         if (item.plantID == id) {
             console.log(item)
-            items.removeItem(item);
             sessionStorage.removeItem('myCart', item);
-            // items.splice(i, 8);
             break;
         }
     }
-    // items = JSON.stringify(items);
-    // sessionStorage.setItem('myCart', items);
+    items = JSON.stringify(items);
+    console.log(items);
+    sessionStorage.setItem('myCart', items);
 
-    // console.log(id);
-    // let storageProducts = JSON.parse(sessionStorage.getItem('myCart'));
-    // let products = storageProducts.filter(product => product.id == id);
-    // sessionStorage.splice('myCart', JSON.stringify(products));
-    // console.log(JSON.parse(sessionStorage.getItem('myCart')));
     getCart();
     cartModal();
 }
