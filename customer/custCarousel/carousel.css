@@ -1,3 +1,88 @@
+#navBarLogo {
+  width: 80px;
+  height: 80px;
+}
+
+.dropdown {
+  font-size: 20px;
+  list-style-type: none;
+}
+
+#navbarDropdown {
+  list-style-type: none;
+}
+
+/* sticky nav bar */
+nav > * {
+  background-color: transparent;
+  position: fixed;
+  padding-top: 50px;
+}
+
+.sticky {
+  background-color: #990000;
+}
+
+footer > * {
+  padding: 100px 0 100px 50px;
+}
+
+#navbarDropdown {
+  color: white;
+  opacity: 1;
+}
+.dropdown-menu {
+  color: white;
+  background-color: white;
+  opacity: 1;
+}
+.dropdown-menu:hover {
+  color: white;
+  background-color: white;
+  opacity: 1;
+}
+.dropdown-item:hover {
+  background-color: #990000;
+  width: 80%;
+  opacity: 1;
+}
+
+/* 321 Project Code Begins Here */
+#navBarLogo {
+  width: 70px;
+  height: 70px;
+}
+.accountPageButton {
+  list-style-type: none;
+}
+
+.container {
+  min-width: -webkit-fill-available;
+}
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+}
+.middle {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.text {
+  background-color: #04aa6d;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
 /* 321 Project Code Begins Here */
 body {
   background-color: #2a3033;
