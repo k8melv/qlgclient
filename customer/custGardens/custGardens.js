@@ -81,9 +81,8 @@ function getCart(){
   var test = JSON.parse(sessionStorage.getItem("myCart"));
   try{
       if (test !== 'null'){
-          let length = Object.keys(test).length;
-          console.log(length + " getCart method");
-          cartHtml.innerHTML = length;
+        let length = Object.keys(test).length;
+        cartHtml.innerHTML = length;
       } 
   }   
   catch{
