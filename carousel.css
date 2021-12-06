@@ -7,6 +7,12 @@ body {
   height: 80px;
   margin-left: 10%;
 }
+.navbar {
+  min-height: 100px;
+}
+.navbar-brand {
+  min-height: auto;
+}
 #headerTitle {
   padding-left: 19%;
 }
