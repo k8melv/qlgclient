@@ -95,7 +95,7 @@ async function loadGardens(){
     for (const garden of json){
       var photoUrl = '../../assets/ElephantLogo_Transparent.png';
       try {
-        photoUrl = await getPhoto(garden.plantID);
+        photoUrl = await getPhoto(garden.gardenID);
       } catch (error) {
         console.log(error);
       }
