@@ -51,7 +51,7 @@ else{
     var cart = [];
 } 
 
-async function addToCart(data){
+function addToCart(data){
     var test = JSON.parse(sessionStorage.getItem("myCart"));
     if (test === null || test === "null"){
         cart = [];
@@ -78,7 +78,7 @@ async function addToCart(data){
     }
 }
 
-window.addToCart = addToCart;
+// window.addToCart = addToCart;
 
 function getCart(){
     var cartHtml = document.getElementById("cartNum");
