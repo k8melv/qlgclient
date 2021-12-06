@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js";
-import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-storage.js";
+import { getStorage, ref, uploadBytes, getDownloadURL, uploadGarden } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-storage.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -20,9 +20,12 @@ const app = initializeApp(firebaseConfig);
 const storage = getStorage(app);
 
 async function uploadImage(value, id){
-    console.log(id)
     const storageRef = ref(storage,`images/plant-${id}.jpg`);
     await uploadBytes(storageRef, value);
 } 
+async function uploadGarden(value, id){
+    const storageRef = ref(storage,`garden/garden-${id}.jpg`);
+    await uploadBytes(storageRef, value);
+}
 
-export { uploadImage, ref, getDownloadURL, storage }
+export { uploadImage, ref, getDownloadURL, storage, uploadGarden }
