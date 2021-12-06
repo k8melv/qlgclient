@@ -95,7 +95,7 @@ function getCart(){
     }
 }
 
-// window.getCart = getCart;
+window.getCart = getCart;
 
 function removeProduct(id){
     var items = JSON.parse(sessionStorage.getItem('myCart'));
