@@ -142,9 +142,9 @@ function addGarden(pic){
       addPhoto(pic);
       loadGardens();
   })
-  var addMenu = document.getElementById("addButton");
-  var html = `<button id = "adminAdd" class="btn btn-outline-dark" type="submit" onclick="displayAddMenu()">Add</button>`;
-  addMenu.innerHTML = html;
+  // var addMenu = document.getElementById("addButton");
+  // var html = `<button id = "adminAdd" class="btn btn-outline-dark" type="submit" onclick="displayAddMenu()">Add</button>`;
+  // addMenu.innerHTML = html;
 }
 
 window.addGarden = addGarden;
@@ -161,7 +161,7 @@ window.getHighestId = getHighestId;
 async function addPhoto(event){
   var selectedFile = event.target.files[0];
   var data = await getHighestId()
-  uploadGarden(selectedFile, data[0].plantID);
+  uploadGarden(selectedFile, data[0].gardenID);
 }
 
 window.addPhoto = addPhoto;
