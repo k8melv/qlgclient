@@ -173,7 +173,7 @@ h1 {
   width: 280px;
   height: 175px;
   border: 3px inset rgba(47, 115, 201, 0.75);
-  box-shadow: 0 0 15px 3px rgba(110, 72, 221, 0.9);
+  /* box-shadow: 0 0 15px 3px rgba(110, 72, 221, 0.9); */
 }
 
 .slide.one {
