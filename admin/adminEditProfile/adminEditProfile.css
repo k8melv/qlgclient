@@ -180,6 +180,8 @@ span {
 .container-profilepic {
   width: 150px;
   height: 150px;
+  margin-top: 150px;
+  margin-left: 50px;
 }
 .photo-preview {
   background-image: url(https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80);
