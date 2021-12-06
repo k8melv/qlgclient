@@ -19,8 +19,8 @@ function displayModal(data){
     var garden = document.getElementById("exampleModal");
     var html = `<div class="modal-dialog"><div class="modal-content">`;
     html += `<div class="modal-header"><h5 class="modal-title" id="exampleModalLabel">${data[0].plantName}</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`;
-    html += `</div><div class="modal-body"><img class="modalImg" src="./assets/plant-${data[0].plantID}.jpeg" alt="Picture" width="300" height="200"/><div>Location: ${data[0].location}</div><div>Water Needs: ${data[0].numTimesWater}</div><div>Sun Needs: ${data[0].sunNeeds}</div><div id="plantinfo">Plant Information: ${data[0].information}</div><div>Fun Fact: ${data[0].funFact}</div>`;
-    html += `<div>Price: ${data[0].price}</div></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-primary" onclick="GetPlantCart(${data[0].plantID})">Add to Cart</button>`;
+    html += `</div><div class="modal-body"><img class="modalImg" src="./assets/plant-${data[0].plantID}.jpeg" alt="Picture" width="300" height="200"/><div style="font-weight: 650">Location: <p style="font-weight: 400">${data[0].location}</p></div><div style="font-weight: 650">Water Needs: <p style="font-weight: 400">${data[0].numTimesWater}</p></div><div style="font-weight: 650">Sun Needs: <p style="font-weight: 400">${data[0].sunNeeds}</p></div><div id="plantinfo" style="font-weight: 650">Plant Information: <p style="font-weight: 400">${data[0].information}</p></div><div style="font-weight: 650">Fun Fact: <p style="font-weight: 400">${data[0].funFact}</p></div>`;
+    html += `<div style="font-weight: 650">Price: <p style="font-weight: 400">${data[0].price}</p></div></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-primary" onclick="GetPlantCart(${data[0].plantID})">Add to Cart</button>`;
     html += `</div></div></div>`;
     garden.innerHTML = html;
 }
