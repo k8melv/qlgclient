@@ -1,5 +1,4 @@
 const obj = JSON.parse(sessionStorage.getItem('user'));
-console.log(obj);
 
 function populateFields(){
     var main = document.getElementById("mainImage");
@@ -7,24 +6,22 @@ function populateFields(){
     main.innerHTML = html;
 
     var fname = document.getElementById("fname");
-    var html = `<div class='col-md-6'><label class='labels'>First Name</label><input type='text' id="editFirst" class='form-control' placeholder='First Name' value='${obj.firstName}'></div>`;
+    var html = `<div class='col-md-6'><label class='labels'>First Name</label><input type='text' id="editFirst" class='form-control' placeholder='First Name' value='${obj.firstName}' readonly></div>`;
     fname.innerHTML = html;
 
     var lname = document.getElementById("lname");
-    var html = `<div class='col-md-6'><label class='labels'>Last Name</label><input type='text'  id="editLast" class='form-control' placeholder='Last Name' value='${obj.lastName}'></div>`;
+    var html = `<div class='col-md-6'><label class='labels'>Last Name</label><input type='text'  id="editLast" class='form-control' placeholder='Last Name' value='${obj.lastName}' readonly></div>`;
     lname.innerHTML = html;
     
     var email = document.getElementById("email");
-    var html = `<div class='col-md-6'><label class='labels'>Email Address</label><input type='text' id="editEmail" class='form-control' placeholder='Email Address' value='${obj.email}'></div>`;
+    var html = `<div class='col-md-6'><label class='labels'>Email Address</label><input type='text' id="editEmail" class='form-control' placeholder='Email Address' value='${obj.email}' readonly></div>`;
     email.innerHTML = html;
 
     var position = document.getElementById("adminPos");
-    var html = `<div class='col-md-6'><label class='labels'>Position</label><input type='text'  id="editPosition" class='form-control' placeholder='Unknown' value='${obj.position}'></div>`;
+    var html = `<div class='col-md-6'><label class='labels'>Position</label><input type='text'  id="editPosition" class='form-control' placeholder='Unknown' value='${obj.position}' readonly></div>`;
     position.innerHTML = html;
 
     var date = document.getElementById("startDate");
-    var html = `<div class='col-md-6'><label class='labels'>Start Date</label><input type='text' id="editDate" class='form-control' placeholder='Email Address' value='${obj.startDate}'></div>`;
+    var html = `<div class='col-md-6'><label class='labels'>Start Date</label><input type='text' id="editDate" class='form-control' placeholder='Email Address' value='${obj.startDate}' readonly></div>`;
     date.innerHTML = html;
-    
-
 }
