@@ -1,3 +1,5 @@
+import { ref, getDownloadURL, storage } from "../../firebase/firebase.js";
+
 const obj = JSON.parse(sessionStorage.getItem('user'));
 
 function handleHello(){
@@ -7,6 +9,8 @@ function handleHello(){
   loadGardens()
 }
 
+window.handleHello = handleHello;
+
 const GetGarden = async (id) => {
   const gardenURL = `https://qlgapi.herokuapp.com/api/garden/${id}`;
   const response = await fetch(gardenURL);
@@ -15,11 +19,14 @@ const GetGarden = async (id) => {
   return data;
 }
 
+window.GetGarden = GetGarden;
+
 function displayModal(data){
+  const photoUrl = await getPhoto(data[0].gardenID);
   var garden = document.getElementById("exampleModal");
   var html = `<div class="modal-dialog"><div class="modal-content">`;
   html += `<div class="modal-header"><h5 class="modal-title" id="exampleModalLabel">${data[0].gardenType}</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`;
-  html += `</div><div class="modal-body"><img class="modalImg" src="./assets/garden-${data[0].gardenID}.jpg" alt="House Plants" width="300" height="200"/><div id="gardeninfo">${data[0].information}</div>`;
+  html += `</div><div class="modal-body"><img class="modalImg" src="${photoUrl}" alt="../../assets/BigLogo_Transparent.png" width="300" height="200"/><div id="gardeninfo">${data[0].information}</div>`;
   html += `</div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>`;
   html += `</div></div></div>`;
   garden.innerHTML = html;
@@ -32,6 +39,8 @@ const slider = async (value) => {
   getSlider(data, value);
   return data;
 }
+
+window.slider = slider;
 
 function getSlider(data, value){
   for (var i=1;i<=data.length;i++){
@@ -46,23 +55,25 @@ function getSlider(data, value){
   }
 }
 
-function loadGardens(){
+async function loadGardens(){
   const gardensURL = "https://qlgapi.herokuapp.com/api/garden";
-  fetch(gardensURL).then(function(response){
-      return response.json();
-  }).then(function(json){
-    var html = `<div class='gardens'>`
-    json.forEach((garden) => {
-        html += `<div class="garden">`;
-        html += `<button id="modalButton-${garden.gardenID}" type="button" class="modalButton" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="GetGarden(${garden.gardenID})">`
-        html += `<img id="myImg" src="./assets/garden-${garden.gardenID}.jpg" alt="${garden.gardenType}" width="300" height="200"/><h3 class="gardenText">${garden.gardenType}</h3></button>`
-        html += "</div>";
-      });
+  var response = await fetch(gardensURL);
+  const json = await response.json();
+    var html = `<div class='gardens'>`;
+    for (const garden of json){
+      var photoUrl = '../../assets/ElephantLogo_Transparent.png';
+      try {
+        photoUrl = await getPhoto(garden.gardenID);
+      } catch (error) {
+        console.log(error);
+      }
+      html += `<div class="garden">`;
+      html += `<button id="modalButton-${garden.gardenID}" type="button" class="modalButton" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="GetGarden(${garden.gardenID})">`
+      html += `<img id="myImg" src="${photoUrl}" alt="../../assets/ElephantLogo_Transparent.png" width="300" height="200"/><h3 class="gardenText">${garden.gardenType}</h3></button>`
       html += "</div>";
-      document.getElementById("gardenSection").innerHTML = html;
-  }).catch(function(error){
-      console.log(error);
-  })
+    }
+  html += "</div>";
+  document.getElementById("gardenSection").innerHTML = html;
 }
 
 function getCart(){
@@ -79,6 +90,8 @@ function getCart(){
       cartHtml.innerHTML = '0';
   }
 }
+
+window.getCart = getCart
 
 function removeProduct(id){
   console.log(id + " made it to remove")
@@ -103,6 +116,8 @@ function removeProduct(id){
   getCart();
   cartModal();
 }
+
+window.removeProduct = removeProduct;
 
 function cartModal(){
 var cart = JSON.parse(sessionStorage.getItem("myCart"));
@@ -147,3 +162,16 @@ function checkoutModal(){
       document.getElementById("checkoutModal").innerHTML = html;
   }
 }
+
+window.checkoutModal = checkoutModal;
+
+async function getPhoto(id){
+  try {
+    const thisUrl =  await getDownloadURL(ref(storage, `garden/garden-${id}.jpg`))
+    return thisUrl;
+  } catch (error) {
+    console.log("Could not get photos");
+  }
+}
+
+window.getPhoto = getPhoto;
