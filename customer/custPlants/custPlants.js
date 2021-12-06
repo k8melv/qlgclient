@@ -104,6 +104,7 @@ function removeProduct(id){
         console.log(item.plantID);
         if (item.plantID == id) {
             console.log(item)
+            items.removeItem(item);
             sessionStorage.removeItem('myCart', item);
             // items.splice(i, 8);
             break;
