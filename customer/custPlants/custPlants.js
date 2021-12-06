@@ -98,16 +98,18 @@ function getCart(){
 window.getCart = getCart;
 
 function removeProduct(id){
-    var items = JSON.parse(sessionStorage.getItem('myCart'));
+    var items = [];
+    items.push(JSON.parse(sessionStorage.getItem('myCart')));
+    console.log(items);
     for (var i =0; i< items.length; i++) {
         var item = JSON.parse(items[i]);
-        console.log(item)
         if (item.plantID == id) {
             console.log(item)
-            sessionStorage.removeItem('myCart', item);
+            items.splice(item.plantID, 1);
             break;
         }
     }
+    sessionStorage.setItem('myCart', items)
     //items = JSON.stringify(items);
     // console.log(items);
     //sessionStorage.setItem('myCart', items);
