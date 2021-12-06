@@ -101,7 +101,7 @@ async function loadGardens(){
       }
       html += `<div class="garden">`;
       html += `<button id="modalButton-${garden.gardenID}" type="button" class="modalButton" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="GetGarden(${garden.gardenID})">`
-      html += `<img id="myImg" src="${photoUrl}" alt="${garden.gardenType}" width="300" height="200"/><h3 class="gardenText">${garden.gardenType}</h3></button>`
+      html += `<img id="myImg" src="${photoUrl}" alt="../../assets/ElephantLogo_Transparent.png" width="300" height="200"/><h3 class="gardenText">${garden.gardenType}</h3></button>`
       html += "</div>";
     }
   html += "</div>";
