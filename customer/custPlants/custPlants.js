@@ -144,7 +144,7 @@ function cartModal(){
         cart.forEach((data) => {
             var parsedData = JSON.parse(data);
             console.log(parsedData)
-            html += `<p>${parsedData.plantName}: ${parsedData.price}<button id='removeButton' type="button" class="btn btn-danger" onclick='removeProduct(${parsedData.plantID})'>Remove</button></p>`
+            html += `<p>${parsedData[0].plantName}: ${parsedData[0].price}<button id='removeButton' type="button" class="btn btn-danger" onclick='removeProduct(${parsedData[0].plantID})'>Remove</button></p>`
         });
         html += `</div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#checkoutModal" onclick='checkoutModal()'>Checkout</button></div></div>`
         html += `</div>`
