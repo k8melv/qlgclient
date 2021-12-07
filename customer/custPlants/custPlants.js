@@ -195,7 +195,7 @@ window.checkoutSubmit = checkoutSubmit;
 
 function sendOrderDatabase(){
     var cart = JSON.parse(sessionStorage.getItem("myCart"));
-    const customerApiUrl = `https://qlgapi.herokuapp.com/api/customer/${obj.email}`;
+    const customerApiUrl = `https://qlgapi.herokuapp.com/api/customer/${obj.customerID}`;
     fetch(customerApiUrl, {
         method: "PUT",
         headers: {
