@@ -116,7 +116,7 @@ function removeProduct(id){
             break;
         }
     }
-    sessionStorage.setItem('myCart', JSON.parse(items));
+    sessionStorage.setItem('myCart', JSON.stringify(items));
     //items = JSON.stringify(items);
     // console.log(items);
     //sessionStorage.setItem('myCart', items);
