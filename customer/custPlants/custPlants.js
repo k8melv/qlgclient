@@ -131,7 +131,6 @@ window.removeProduct = removeProduct;
 function cartModal(){
     var cart = []
 	cart.push(sessionStorage.getItem("myCart"));
-    console.log(cart);
     if (cart === null || cart === "null"){
         var html = `<div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Cart</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`
         html += `</div><div class="modal-body"><p>Your cart is empty</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-primary">Checkout</button>`
@@ -143,7 +142,6 @@ function cartModal(){
         html += `</div><div class="modal-body">`
         cart.forEach((data) => {
             var parsedData = JSON.parse(data);
-            console.log(parsedData)
             html += `<p>${parsedData[0].plantName}: ${parsedData[0].price}<button id='removeButton' type="button" class="btn btn-danger" onclick='removeProduct(${parsedData[0].plantID})'>Remove</button></p>`
         });
         html += `</div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#checkoutModal" onclick='checkoutModal()'>Checkout</button></div></div>`
@@ -155,7 +153,8 @@ function cartModal(){
 window.cartModal = cartModal;
 
 function checkoutModal(){
-    var cart = JSON.parse(sessionStorage.getItem("myCart"));
+    var cart = []
+	cart.push(sessionStorage.getItem("myCart"));
     if (cart === null || cart === "null"){
         alert("Your cart is empty! Add plants before checking out");
     }
@@ -165,8 +164,8 @@ function checkoutModal(){
         var total;
         cart.forEach((data) => {
             var parsedData = JSON.parse(data);
-            total = parsedData["price"];
-            html += `<p>${parsedData["plantName"]}: ${parsedData["price"]}<button id='removeButton' type="button" class="btn btn-danger" onclick='removeProduct(${parsedData["plantID"]})'>Remove</button></p>`
+            total += parsedData[0].price;
+            html += `<p>${parsedData[0].plantName}: ${parsedData[0].price}<button id='removeButton' type="button" class="btn btn-danger" onclick='removeProduct(${parsedData[0].plantID})'>Remove</button></p>`
         });
         html += `<p>Total: ${total}</p>`
         html += `<div class="col-md-6"><label class="labels">First Name:</label><input id="fname" type="text" class="form-control" placeholder="${obj.firstName}" value=""></div>`
