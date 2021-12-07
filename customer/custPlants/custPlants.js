@@ -3,11 +3,16 @@ import { ref, getDownloadURL, storage } from "../../firebase/firebase.js";
 const obj = JSON.parse(sessionStorage.getItem('user'));
 
 function handleHello(){
-    console.log(obj)
-    var helloHtml = document.getElementById('hello');
-    var html = `<li id="hello" class="nav-item accountPageButton"><a class="nav-link active" aria-current="page" href="../custProfile/custProfile.html">Hello ${obj.firstName}</a></li>`;
-    helloHtml.innerHTML = html;
-    loadPlants();
+    if (obj.firstName == null || obj.firstName == "null"){
+        alert("You must log in first");
+        window.location.replace("../../carousel.html")
+    }
+    else{
+        var helloHtml = document.getElementById('hello');
+        var html = `<li id="hello" class="nav-item accountPageButton"><a class="nav-link active" aria-current="page" href="../custProfile/custProfile.html">Hello ${obj.firstName}</a></li>`;
+        helloHtml.innerHTML = html;
+        loadPlants();
+    }
 }
 
 window.handleHello = handleHello;
