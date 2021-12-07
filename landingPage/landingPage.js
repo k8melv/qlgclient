@@ -31,7 +31,7 @@ async function loginOnClick(json) {
                 var user = json[0];
                 sessionStorage.setItem('user', JSON.stringify(user));
 
-                window.location.replace("../customer/custProfile/custProfile.html");
+                window.location.replace("../customer/custCarousel/carousel.html");
             }
         }
     }

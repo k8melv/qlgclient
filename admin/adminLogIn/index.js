@@ -38,7 +38,7 @@ async function loginOnClick(json) {
                 var user = json[0];
                 sessionStorage.setItem('user', JSON.stringify(user));
 
-                window.location.replace("../adminProfile/adminProfile.html");
+                window.location.replace("../adminCarousel/carousel.html");
             }
         }
     }
