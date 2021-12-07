@@ -104,15 +104,14 @@ function getCart(){
 window.getCart = getCart;
 
 function removeProduct(id){
-    var items = [];
-    items.push(sessionStorage.getItem('myCart'));
+    var items = JSON.parse(sessionStorage.getItem('myCart'));
     console.log(items);
     for (var i =0; i< items.length; i++) {
         var item = items[i];
-        console.log(items[i])
-        if (item.plantID == id) {
+        console.log(item)
+        if (item[i].plantID == id) {
             console.log(item)
-            items.splice(item.plantID, 1);
+            items.splice(item[i], 1);
             console.log(items);
             break;
         }
@@ -219,11 +218,9 @@ function sendOrderDatabase(){
     })
     .then((response)=>{
         console.log(response); 
-        
+        sessionStorage.removeItem('myCart');
     })
 }
-
-// window.sendOrderDatabase = sendOrderDatabase;
 
 async function loadPlants(){
     const allPlantsApiUrl = "https://qlgapi.herokuapp.com/api/plantinformation";
