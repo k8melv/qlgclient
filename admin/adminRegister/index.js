@@ -8,15 +8,15 @@ function registerAccount(){
     const position = document.getElementById(`position`).value;
 
     var emailCheck = email.split('@');
-    console.log(emailCheck[1]);
-    if (emailCheck[1] !== 'qlg.com'){
-        var errorMessage = document.getElementById("errorMsg");
-        var html = `You are not an admin. Please register through the <a href="../../customer/custRegister/custRegister.html">customer registration</a>`;
-        errorMessage.innerHTML=html;
-    }
-    else if (firstName == null || firstName == "" || lastName == null || lastName == "" || email == null || email == "" || password == null || password == "" || date == null || date == "" || position == null || position == ""){
+
+    if (firstName == null || firstName == "" || lastName == null || lastName == "" || email == null || email == "" || password == null || password == "" || date == null || date == "" || position == null || position == ""){
         var errorMessage = document.getElementById("errorMsg");
         var html = "You must fill out all information";
+        errorMessage.innerHTML=html;
+    }
+    else if (emailCheck[1] !== 'qlg.com'){
+        var errorMessage = document.getElementById("errorMsg");
+        var html = `You are not an admin. Please register through the <a href="../../customer/custRegister/custRegister.html">customer registration</a>`;
         errorMessage.innerHTML=html;
     }
     else{
@@ -43,9 +43,14 @@ function registerAccount(){
             })
         }
         else{
-            var errorMessage = document.getElementById("errorMsg");
-            var html = "You must agree to the Terms and Conditions before registering your account.";
-            errorMessage.innerHTML=html;
+            if (document.getElementById("errorMsg") == "You must agree to the Terms and Conditions before registering your account."){
+
+            }
+            else{
+                var errorMessage = document.getElementById("errorMsg");
+                var html = "You must agree to the Terms and Conditions before registering your account.";
+                errorMessage.innerHTML=html;
+            }
         }
     }
 }
