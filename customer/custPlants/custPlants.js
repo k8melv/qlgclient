@@ -122,7 +122,7 @@ window.removeProduct = removeProduct;
 
 function cartModal(){
 	var cart = JSON.parse(sessionStorage.getItem("myCart"));
-    if (cart === null || cart === "null" || cart === "" || cart === []){
+    if (cart === null || cart === "null"){
         var html = `<div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Cart</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`
         html += `</div><div class="modal-body"><p>Your cart is empty</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-primary">Checkout</button>`
         html += `</div></div></div>`
@@ -158,7 +158,7 @@ function checkoutModal(){
             var price = p.split("$");
             console.log(price);
             total += parseFloat(price[1]);
-            html += `<p>${parsedData["plantName"]}: ${parsedData["price"]}<button id='removeButton' type="button" class="btn btn-danger" onclick='removeProduct(${parsedData["plantID"]})'>Remove</button></p>`
+            html += `<p>${parsedData["plantName"]}: ${parsedData["price"]}<button id='removeButton' type="button" class="btn btn-danger" onclick='removeProductCheckout(${parsedData["plantID"]})'>Remove</button></p>`
         });
         html += `<p>Total: $${Math.round(total*100)/100}</p>`
         html += `<div class="col-md-6"><label class="labels">First Name:</label><input id="fname" type="text" class="form-control" placeholder="${obj.firstName}" value="${obj.firstName}"></div>`
@@ -175,6 +175,22 @@ function checkoutModal(){
 }
 
 window.checkoutModal = checkoutModal;
+
+function removeProductCheckout(id){
+    var items = JSON.parse(sessionStorage.getItem('myCart'));
+    for (var i =0; i< items.length; i++) {
+        var item = items[i];
+        if (item.plantID == id) {
+            items.splice(i, 1);
+            break;
+        }
+    }
+    sessionStorage.setItem('myCart', JSON.stringify(items));
+    getCart();
+    checkoutModal();
+}
+
+window.removeProduct = removeProductCheckout;
 
 function checkoutSubmit(){
     var fname = document.getElementById('fname').value;
