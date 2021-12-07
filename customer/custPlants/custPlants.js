@@ -122,7 +122,7 @@ window.removeProduct = removeProduct;
 
 function cartModal(){
 	var cart = JSON.parse(sessionStorage.getItem("myCart"));
-    if (cart === null || cart === "null" || cart == []){
+    if (cart === null || cart === "null" || cart === "" || cart === []){
         var html = `<div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Cart</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`
         html += `</div><div class="modal-body"><p>Your cart is empty</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-primary">Checkout</button>`
         html += `</div></div></div>`
