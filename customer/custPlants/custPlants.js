@@ -106,12 +106,10 @@ window.getCart = getCart;
 
 function removeProduct(id){
     var items = JSON.parse(sessionStorage.getItem('myCart'));
-    console.log(items);
     for (var i =0; i< items.length; i++) {
         var item = items[i];
         if (item.plantID == id) {
-            items.splice(item, 1);
-            console.log(items);
+            items.splice(i, 1);
             break;
         }
     }
