@@ -41,9 +41,14 @@ function registerAccount(){
             })
         }
         else{
-            var errorMessage = document.getElementById("errorMsg");
-            var html = "You must agree to the Terms and Conditions before registering your account.";
-            errorMessage.innerHTML=html;
+            if (document.getElementById("errorMsg").innerHTML=="You must agree to the Terms and Conditions before registering your account."){
+
+            }
+            else{
+                var errorMessage = document.getElementById("errorMsg");
+                var html = "You must agree to the Terms and Conditions before registering your account.";
+                errorMessage.innerHTML=html;
+            }
         }
     }
 }
