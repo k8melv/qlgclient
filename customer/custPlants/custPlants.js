@@ -204,7 +204,16 @@ function sendOrderDatabase(){
         },
         body: JSON.stringify({
             customerID: obj.customerID,
-            pastPurchases: cart
+            firstName: obj.firstName,
+            lastName: obj.lastName,
+            birthdate: obj.birthdate,
+            email: obj.email,
+            password: obj.password,
+            creditcard: " ",
+            shippingaddress: obj.shippingaddress,
+            billingaddress: obj.billingaddress,
+            pastPurchases: cart,
+            status: obj.status
         })
     })
     .then((response)=>{
