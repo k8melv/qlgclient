@@ -1,11 +1,3 @@
-/*!
-* Start Bootstrap - Shop Homepage v5.0.4 (https://startbootstrap.com/template/shop-homepage)
-* Copyright 2013-2021 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-shop-homepage/blob/master/LICENSE)
-*/
-// This file is intentionally blank NOT ANYMORE!!
-// Use this file to add JavaScript to your project. NO YOU DO IT!
-
 // Get the modal
 var modal = document.getElementById('myModal');
 
@@ -37,8 +29,6 @@ img.onclick = function(){
     advice.innerHTML = `Advice: ${adviceLabel}`;
     calculator2Database();
   }
-  
-
 }
 
 function calculator2Database(){
@@ -62,10 +52,7 @@ function calculator2Database(){
     .then((response)=>{
         console.log(response);
     })
-
-
 }
-
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
@@ -124,7 +111,6 @@ function calculateAdvice(){
   return advice;
 }
 
-
 function question1(id){
   answer1=document.getElementById(id).innerHTML;
   if(id=="q1c1"){imageID=`./assets/plant-1.jpeg`;}
@@ -136,6 +122,7 @@ function question1(id){
   counter++;
 
 }
+
 function question2(id){
   counter++;
   answer2=document.getElementById(id).innerHTML;
@@ -156,6 +143,7 @@ function question2(id){
     answer2="1";
   }
 }
+
 function question3(id){
   counter++;
   answer3=document.getElementById(id).innerHTML;
@@ -176,6 +164,7 @@ function question3(id){
     answer3="1";
   }
 }
+
 function question4(id){
   counter++;
   answer4=document.getElementById(id).innerHTML;

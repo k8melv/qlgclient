@@ -359,6 +359,9 @@ button:hover {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
   background-color: rgb(0, 0, 0); /* Fallback color */
   background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
 }
@@ -442,7 +445,7 @@ nav > * {
 #activePage {
   color: #990000;
 }
-#calcAgain > *{
+#calcAgain > * {
   margin-left: 44%;
   margin-top: -20px;
   font-size: 15px;
