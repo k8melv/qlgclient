@@ -159,10 +159,11 @@ function checkoutModal(){
     else{
         var html = `<div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Checkout</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`
         html += `</div><div class="modal-body">`
-        var total = 0;
+        let total = 0;
         cart.forEach((data) => {
             var parsedData = data;
-            total += parsedData["price"];
+            var price = parsedData[price].split('$');
+            total += parseInt(price[1]);
             html += `<p>${parsedData["plantName"]}: ${parsedData["price"]}<button id='removeButton' type="button" class="btn btn-danger" onclick='removeProduct(${parsedData["plantID"]})'>Remove</button></p>`
         });
         html += `<p>Total: ${total}</p>`
