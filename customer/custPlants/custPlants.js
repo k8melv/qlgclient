@@ -73,6 +73,7 @@ function addToCart(data){
         cartHtml.innerHTML = length;
     }
     else{
+        cart = JSON.parse(sessionStorage.getItem("myCart"));
         var cartHtml = document.getElementById("cartNum");
         var productName = data[0].plantName;
     
