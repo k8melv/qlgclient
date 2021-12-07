@@ -27,5 +27,10 @@ async function uploadGarden(value, id){
     const storageRef = ref(storage,`garden/garden-${id}.jpg`);
     await uploadBytes(storageRef, value);
 }
+async function uploadProfile(value, email){
+    const storageRef = ref(storage,`profile/propic-${email}.jpg`);
+    await uploadBytes(storageRef, value);
+}
 
-export { uploadImage, ref, getDownloadURL, storage, uploadGarden }
+
+export { uploadImage, ref, getDownloadURL, storage, uploadGarden, uploadProfile }
