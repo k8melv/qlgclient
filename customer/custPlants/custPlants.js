@@ -51,7 +51,7 @@ const GetPlantCart = async (id) => {
 window.GetPlantCart = GetPlantCart;
 
 if (sessionStorage.getItem("myCart")){
-    var cart = sessionStorage.getItem("myCart");
+    var cart = JSON.parse(sessionStorage.getItem("myCart"));
 } 
 else{
     var cart = [];
