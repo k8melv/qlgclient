@@ -1,3 +1,5 @@
+import { uploadProfile, ref, getDownloadURL, storage } from "../../firebase/firebase.js";
+
 const obj = JSON.parse(sessionStorage.getItem('user'));
 
 const getCustomer = async () => {
@@ -8,9 +10,13 @@ const getCustomer = async () => {
     return data;
 }
 
-function populateFields(data){
+window.getCustomer = getCustomer;
+
+async function populateFields(data){
+    const photoUrl = await getPhoto(data[0].email)
     var main = document.getElementById("mainImage");
-    var html = `<div class="d-flex flex-column align-items-center text-center p-3 py-5" id="mainImage"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">${data[0].firstName}</span><span class="text-black-50">${data[0].email}</span><span> </span></div>`
+    var html = `<div class="d-flex flex-column align-items-center text-center p-3 py-5" id="mainImage"><img class="rounded-circle mt-5" width="150px" src="${photoUrl}" alt="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">${data[0].firstName}</span><span class="text-black-50">${data[0].email}</span><span> </span></div>`
+    html += `<button type="button" class="btn btn-info" data-toggle="modal" data-target="#uploadModal" onclick="displayModal()">Change Photo</button>`
     main.innerHTML = html;
 
     var fname = document.getElementById("fname");
@@ -64,6 +70,8 @@ function saveProfile(){
         }
     })   
 }
+
+window.saveProfile = saveProfile;
   
 function getCart(){
     var cartHtml = document.getElementById("cartNum");
@@ -199,3 +207,35 @@ function sendOrderDatabase(){
         sessionStorage.removeItem('myCart');
     })
 }
+
+function displayModal(){
+    const pic = '';
+    var modalhtml = document.getElementById("uploadModal");
+    var html = `<div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="submitModalLabel">File Upload Form</h5>`
+    html += `<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body">`
+    html += `<form method='post' action='' enctype="multipart/form-data">Select file : <input class='form-control' type="file" value="Choose File" id="ppicture" accept='image/jpg' onchange="pic = event"><br>`
+    html += `<input type='button' class='btn btn-info' value='Upload' id='btn_upload' onsubmit="addPhoto(pic)"></form><div id='preview'></div></div>`
+    html += `<div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button></div></div></div></div>`
+    modalhtml.innerHTML = html;
+}
+
+window.displayModal = displayModal;
+
+async function addPhoto(event){
+    var selectedFile = event.target.files[0];
+    var data = obj.email
+    uploadProfile(selectedFile, data);
+}
+
+window.addPhoto = addPhoto;
+
+async function getPhoto(email){
+    try {
+        const thisUrl =  await getDownloadURL(ref(storage, `profile/propic-${email}.jpg`))
+        return thisUrl;
+    } catch (error) {
+        console.log("Could not get photos");
+    }
+}
+
+window.getPhoto = getPhoto;
