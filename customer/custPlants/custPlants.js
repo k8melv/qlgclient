@@ -141,8 +141,8 @@ function cartModal(){
         var html = `<div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Cart</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`
         html += `</div><div class="modal-body">`
         cart.forEach((data, i) => {
-            num = i;
             var parsedData = JSON.parse(data);
+            console.log(parsedData[i])
             html += `<p>${parsedData[i].plantName}: ${parsedData[i].price}<button id='removeButton' type="button" class="btn btn-danger" onclick='removeProduct(${parsedData[i].plantID})'>Remove</button></p>`
         });
         html += `</div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#checkoutModal" onclick='checkoutModal()'>Checkout</button></div></div>`
