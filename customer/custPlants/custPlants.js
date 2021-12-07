@@ -58,7 +58,6 @@ else{
 } 
 
 function addToCart(data){
-    console.log(data);
     var test = JSON.parse(sessionStorage.getItem("myCart"));
     if (test === null || test === "null"){
         cart = [];
@@ -133,7 +132,7 @@ function cartModal(){
         html += `</div><div class="modal-body">`
         cart.forEach((data) => {
             var parsedData = data;
-            html += `<p>${parsedData["plantName"]}: ${parsedData["price"]}<button id='removeButton' type="button" class="btn btn-danger" onclick='removeProduct(${parsedData["plantID"]})'>Remove</button></p>`
+            html += `<p style="font-weight: 650;">${parsedData["plantName"]}: <p style="font-weight: 400;">${parsedData["price"]}<button id='removeButton' type="button" class="btn btn-danger" onclick='removeProduct(${parsedData["plantID"]})'>Remove</button></p></p>`
         });
         html += `</div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#checkoutModal" onclick='checkoutModal()'>Checkout</button></div></div>`
         html += `</div>`
@@ -156,9 +155,8 @@ function checkoutModal(){
             var parsedData = data;
             var p = parsedData["price"];
             var price = p.split("$");
-            console.log(price);
             total += parseFloat(price[1]);
-            html += `<p>${parsedData["plantName"]}: ${parsedData["price"]}</p>`
+            html += `<p style="font-weight: 650;">${parsedData["plantName"]}: <p style="font-weight: 400;">${parsedData["price"]}</p></p>`
         });
         html += `<p>Total: $${Math.round(total*100)/100}</p>`
         html += `<div class="col-md-6"><label class="labels">First Name:</label><input id="fname" type="text" class="form-control" placeholder="${obj.firstName}" value="${obj.firstName}"></div>`
