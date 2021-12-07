@@ -152,19 +152,18 @@ function cartModal(){
 window.cartModal = cartModal;
 
 function checkoutModal(){
-    var cart = []
-	cart.push(sessionStorage.getItem("myCart"));
+	var cart = JSON.parse(sessionStorage.getItem("myCart"));
     if (cart === null || cart === "null"){
         alert("Your cart is empty! Add plants before checking out");
     }
     else{
         var html = `<div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Checkout</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`
         html += `</div><div class="modal-body">`
-        var total;
+        var total = 0;
         cart.forEach((data) => {
-            var parsedData = JSON.parse(data);
-            total += parsedData[0].price;
-            html += `<p>${parsedData[0].plantName}: ${parsedData[0].price}<button id='removeButton' type="button" class="btn btn-danger" onclick='removeProduct(${parsedData[0].plantID})'>Remove</button></p>`
+            var parsedData = data;
+            total += parsedData["price"];
+            html += `<p>${parsedData["plantName"]}: ${parsedData["price"]}<button id='removeButton' type="button" class="btn btn-danger" onclick='removeProduct(${parsedData["plantID"]})'>Remove</button></p>`
         });
         html += `<p>Total: ${total}</p>`
         html += `<div class="col-md-6"><label class="labels">First Name:</label><input id="fname" type="text" class="form-control" placeholder="${obj.firstName}" value=""></div>`
