@@ -108,19 +108,13 @@ function removeProduct(id){
     console.log(items);
     for (var i =0; i< items.length; i++) {
         var item = items[i];
-        console.log(item)
         if (item.plantID == id) {
-            console.log(item)
-            items.splice(item[i], 1);
+            items.splice(item, 1);
             console.log(items);
             break;
         }
     }
     sessionStorage.setItem('myCart', JSON.stringify(items));
-    //items = JSON.stringify(items);
-    // console.log(items);
-    //sessionStorage.setItem('myCart', items);
-
     getCart();
     cartModal();
 }
