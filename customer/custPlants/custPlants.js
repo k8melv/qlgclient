@@ -109,14 +109,14 @@ function removeProduct(id){
     for (var i =0; i< items.length; i++) {
         var item = items[i];
         console.log(item)
-        if (item[i].plantID == id) {
+        if (item.plantID == id) {
             console.log(item)
             items.splice(item[i], 1);
             console.log(items);
             break;
         }
     }
-    sessionStorage.setItem('myCart', items)
+    sessionStorage.setItem('myCart', JSON.parse(items));
     //items = JSON.stringify(items);
     // console.log(items);
     //sessionStorage.setItem('myCart', items);
