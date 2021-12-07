@@ -12,9 +12,14 @@ function registerAccount(){
         var status="no";
     }
     if (firstName == null || firstName == "" || lastName == null || lastName == "" || birthdate == null || birthdate == "" || email == null || email == "" || password == null || password == ""){
-        var errorMessage = document.getElementById("errorMsg");
-        var html = "You must fill out all information";
-        errorMessage.innerHTML=html;
+        if (document.getElementById("errorMsg").innerHTML=="You must fill out all information"){
+
+        }
+        else{
+            var errorMessage = document.getElementById("errorMsg");
+            var html = "You must fill out all information";
+            errorMessage.innerHTML=html;
+        }
     }
     else{
         if(document.getElementById("termsAndCond").checked==true){
