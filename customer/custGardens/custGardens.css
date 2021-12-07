@@ -45,6 +45,7 @@ nav > * {
   background-color: transparent;
   position: fixed;
   padding-top: 50px;
+  z-index: 1;
 }
 
 .sticky {
