@@ -162,7 +162,9 @@ function checkoutModal(){
         let total = 0;
         cart.forEach((data) => {
             var parsedData = data;
-            var price = parsedData["price"].split('$');
+            var p = parsedData["price"];
+            var price = p.split("$");
+            console.log(price);
             total += parseInt(price[1]);
             html += `<p>${parsedData["plantName"]}: ${parsedData["price"]}<button id='removeButton' type="button" class="btn btn-danger" onclick='removeProduct(${parsedData["plantID"]})'>Remove</button></p>`
         });
