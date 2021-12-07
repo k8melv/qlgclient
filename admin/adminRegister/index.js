@@ -39,7 +39,7 @@ function registerAccount(){
                 console.log(response);
                 var user = {firstName, lastName, email, password, position, date};
                 sessionStorage.setItem('user', JSON.stringify(user));
-                window.location.replace("../adminProfile/adminProfile.html");
+                window.location.replace("../adminCarousel/carousel.html");
             })
         }
         else{

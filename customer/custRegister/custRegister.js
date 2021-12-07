@@ -37,7 +37,7 @@ function registerAccount(){
                 console.log(response); 
                 var user = {firstName, lastName, birthdate, email, password};
                 sessionStorage.setItem('user', JSON.stringify(user));
-                window.location.replace("../custProfile/custProfile.html");
+                window.location.replace("../custCarousel/carousel.html");
             })
         }
         else{
