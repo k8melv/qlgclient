@@ -30,8 +30,16 @@ function populateFields(data){
     address.innerHTML = html;
 }
 
+const getCustomerSave = async () => {
+    const customer = `https://qlgapi.herokuapp.com/api/customer/${obj.email}`;
+    const response = await fetch(customer);
+    const data = await response.json();
+    saveProfile(data);
+    return data;
+}
+
 function saveProfile(){
-    const profileApiUrl = `https://qlgapi.herokuapp.com/api/customer/${obj.customerID}`;
+    const profileApiUrl = `https://qlgapi.herokuapp.com/api/customer/${data[0].customerID}`;
     const firstName = document.getElementById("editFname").value;
     const lastName = document.getElementById("editLname").value;
     const email = document.getElementById("editEmail").value;
