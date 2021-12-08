@@ -38,7 +38,7 @@ const getCustomerSave = async () => {
     return data;
 }
 
-function saveProfile(){
+function saveProfile(data){
     const profileApiUrl = `https://qlgapi.herokuapp.com/api/customer/${data[0].customerID}`;
     const firstName = document.getElementById("editFname").value;
     const lastName = document.getElementById("editLname").value;
