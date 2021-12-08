@@ -56,7 +56,7 @@ function updateProfile(data){
             "Content-Type": 'application/json',
         },
         body: JSON.stringify({
-            AdminID: obj.adminID,
+            AdminID: data[0].adminID,
             FirstName: firstName,
             LastName: lastName,
             Email: email,
