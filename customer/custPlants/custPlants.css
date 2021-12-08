@@ -11790,3 +11790,21 @@ footer > * {
 #activePage {
   color: #990000;
 }
+#suggestionsBTN  {
+  border: 0px solid white;
+  color: white;
+  background-color: #990000;
+  font-size: 12px;
+  font-family: "Ubuntu", sans-serif;
+  height: 4em;
+  width: 8em;
+  margin: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#suggestionsBTN :hover {
+  background-color: lightgray;
+  color: #990000;
+}
