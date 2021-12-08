@@ -205,7 +205,7 @@ function deleteSubmission(id){
             "Content-Type": 'application/json'
         }
     })
-    suggestionModal();
+    getSuggestions();
 }
 
 function confirmDelete(id){
