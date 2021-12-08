@@ -43,7 +43,7 @@ async function loginOnClick(json) {
         }
     }
     catch{
-        var html = "<input type='password' id='pass' name='password' placeholder='Password'><br><br><div style='color: red'>Incorrect email or password. Try again</div>";
-        document.getElementById("pass").outerHTML = html
+        var html = "Incorrect email or password. Please try again";
+        document.getElementById("errorMsg").inner = html;
     }
 }
