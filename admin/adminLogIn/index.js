@@ -31,9 +31,9 @@ async function loginOnClick(json) {
     var pass = document.getElementById("pass").value;
 
     try{
-        if (emailval=json[0].email)
+        if (emailval==json[0].email)
         {
-            if (pass=json[0].password)
+            if (pass==json[0].password)
             {
                 var user = json[0];
                 sessionStorage.setItem('user', JSON.stringify(user));
