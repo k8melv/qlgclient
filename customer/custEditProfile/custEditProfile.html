@@ -100,6 +100,27 @@
                 </div>
               </div>
             </div>
+            <!--Upload Modal-->
+            <div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                  <h5 class="modal-title" id="submitModalLabel">File Upload Form</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                      <form method='post' action='' enctype="multipart/form-data">
+                          Select file : <input type='file' name='file' id='file' class='form-control' ><br>
+                          <input type='button' class='btn btn-info' value='Upload' id='btn_upload'>
+                      </form>
+                      <div id='preview'></div>
+                  </div>
+                  <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+              </div>
+              </div>
+          </div>
 
         <!-- Footer-->
         <footer class="py-5 bg-dark">

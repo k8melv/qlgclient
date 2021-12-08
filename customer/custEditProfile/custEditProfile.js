@@ -16,7 +16,7 @@ async function populateFields(data){
     const photoUrl = await getPhoto(data[0].email)
     var main = document.getElementById("mainImage");
     var html = `<div class="d-flex flex-column align-items-center text-center p-3 py-5" id="mainImage"><img class="rounded-circle mt-5" width="150px" src="${photoUrl}" alt="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">${data[0].firstName}</span><span class="text-black-50">${data[0].email}</span><span> </span></div>`
-    html += `<button type="button" class="btn btn-info" data-toggle="modal" data-target="#uploadModal" onclick="displayModal()">Change Photo</button>`
+    html += `<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#uploadModal" onclick="displayModal()">Change Photo</button>`
     main.innerHTML = html;
 
     var fname = document.getElementById("fname");
@@ -235,6 +235,8 @@ async function getPhoto(email){
         return thisUrl;
     } catch (error) {
         console.log("Could not get photos");
+        const thisUrl = "https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg";
+        return thisUrl;
     }
 }
 
