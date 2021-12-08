@@ -27,7 +27,7 @@ async function displayModal(data){
     var html = `<div class="modal-dialog"><div class="modal-content">`;
     html += `<div class="modal-header"><h5 class="modal-title" id="plantName">${data[0].plantName}</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`;
     html += `</div><div class="modal-body"><img class="modalImg" src="${photoUrl}" alt="Picture" width="300" height="200"/><div style="font-weight: 650">Location: <input class="form-control" type="edit" value="${data[0].location}" id="editLocation"></div><div style="font-weight: 650">Water Needs: <input class="form-control" type="edit" value="${data[0].numTimesWater}" id="editWater"></div><div style="font-weight: 650">Sun Needs: <input class="form-control" type="edit" value="${data[0].sunNeeds}" id="editSun"></div><div id="plantinfo" style="font-weight: 650">Plant Information: <input class="form-control" type="edit" value="${data[0].information}" id="editInfo"></div><div style="font-weight: 650">Fun Fact: <input class="form-control" type="edit" value="${data[0].funFact}" id="editFact"></div>`;
-    html += `<div style="font-weight: 650">Price: <input class="form-control" type="edit" value="${data[0].price}" id="editPrice"></div></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-danger" onclick="confirmation(${data[0].plantID})">Delete</button><button type="button" class="btn btn-primary" onclick="putPlant(${data[0].plantID})" method="PUT">Save Changes</button>`;
+    html += `<div style="font-weight: 650">Price: <input class="form-control" type="edit" value="${data[0].price}" id="editPrice"></div></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="confirmation(${data[0].plantID})">Delete</button><button type="button" class="btn btn-primary" onclick="putPlant(${data[0].plantID})" method="PUT">Save Changes</button>`;
     html += `</div></div></div>`;
     garden.innerHTML = html;
 }
@@ -60,9 +60,14 @@ function addPlant(pic){
         })
     })
     .then((response)=>{
-        console.log(response);
-        addPhoto(pic);
-        loadPlants();
+        if (response.status == 200){
+            alert("Plant has been successfully added");
+            addPhoto(pic);
+            loadPlants();
+        }
+        else{
+            alert("Something went wrong. Please try again");
+        }
     })
     var addMenu = document.getElementById("addButton");
     var html = `<button id = "adminAdd" class="btn btn-outline-dark" type="submit" onclick="displayAddMenu()">Add</button>`;

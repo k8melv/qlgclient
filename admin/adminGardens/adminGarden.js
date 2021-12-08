@@ -27,13 +27,13 @@ async function displayModal(data){
   var html = `<div class="modal-dialog"><div class="modal-content">`;
   html += `<div class="modal-header"><h5 class="modal-title" id="exampleModalLabel">${data[0].gardenType}</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`;
   html += `</div><div class="modal-body"><img class="modalImg" src="${photoUrl}" alt="House Plants" width="300" height="200"/><div style='display: flex;'><input type='text' id="gardenInfoForm" class='form-control' placeholder='Garden Information' value='${data[0].information}'></div></div>`;
-  html += `<div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-danger" onclick="confirmation(${data[0].gardenID})">Delete</button><button type="button" class="btn btn-primary" onclick="putGarden(${data[0].gardenID})" method="PUT">Save changes</button>`;
+  html += `<div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="confirmation(${data[0].gardenID})">Delete</button><button type="button" class="btn btn-primary" onclick="putGarden(${data[0].gardenID})" method="PUT">Save changes</button>`;
   html += `</div></div></div></div>`;
   garden.innerHTML = html;
 }
 
 function confirmation(id){
-  let isExecuted = confirm("Are you sure to delete this plant?");
+  let isExecuted = confirm("Are you sure to delete this garden?");
   if (isExecuted == true) {
     alert("This garden has been deleted");
     removeElement(id);
@@ -138,13 +138,15 @@ function addGarden(pic){
       })
   })
   .then((response)=>{
-      console.log(response);
+    if (response.status == 200){
+      alert("Garden has been successfully added");
       addPhoto(pic);
       loadGardens();
+    }
+    else{
+        alert("Something went wrong. Please try again");
+    }
   })
-  // var addMenu = document.getElementById("addButton");
-  // var html = `<button id = "adminAdd" class="btn btn-outline-dark" type="submit" onclick="displayAddMenu()">Add</button>`;
-  // addMenu.innerHTML = html;
 }
 
 window.addGarden = addGarden;
