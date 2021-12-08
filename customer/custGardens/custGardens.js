@@ -16,6 +16,7 @@ const GetGarden = async (id) => {
   const response = await fetch(gardenURL);
   const data = await response.json();
   displayModal(data);
+  sliderMax(data);
   return data;
 }
 
@@ -37,7 +38,6 @@ const slider = async (value) => {
   const response = await fetch(gardenURL);
   const data = await response.json();
   getSlider(data, value);
-  sliderMax(data)
   return data;
 }
 
@@ -57,7 +57,6 @@ function getSlider(data, value){
 }
 
 function sliderMax(data){
-  console.log(data.length)
   var slider = document.getElementById("slidecontainer");
   slider.innerHTML = `<input type="range" min="1" max="${data.length}" class="slider" id="myRange" oninput="slider(value)">`
 }
