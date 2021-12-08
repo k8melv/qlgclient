@@ -215,7 +215,7 @@ function displayModal(){
     html += `<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body">`
     html += `<form method='post' action='' enctype="multipart/form-data">Select file : <input class='form-control' type="file" value="Choose File" id="ppicture" accept='image/jpg' onchange="pic = event"><br>`
     html += `<input type='button' class='btn btn-info' value='Upload' id='btn_upload' onsubmit="addPhoto(pic)"></form><div id='preview'></div></div>`
-    html += `<div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button></div></div></div></div>`
+    html += `<div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button></div></div></div>`
     modalhtml.innerHTML = html;
 }
 
