@@ -30,7 +30,6 @@ async function loginOnClick(json) {
     var emailval = document.getElementById("email").value;
     var pass = document.getElementById("pass").value;
 
-    try{
         if (emailval==json[0].email)
         {
             if (pass==json[0].password)
@@ -40,10 +39,23 @@ async function loginOnClick(json) {
 
                 window.location.replace("../adminCarousel/carousel.html");
             }
+            else{
+                if (document.getElementById("errorMsg").innerHTML = "Incorrect email or password. Please try again"){
+    
+                }
+                else{
+                    var html = "Incorrect email or password. Please try again";
+                    document.getElementById("errorMsg").innerHTML = html;
+                }
+            }
         }
-    }
-    catch{
-        var html = "Incorrect email or password. Please try again";
-        document.getElementById("errorMsg").inner = html;
+    else{
+        if (document.getElementById("errorMsg").innerHTML = "Incorrect email or password. Please try again"){
+
+        }
+        else{
+            var html = "Incorrect email or password. Please try again";
+            document.getElementById("errorMsg").innerHTML = html;
+        }
     }
 }

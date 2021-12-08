@@ -31,9 +31,23 @@ async function loginOnClick(json) {
 
             window.location.replace("../customer/custCarousel/carousel.html");
         }
+        else{
+            if (document.getElementById("errorMsg").innerHTML = "Incorrect email or password. Please try again"){
+
+            }
+            else{
+                var html = "Incorrect email or password. Please try again";
+                document.getElementById("errorMsg").innerHTML = html;
+            }
+        }
     }
     else{
-        var html = "Incorrect email or password. Please try again";
-        document.getElementById("errorMsg").innerHTML = html
+        if (document.getElementById("errorMsg").innerHTML = "Incorrect email or password. Please try again"){
+
+        }
+        else{
+            var html = "Incorrect email or password. Please try again";
+            document.getElementById("errorMsg").innerHTML = html;
+        }
     }
 }
