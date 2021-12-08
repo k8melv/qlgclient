@@ -1,4 +1,12 @@
 customerid,firstname,lastname,birthdate,email,password,creditcard,shippingaddress,billingaddress,pastPurchases,status
-1,Jeff,Lucas,1980-09-23,jslucas@customer.com,#Pass123,2342323443244323,"13904 Summerlook Lane","13904 Summerlook Lane"," ",yes
-2,Jamie,Hillman,1995-05-12,jmhillman@customer.com,#Pass123," "," "," "," ",no
-3,Blake,Minichan,2000-09-28,bminichan@customer.com,#Pass123,1234431254322134,"700 15th St Tuscaloosa, AL 35401","700 15th St Tuscaloosa, AL 35401"," ",yes
+1,Jeffery,Lucas,9/23/80,jslucas@customer.com,#Pass123,,"700 15th St Tuscaloosa, AL 35401","700 15th St Tuscaloosa, AL 35401", ,yes
+3,Blake,Minichan,9/28/00,bminichan@customer.com,#Pass123, , , , ,yes
+4,test,test,3/23/00,test@yahoo.com,test, , , , ,yes
+5,Test2,test,1230-03-03,test@test.com,#Test, , , , ,yes
+6,test,test,5/31/99,test@yahoo.com,#pasda, , , , ,yes
+7,Nick,Malmquist,12/4/00,nmquist@yahoo.com,nick, , , , ,yes
+8,Caleb,Ray,11/1/00,cwray2@crimson.ua.edu,, , , , ,yes
+9,test,test,2/4/99,tset,sdfaf, , , , ,yes
+10,tgdsfg,sdfgs,5/4/00,regs,hjkhjk, , , , ,yes
+12,Jimmy,Carter,7/18/00,jwc71800@gmail.com,QLAG12345, , , , ,yes
+14,Kate,Melvin,1/9/01,kate@customer.com,#Pass123, , , , ,yes
