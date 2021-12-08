@@ -114,6 +114,9 @@ function question1(id){
   else if(id=="q1c3"){imageID=`./assets/plant-3.jpeg`;}
   else if(id=="q1c4"){imageID=`./assets/plant-4.jpeg`;}
   else if(id=="q1c5"){imageID=`./assets/plant-5.jpeg`;}
+  else if(id=="q1c6"){imageID=`./assets/plant-6.jpeg`;}
+  else if(id=="q1c7"){imageID=`./assets/plant-7.jpeg`;}
+  else if(id=="q1c8"){imageID=`./assets/plant-8.jpeg`;}
 
   counter++;
 
