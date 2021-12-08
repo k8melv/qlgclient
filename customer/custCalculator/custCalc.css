@@ -280,6 +280,18 @@ button {
   background-color: #5c636a;
   border-color: #565e64;
 }
+.btn-danger {
+  width: 100px;
+  height: 50px;
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+.btn-danger:hover {
+  color: #fff;
+  background-color: #bb2d3b;
+  border-color: #b02a37;
+}
 button:hover {
   background-color: lightgray;
   color: #990000;

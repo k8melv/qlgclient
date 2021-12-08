@@ -1,5 +1,3 @@
-import { uploadProfile, ref, getDownloadURL, storage } from "../../firebase/firebase.js";
-
 const obj = JSON.parse(sessionStorage.getItem('user'));
 
 const getCustomer = async () => {
@@ -10,18 +8,15 @@ const getCustomer = async () => {
     return data;
 }
 
-window.getCustomer = getCustomer;
-
-async function populateFields(data){
-    const photoUrl = await getPhoto(data[0].email)
+function populateFields(data){
     var main = document.getElementById("mainImage");
-    var html = `<div class="d-flex flex-column align-items-center text-center p-3 py-5" id="mainImage"><img class="rounded-circle mt-5" width="150px" src="${photoUrl}" alt="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">${data[0].firstName}</span><span class="text-black-50">${data[0].email}</span><span> </span></div>`
-    html += `<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#uploadModal" onclick="displayModal()">Change Photo</button>`
+    var html = `<div class="d-flex flex-column align-items-center text-center p-3 py-5" id="mainImage"><img class="rounded-circle mt-5" width="150px" src="../../assets/BigAlHoldingPlant.png" alt="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">${data[0].firstName}</span><span class="text-black-50">${data[0].email}</span><span> </span></div>`
     main.innerHTML = html;
 
     var fname = document.getElementById("fname");
     var html = `<div class='col-md-6'><label class='labels'>First Name</label><input type='text' id="editFname" class='form-control' placeholder='First Name' value='${data[0].firstName}'></div>`;
     fname.innerHTML = html;
+    
     var lname = document.getElementById("lname");
     var html = `<div class='col-md-6'><label class='labels'>Last Name</label><input type='text' id="editLname" class='form-control' placeholder='Last Name' value='${data[0].lastName}'></div>`;
     lname.innerHTML = html;
@@ -70,8 +65,6 @@ function saveProfile(){
         }
     })   
 }
-
-window.saveProfile = saveProfile;
   
 function getCart(){
     var cartHtml = document.getElementById("cartNum");
@@ -87,8 +80,6 @@ function getCart(){
     }
 }
 
-window.getCart = getCart;
-
 function removeProduct(id){
     var items = JSON.parse(sessionStorage.getItem('myCart'));
     for (var i =0; i< items.length; i++) {
@@ -102,8 +93,6 @@ function removeProduct(id){
     getCart();
     cartModal();
 }
-
-window.removeProduct = removeProduct;
 
 function cartModal(){
 	var cart = JSON.parse(sessionStorage.getItem("myCart"));
@@ -125,8 +114,6 @@ function cartModal(){
         document.getElementById("cartModal").innerHTML = html;
     }
 }
-
-window.cartModal = cartModal;
 
 function checkoutModal(){
 	var cart = JSON.parse(sessionStorage.getItem("myCart"));
@@ -158,8 +145,6 @@ function checkoutModal(){
     }
 }
 
-window.checkoutModal = checkoutModal;
-
 function checkoutSubmit(){
     var fname = document.getElementById('fname').value;
     var lname = document.getElementById('lname').value;
@@ -176,8 +161,6 @@ function checkoutSubmit(){
         sendOrderDatabase();
     }
 }
-
-window.checkoutSubmit = checkoutSubmit;
 
 function sendOrderDatabase(){
     var cart = JSON.parse(sessionStorage.getItem("myCart"));
@@ -207,37 +190,3 @@ function sendOrderDatabase(){
         sessionStorage.removeItem('myCart');
     })
 }
-
-function displayModal(){
-    const pic = '';
-    var modalhtml = document.getElementById("uploadModal");
-    var html = `<div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="submitModalLabel">File Upload Form</h5>`
-    html += `<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body">`
-    html += `<form method='post' action='' enctype="multipart/form-data">Select file : <input class='form-control' type="file" value="Choose File" id="ppicture" accept='image/jpg' onchange="pic = event"><br>`
-    html += `<input type='button' class='btn btn-info' value='Upload' id='btn_upload' onsubmit="addPhoto(pic)"></form><div id='preview'></div></div>`
-    html += `<div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button></div></div></div>`
-    modalhtml.innerHTML = html;
-}
-
-window.displayModal = displayModal;
-
-async function addPhoto(event){
-    var selectedFile = event.target.files[0];
-    var data = obj.email
-    uploadProfile(selectedFile, data);
-}
-
-window.addPhoto = addPhoto;
-
-async function getPhoto(email){
-    try {
-        const thisUrl =  await getDownloadURL(ref(storage, `profile/propic-${email}.jpg`))
-        return thisUrl;
-    } catch (error) {
-        console.log("Could not get photos");
-        const thisUrl = "https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg";
-        return thisUrl;
-    }
-}
-
-window.getPhoto = getPhoto;
