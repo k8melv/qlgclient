@@ -12,14 +12,11 @@ var advice = document.getElementById("advice");
 var captionText = document.getElementById("caption");
 img.onclick = function(){
   if(counter>=4){
-    console.log(answer3);
-    console.log(answer2);
     var score = parseInt(answer2)+parseInt(answer3);
-    console.log(score);
     var scoreLabel = calculateScore(score);
-    console.log(scoreLabel);
     var adviceLabel = calculateAdvice();
     modal.style.display = "block";
+    modal.style.backgroundColor = "grey";
     healthScore.innerHTML=`Your Plant is: ${scoreLabel}`;
     modalImg.src = imageID;
     captionText.innerHTML = this.alt;
@@ -63,7 +60,6 @@ span.onclick = function() {
 }
 
 const obj = JSON.parse(sessionStorage.getItem('user'));
-console.log(obj);
 
 function handleHello(){
     var helloHtml = document.getElementById('hello');
