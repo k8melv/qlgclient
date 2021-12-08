@@ -75,3 +75,6 @@ body.modal {
 #activePage {
   color: #990000;
 }
+footer > * {
+  height: 40px;
+}
